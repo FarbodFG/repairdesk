@@ -1,0 +1,334 @@
+{
+  "checkedAt": "2026-08-28T22:35:40.337Z",
+  "registry": "https://registry.yarnpkg.com",
+  "packages": [
+    {
+      "name": "react",
+      "version": "19.2.8",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    {
+      "name": "react-dom",
+      "version": "19.2.8",
+      "peerDependencies": {
+        "react": "^19.2.8"
+      }
+    },
+    {
+      "name": "react-router",
+      "version": "7.18.3",
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "peerDependencies": {
+        "react": ">=18",
+        "react-dom": ">=18"
+      }
+    },
+    {
+      "name": "@tanstack/react-query",
+      "version": "5.102.8",
+      "peerDependencies": {
+        "react": "^18 || ^19"
+      }
+    },
+    {
+      "name": "react-hook-form",
+      "version": "7.86.0",
+      "engines": {
+        "node": ">=18.0.0"
+      },
+      "peerDependencies": {
+        "react": "^16.8.0 || ^17 || ^18 || ^19"
+      }
+    },
+    {
+      "name": "@hookform/resolvers",
+      "version": "5.9.1",
+      "peerDependencies": {
+        "ajv": "^8.12.0",
+        "joi": "^17.0.0 || ^18.0.0",
+        "yup": "^1.0.0",
+        "zod": "^3.25.0 || ^4.0.0",
+        "vest": ">=6.0.0",
+        "fp-ts": "^2.7.0",
+        "io-ts": "^2.0.0",
+        "effect": "^3.10.3",
+        "arktype": "^2.0.0",
+        "valibot": ">=0.31.0 || ^1.0.0-beta.4 || ^1.0.0-rc",
+        "typanion": "^3.3.2",
+        "ajv-errors": "^3.0.0",
+        "ajv-formats": "^2.1.1",
+        "superstruct": ">=0.12.0",
+        "@vinejs/vine": "^2.0.0 || ^3.0.0 || ^4.0.0",
+        "ata-validator": "^1.2.0",
+        "computed-types": "^1.0.0",
+        "nope-validator": ">=0.12.0",
+        "class-validator": ">=0.12.0",
+        "react-hook-form": "^7.55.0",
+        "@typeschema/main": ">=0.13.7",
+        "@sinclair/typebox": ">=0.25.24",
+        "class-transformer": ">=0.4.0",
+        "fluentvalidation-ts": "^3.0.0",
+        "@standard-schema/spec": "^1.0.0"
+      }
+    },
+    {
+      "name": "zod",
+      "version": "4.5.1"
+    },
+    {
+      "name": "tailwindcss",
+      "version": "4.3.3"
+    },
+    {
+      "name": "@tailwindcss/vite",
+      "version": "4.3.3",
+      "peerDependencies": {
+        "vite": "^5.2.0 || ^6 || ^7 || ^8"
+      }
+    },
+    {
+      "name": "@radix-ui/react-dialog",
+      "version": "1.1.23",
+      "peerDependencies": {
+        "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+        "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+        "@types/react": "*",
+        "@types/react-dom": "*"
+      }
+    },
+    {
+      "name": "gsap",
+      "version": "3.15.0"
+    },
+    {
+      "name": "three",
+      "version": "0.185.1"
+    },
+    {
+      "name": "@react-three/fiber",
+      "version": "9.7.0",
+      "peerDependencies": {
+        "expo": ">=43.0",
+        "react": ">=19 <19.3",
+        "three": ">=0.156",
+        "expo-gl": ">=11.0",
+        "react-dom": ">=19 <19.3",
+        "expo-asset": ">=8.4",
+        "react-native": ">=0.78",
+        "expo-file-system": ">=11.0"
+      }
+    },
+    {
+      "name": "@react-three/drei",
+      "version": "10.7.8",
+      "peerDependencies": {
+        "react": "^19",
+        "three": ">=0.159",
+        "react-dom": "^19",
+        "@react-three/fiber": "^9.0.0"
+      }
+    },
+    {
+      "name": "lucide-react",
+      "version": "1.35.0",
+      "peerDependencies": {
+        "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+      }
+    },
+    {
+      "name": "@fontsource-variable/vazirmatn",
+      "version": "5.3.0"
+    },
+    {
+      "name": "vite",
+      "version": "8.2.2",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "peerDependencies": {
+        "tsx": "^4.8.1",
+        "jiti": ">=1.21.0",
+        "less": "^4.0.0",
+        "sass": "^1.70.0",
+        "yaml": "^2.4.2",
+        "stylus": ">=0.54.8",
+        "terser": "^5.16.0",
+        "esbuild": "^0.27.0 || ^0.28.0",
+        "sugarss": "^5.0.0",
+        "@types/node": "^20.19.0 || >=22.12.0",
+        "sass-embedded": "^1.70.0",
+        "@vitejs/devtools": "^0.4.0 || ^0.5.0"
+      }
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "version": "6.1.1",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "peerDependencies": {
+        "vite": "^8.0.0",
+        "oxc-transform-react": "^0.145.0",
+        "@rolldown/plugin-babel": "^0.1.7 || ^0.2.0",
+        "babel-plugin-react-compiler": "^1.0.0"
+      }
+    },
+    {
+      "name": "typescript",
+      "version": "6.0.3",
+      "engines": {
+        "node": ">=14.17"
+      }
+    },
+    {
+      "name": "@types/react",
+      "version": "19.2.18",
+      "peerDependencies": {}
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "19.2.5",
+      "peerDependencies": {
+        "@types/react": "^19.2.0"
+      }
+    },
+    {
+      "name": "@types/three",
+      "version": "0.185.4",
+      "peerDependencies": {}
+    },
+    {
+      "name": "@types/node",
+      "version": "22.20.1",
+      "peerDependencies": {}
+    },
+    {
+      "name": "vitest",
+      "version": "4.1.11",
+      "engines": {
+        "node": "^20.0.0 || ^22.0.0 || >=24.0.0"
+      },
+      "peerDependencies": {
+        "vite": "^6.0.0 || ^7.0.0 || ^8.0.0",
+        "jsdom": "*",
+        "happy-dom": "*",
+        "@vitest/ui": "4.1.11",
+        "@types/node": "^20.0.0 || ^22.0.0 || >=24.0.0",
+        "@edge-runtime/vm": "*",
+        "@opentelemetry/api": "^1.9.0",
+        "@vitest/coverage-v8": "4.1.11",
+        "@vitest/browser-preview": "4.1.11",
+        "@vitest/coverage-istanbul": "4.1.11",
+        "@vitest/browser-playwright": "4.1.11",
+        "@vitest/browser-webdriverio": "4.1.11"
+      }
+    },
+    {
+      "name": "@testing-library/react",
+      "version": "16.3.3",
+      "engines": {
+        "node": ">=18"
+      },
+      "peerDependencies": {
+        "react": "^18.0.0 || ^19.0.0",
+        "react-dom": "^18.0.0 || ^19.0.0",
+        "@types/react": "^18.0.0 || ^19.0.0",
+        "@types/react-dom": "^18.0.0 || ^19.0.0",
+        "@testing-library/dom": "^10.0.0"
+      }
+    },
+    {
+      "name": "@testing-library/jest-dom",
+      "version": "7.0.1",
+      "engines": {
+        "npm": ">=6",
+        "node": ">=22",
+        "yarn": ">=1"
+      },
+      "peerDependencies": {
+        "vitest": ">= 0.32",
+        "@testing-library/dom": ">=10 <11"
+      }
+    },
+    {
+      "name": "@testing-library/user-event",
+      "version": "14.6.6",
+      "engines": {
+        "npm": ">=6",
+        "node": ">=12"
+      },
+      "peerDependencies": {
+        "@testing-library/dom": ">=7.21.4"
+      }
+    },
+    {
+      "name": "jsdom",
+      "version": "26.1.0",
+      "engines": {
+        "node": ">=18"
+      },
+      "peerDependencies": {
+        "canvas": "^3.0.0"
+      }
+    },
+    {
+      "name": "@playwright/test",
+      "version": "1.62.1",
+      "engines": {
+        "node": ">=20"
+      }
+    },
+    {
+      "name": "eslint",
+      "version": "10.9.1",
+      "engines": {
+        "node": "^20.19.0 || ^22.13.0 || >=24"
+      },
+      "peerDependencies": {
+        "jiti": "*"
+      }
+    },
+    {
+      "name": "@eslint/js",
+      "version": "10.0.1",
+      "engines": {
+        "node": "^20.19.0 || ^22.13.0 || >=24"
+      },
+      "peerDependencies": {
+        "eslint": "^10.0.0"
+      }
+    },
+    {
+      "name": "typescript-eslint",
+      "version": "8.68.0",
+      "engines": {
+        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+      },
+      "peerDependencies": {
+        "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0",
+        "typescript": ">=4.8.4 <6.1.0"
+      }
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "version": "7.1.1",
+      "engines": {
+        "node": ">=18"
+      },
+      "peerDependencies": {
+        "eslint": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0 || ^10.0.0"
+      }
+    },
+    {
+      "name": "globals",
+      "version": "17.11.0",
+      "engines": {
+        "node": ">=18"
+      }
+    }
+  ]
+}

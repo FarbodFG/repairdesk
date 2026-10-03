@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
+
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,10 +40,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'corsheaders',
+    'rest_framework',
+
+    'accounts',
+    'shops',
+    'customers',
+    'repairs',
+    'devices',
+    'notifications',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -73,9 +87,13 @@ WSGI_APPLICATION = 'repair_desk.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "repair_desk_db",
+        "USER": "django_user",
+        "PASSWORD": "farbod.M1274979",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
     }
 }
 
@@ -104,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 
@@ -120,3 +138,100 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Media files (Uploaded files)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+MEDIA_URL = '/images/'
+
+
+# Authentication
+AUTH_USER_MODEL = 'accounts.User'
+
+
+# JWT Auth setting
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=60),
+}
+
+
+# Cors
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+]
+
+CORS_URLS_REGEX = r'^/api/.*$'
+
+
+# Customer notifications
+NOTIFICATION_PROVIDER = os.getenv('NOTIFICATION_PROVIDER', 'fake')
+NOTIFICATION_SEND_MODE = os.getenv('NOTIFICATION_SEND_MODE', 'auto')
+PUBLIC_TRACKING_BASE_URL = os.getenv(
+    'PUBLIC_TRACKING_BASE_URL',
+    'http://localhost:5173/track',
+)
+# Keep environment values raw here. The notification system validates them via
+# `manage.py check`, so a typo produces an actionable check error instead of
+# preventing Django from importing its settings module.
+NOTIFICATION_PROCESSING_TIMEOUT_SECONDS = os.getenv(
+    'NOTIFICATION_PROCESSING_TIMEOUT_SECONDS',
+    '300',
+)
+NOTIFICATION_MAX_ATTEMPTS = os.getenv('NOTIFICATION_MAX_ATTEMPTS', '4')
+NOTIFICATION_RETRY_DELAYS_SECONDS = os.getenv(
+    'NOTIFICATION_RETRY_DELAYS_SECONDS',
+    '60,300,900',
+)
+
+# SMS.ir is inactive until NOTIFICATION_PROVIDER=smsir is selected.
+SMSIR_API_KEY = os.getenv('SMSIR_API_KEY', '')
+SMSIR_TIMEOUT_SECONDS = os.getenv('SMSIR_TIMEOUT_SECONDS', '10')
+SMSIR_TEMPLATE_IDS = {
+    template_key: template_id
+    for template_key, template_id in {
+        'repair_created': os.getenv('SMSIR_TEMPLATE_REPAIR_CREATED', ''),
+        'repair_waiting_for_parts': os.getenv(
+            'SMSIR_TEMPLATE_REPAIR_WAITING_FOR_PARTS',
+            '',
+        ),
+        'repair_ready': os.getenv('SMSIR_TEMPLATE_REPAIR_READY', ''),
+        'repair_cancelled': os.getenv(
+            'SMSIR_TEMPLATE_REPAIR_CANCELLED',
+            '',
+        ),
+    }.items()
+    if template_id
+}
+SMSIR_PARAMETER_NAMES = {
+    'customer_name': 'NAME',
+    'tracking_code': 'CODE',
+    'tracking_url': 'LINK',
+}
+
+# Kavenegar is inactive until NOTIFICATION_PROVIDER=kavenegar is selected.
+KAVENEGAR_API_KEY = os.getenv('KAVENEGAR_API_KEY', '')
+KAVENEGAR_TIMEOUT_SECONDS = os.getenv('KAVENEGAR_TIMEOUT_SECONDS', '10')
+KAVENEGAR_TEMPLATES = {
+    template_key: template_name
+    for template_key, template_name in {
+        'repair_created': os.getenv('KAVENEGAR_TEMPLATE_REPAIR_CREATED', ''),
+        'repair_waiting_for_parts': os.getenv(
+            'KAVENEGAR_TEMPLATE_REPAIR_WAITING_FOR_PARTS',
+            '',
+        ),
+        'repair_ready': os.getenv('KAVENEGAR_TEMPLATE_REPAIR_READY', ''),
+        'repair_cancelled': os.getenv(
+            'KAVENEGAR_TEMPLATE_REPAIR_CANCELLED',
+            '',
+        ),
+    }.items()
+    if template_name
+}
+KAVENEGAR_TOKEN_MAPPINGS = {
+    'tracking_code': 'token',
+    'customer_name': 'token10',
+}

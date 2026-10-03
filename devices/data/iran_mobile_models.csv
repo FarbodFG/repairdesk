@@ -1,0 +1,973 @@
+﻿catalog_key,brand,model_name,series,device_type,catalog_priority,search_aliases,is_active,source_group
+apple-iphone-16e,Apple,iPhone 16e,iPhone,smartphone,new,iPhone 16e|Apple iPhone 16e|اپل iPhone 16e|آیفون 16e,True,official_apple_and_iran_market
+apple-iphone-17,Apple,iPhone 17,iPhone,smartphone,new,iPhone 17|Apple iPhone 17|اپل iPhone 17|آیفون 17,True,official_apple_and_iran_market
+apple-iphone-17-air,Apple,iPhone 17 Air,iPhone,smartphone,new,iPhone 17 Air|Apple iPhone 17 Air|اپل iPhone 17 Air|آیفون 17 Air,True,official_apple_and_iran_market
+apple-iphone-17-pro,Apple,iPhone 17 Pro,iPhone,smartphone,new,iPhone 17 Pro|Apple iPhone 17 Pro|اپل iPhone 17 Pro|آیفون 17 Pro|iPhone 17 پرو,True,official_apple_and_iran_market
+apple-iphone-17-pro-max,Apple,iPhone 17 Pro Max,iPhone,smartphone,new,iPhone 17 Pro Max|Apple iPhone 17 Pro Max|اپل iPhone 17 Pro Max|آیفون 17 Pro Max|iPhone 17 پرو مکس,True,official_apple_and_iran_market
+apple-iphone-11,Apple,iPhone 11,iPhone,smartphone,core,iPhone 11|Apple iPhone 11|اپل iPhone 11|آیفون 11,True,official_apple_and_common_repair
+apple-iphone-11-pro,Apple,iPhone 11 Pro,iPhone,smartphone,core,iPhone 11 Pro|Apple iPhone 11 Pro|اپل iPhone 11 Pro|آیفون 11 Pro|iPhone 11 پرو,True,official_apple_and_common_repair
+apple-iphone-11-pro-max,Apple,iPhone 11 Pro Max,iPhone,smartphone,core,iPhone 11 Pro Max|Apple iPhone 11 Pro Max|اپل iPhone 11 Pro Max|آیفون 11 Pro Max|iPhone 11 پرو مکس,True,official_apple_and_common_repair
+apple-iphone-12,Apple,iPhone 12,iPhone,smartphone,core,iPhone 12|Apple iPhone 12|اپل iPhone 12|آیفون 12,True,official_apple_and_common_repair
+apple-iphone-12-mini,Apple,iPhone 12 mini,iPhone,smartphone,core,iPhone 12 mini|Apple iPhone 12 mini|اپل iPhone 12 mini|آیفون 12 mini|iPhone 12 مینی,True,official_apple_and_common_repair
+apple-iphone-12-pro,Apple,iPhone 12 Pro,iPhone,smartphone,core,iPhone 12 Pro|Apple iPhone 12 Pro|اپل iPhone 12 Pro|آیفون 12 Pro|iPhone 12 پرو,True,official_apple_and_common_repair
+apple-iphone-12-pro-max,Apple,iPhone 12 Pro Max,iPhone,smartphone,core,iPhone 12 Pro Max|Apple iPhone 12 Pro Max|اپل iPhone 12 Pro Max|آیفون 12 Pro Max|iPhone 12 پرو مکس,True,official_apple_and_common_repair
+apple-iphone-13,Apple,iPhone 13,iPhone,smartphone,core,iPhone 13|Apple iPhone 13|اپل iPhone 13|آیفون 13,True,official_apple_and_common_repair
+apple-iphone-13-mini,Apple,iPhone 13 mini,iPhone,smartphone,core,iPhone 13 mini|Apple iPhone 13 mini|اپل iPhone 13 mini|آیفون 13 mini|iPhone 13 مینی,True,official_apple_and_common_repair
+apple-iphone-13-pro,Apple,iPhone 13 Pro,iPhone,smartphone,core,iPhone 13 Pro|Apple iPhone 13 Pro|اپل iPhone 13 Pro|آیفون 13 Pro|iPhone 13 پرو,True,official_apple_and_common_repair
+apple-iphone-13-pro-max,Apple,iPhone 13 Pro Max,iPhone,smartphone,core,iPhone 13 Pro Max|Apple iPhone 13 Pro Max|اپل iPhone 13 Pro Max|آیفون 13 Pro Max|iPhone 13 پرو مکس,True,official_apple_and_common_repair
+apple-iphone-14,Apple,iPhone 14,iPhone,smartphone,core,iPhone 14|Apple iPhone 14|اپل iPhone 14|آیفون 14,True,official_apple_and_common_repair
+apple-iphone-14-plus,Apple,iPhone 14 Plus,iPhone,smartphone,core,iPhone 14 Plus|Apple iPhone 14 Plus|اپل iPhone 14 Plus|آیفون 14 Plus|iPhone 14 پلاس,True,official_apple_and_common_repair
+apple-iphone-14-pro,Apple,iPhone 14 Pro,iPhone,smartphone,core,iPhone 14 Pro|Apple iPhone 14 Pro|اپل iPhone 14 Pro|آیفون 14 Pro|iPhone 14 پرو,True,official_apple_and_common_repair
+apple-iphone-14-pro-max,Apple,iPhone 14 Pro Max,iPhone,smartphone,core,iPhone 14 Pro Max|Apple iPhone 14 Pro Max|اپل iPhone 14 Pro Max|آیفون 14 Pro Max|iPhone 14 پرو مکس,True,official_apple_and_common_repair
+apple-iphone-15,Apple,iPhone 15,iPhone,smartphone,core,iPhone 15|Apple iPhone 15|اپل iPhone 15|آیفون 15,True,official_apple_and_common_repair
+apple-iphone-15-plus,Apple,iPhone 15 Plus,iPhone,smartphone,core,iPhone 15 Plus|Apple iPhone 15 Plus|اپل iPhone 15 Plus|آیفون 15 Plus|iPhone 15 پلاس,True,official_apple_and_common_repair
+apple-iphone-15-pro,Apple,iPhone 15 Pro,iPhone,smartphone,core,iPhone 15 Pro|Apple iPhone 15 Pro|اپل iPhone 15 Pro|آیفون 15 Pro|iPhone 15 پرو,True,official_apple_and_common_repair
+apple-iphone-15-pro-max,Apple,iPhone 15 Pro Max,iPhone,smartphone,core,iPhone 15 Pro Max|Apple iPhone 15 Pro Max|اپل iPhone 15 Pro Max|آیفون 15 Pro Max|iPhone 15 پرو مکس,True,official_apple_and_common_repair
+apple-iphone-16,Apple,iPhone 16,iPhone,smartphone,core,iPhone 16|Apple iPhone 16|اپل iPhone 16|آیفون 16,True,official_apple_and_common_repair
+apple-iphone-16-plus,Apple,iPhone 16 Plus,iPhone,smartphone,core,iPhone 16 Plus|Apple iPhone 16 Plus|اپل iPhone 16 Plus|آیفون 16 Plus|iPhone 16 پلاس,True,official_apple_and_common_repair
+apple-iphone-16-pro,Apple,iPhone 16 Pro,iPhone,smartphone,core,iPhone 16 Pro|Apple iPhone 16 Pro|اپل iPhone 16 Pro|آیفون 16 Pro|iPhone 16 پرو,True,official_apple_and_common_repair
+apple-iphone-16-pro-max,Apple,iPhone 16 Pro Max,iPhone,smartphone,core,iPhone 16 Pro Max|Apple iPhone 16 Pro Max|اپل iPhone 16 Pro Max|آیفون 16 Pro Max|iPhone 16 پرو مکس,True,official_apple_and_common_repair
+apple-iphone-7,Apple,iPhone 7,iPhone,smartphone,core,iPhone 7|Apple iPhone 7|اپل iPhone 7|آیفون 7,True,official_apple_and_common_repair
+apple-iphone-7-plus,Apple,iPhone 7 Plus,iPhone,smartphone,core,iPhone 7 Plus|Apple iPhone 7 Plus|اپل iPhone 7 Plus|آیفون 7 Plus|iPhone 7 پلاس,True,official_apple_and_common_repair
+apple-iphone-8,Apple,iPhone 8,iPhone,smartphone,core,iPhone 8|Apple iPhone 8|اپل iPhone 8|آیفون 8,True,official_apple_and_common_repair
+apple-iphone-8-plus,Apple,iPhone 8 Plus,iPhone,smartphone,core,iPhone 8 Plus|Apple iPhone 8 Plus|اپل iPhone 8 Plus|آیفون 8 Plus|iPhone 8 پلاس,True,official_apple_and_common_repair
+apple-iphone-x,Apple,iPhone X,iPhone,smartphone,core,iPhone X|Apple iPhone X|اپل iPhone X|آیفون X,True,official_apple_and_common_repair
+apple-iphone-xr,Apple,iPhone XR,iPhone,smartphone,core,iPhone XR|Apple iPhone XR|اپل iPhone XR|آیفون XR,True,official_apple_and_common_repair
+apple-iphone-xs,Apple,iPhone XS,iPhone,smartphone,core,iPhone XS|Apple iPhone XS|اپل iPhone XS|آیفون XS,True,official_apple_and_common_repair
+apple-iphone-xs-max,Apple,iPhone XS Max,iPhone,smartphone,core,iPhone XS Max|Apple iPhone XS Max|اپل iPhone XS Max|آیفون XS Max,True,official_apple_and_common_repair
+apple-iphone-se-2nd-generation,Apple,iPhone SE (2nd generation),iPhone SE,smartphone,core,iPhone SE (2nd generation)|Apple iPhone SE (2nd generation)|اپل iPhone SE (2nd generation)|آیفون SE (2nd generation),True,official_apple_and_common_repair
+apple-iphone-se-3rd-generation,Apple,iPhone SE (3rd generation),iPhone SE,smartphone,core,iPhone SE (3rd generation)|Apple iPhone SE (3rd generation)|اپل iPhone SE (3rd generation)|آیفون SE (3rd generation),True,official_apple_and_common_repair
+apple-iphone-5,Apple,iPhone 5,iPhone,smartphone,legacy,iPhone 5|Apple iPhone 5|اپل iPhone 5|آیفون 5,True,official_apple_and_curated_repair
+apple-iphone-5c,Apple,iPhone 5c,iPhone,smartphone,legacy,iPhone 5c|Apple iPhone 5c|اپل iPhone 5c|آیفون 5c,True,official_apple_and_curated_repair
+apple-iphone-5s,Apple,iPhone 5s,iPhone,smartphone,legacy,iPhone 5s|Apple iPhone 5s|اپل iPhone 5s|آیفون 5s,True,official_apple_and_curated_repair
+apple-iphone-6,Apple,iPhone 6,iPhone,smartphone,legacy,iPhone 6|Apple iPhone 6|اپل iPhone 6|آیفون 6,True,official_apple_and_curated_repair
+apple-iphone-6-plus,Apple,iPhone 6 Plus,iPhone,smartphone,legacy,iPhone 6 Plus|Apple iPhone 6 Plus|اپل iPhone 6 Plus|آیفون 6 Plus|iPhone 6 پلاس,True,official_apple_and_curated_repair
+apple-iphone-6s,Apple,iPhone 6s,iPhone,smartphone,legacy,iPhone 6s|Apple iPhone 6s|اپل iPhone 6s|آیفون 6s,True,official_apple_and_curated_repair
+apple-iphone-6s-plus,Apple,iPhone 6s Plus,iPhone,smartphone,legacy,iPhone 6s Plus|Apple iPhone 6s Plus|اپل iPhone 6s Plus|آیفون 6s Plus|iPhone 6s پلاس,True,official_apple_and_curated_repair
+apple-iphone-se-1st-generation,Apple,iPhone SE (1st generation),iPhone SE,smartphone,legacy,iPhone SE (1st generation)|Apple iPhone SE (1st generation)|اپل iPhone SE (1st generation)|آیفون SE (1st generation),True,official_apple_and_curated_repair
+google-pixel-10,Google,Pixel 10,Pixel,smartphone,new,Pixel 10|Google Pixel 10|گوگل Pixel 10,True,current_global
+google-pixel-10-pro,Google,Pixel 10 Pro,Pixel,smartphone,new,Pixel 10 Pro|Google Pixel 10 Pro|گوگل Pixel 10 Pro,True,current_global
+google-pixel-10-pro-xl,Google,Pixel 10 Pro XL,Pixel,smartphone,new,Pixel 10 Pro XL|Google Pixel 10 Pro XL|گوگل Pixel 10 Pro XL,True,current_global
+google-pixel-4a,Google,Pixel 4a,Pixel,smartphone,extended,Pixel 4a|Google Pixel 4a|گوگل Pixel 4a,True,common_repair
+google-pixel-4a-5g,Google,Pixel 4a 5G,Pixel,smartphone,extended,Pixel 4a 5G|Google Pixel 4a 5G|گوگل Pixel 4a 5G,True,common_repair
+google-pixel-5,Google,Pixel 5,Pixel,smartphone,extended,Pixel 5|Google Pixel 5|گوگل Pixel 5,True,common_repair
+google-pixel-5a-5g,Google,Pixel 5a 5G,Pixel,smartphone,extended,Pixel 5a 5G|Google Pixel 5a 5G|گوگل Pixel 5a 5G,True,common_repair
+google-pixel-6,Google,Pixel 6,Pixel,smartphone,extended,Pixel 6|Google Pixel 6|گوگل Pixel 6,True,common_repair
+google-pixel-6-pro,Google,Pixel 6 Pro,Pixel,smartphone,extended,Pixel 6 Pro|Google Pixel 6 Pro|گوگل Pixel 6 Pro,True,common_repair
+google-pixel-6a,Google,Pixel 6a,Pixel,smartphone,extended,Pixel 6a|Google Pixel 6a|گوگل Pixel 6a,True,common_repair
+google-pixel-7,Google,Pixel 7,Pixel,smartphone,extended,Pixel 7|Google Pixel 7|گوگل Pixel 7,True,common_repair
+google-pixel-7-pro,Google,Pixel 7 Pro,Pixel,smartphone,extended,Pixel 7 Pro|Google Pixel 7 Pro|گوگل Pixel 7 Pro,True,common_repair
+google-pixel-7a,Google,Pixel 7a,Pixel,smartphone,extended,Pixel 7a|Google Pixel 7a|گوگل Pixel 7a,True,common_repair
+google-pixel-8,Google,Pixel 8,Pixel,smartphone,extended,Pixel 8|Google Pixel 8|گوگل Pixel 8,True,common_repair
+google-pixel-8-pro,Google,Pixel 8 Pro,Pixel,smartphone,extended,Pixel 8 Pro|Google Pixel 8 Pro|گوگل Pixel 8 Pro,True,common_repair
+google-pixel-8a,Google,Pixel 8a,Pixel,smartphone,extended,Pixel 8a|Google Pixel 8a|گوگل Pixel 8a,True,common_repair
+google-pixel-9,Google,Pixel 9,Pixel,smartphone,extended,Pixel 9|Google Pixel 9|گوگل Pixel 9,True,common_repair
+google-pixel-9-pro,Google,Pixel 9 Pro,Pixel,smartphone,extended,Pixel 9 Pro|Google Pixel 9 Pro|گوگل Pixel 9 Pro,True,common_repair
+google-pixel-9-pro-xl,Google,Pixel 9 Pro XL,Pixel,smartphone,extended,Pixel 9 Pro XL|Google Pixel 9 Pro XL|گوگل Pixel 9 Pro XL,True,common_repair
+google-pixel-9a,Google,Pixel 9a,Pixel,smartphone,extended,Pixel 9a|Google Pixel 9a|گوگل Pixel 9a,True,common_repair
+google-pixel-2,Google,Pixel 2,Pixel,smartphone,legacy,Pixel 2|Google Pixel 2|گوگل Pixel 2,True,curated_repair
+google-pixel-2-xl,Google,Pixel 2 XL,Pixel,smartphone,legacy,Pixel 2 XL|Google Pixel 2 XL|گوگل Pixel 2 XL,True,curated_repair
+google-pixel-3,Google,Pixel 3,Pixel,smartphone,legacy,Pixel 3|Google Pixel 3|گوگل Pixel 3,True,curated_repair
+google-pixel-3-xl,Google,Pixel 3 XL,Pixel,smartphone,legacy,Pixel 3 XL|Google Pixel 3 XL|گوگل Pixel 3 XL,True,curated_repair
+google-pixel-3a,Google,Pixel 3a,Pixel,smartphone,legacy,Pixel 3a|Google Pixel 3a|گوگل Pixel 3a,True,curated_repair
+google-pixel-3a-xl,Google,Pixel 3a XL,Pixel,smartphone,legacy,Pixel 3a XL|Google Pixel 3a XL|گوگل Pixel 3a XL,True,curated_repair
+google-pixel-4,Google,Pixel 4,Pixel,smartphone,legacy,Pixel 4|Google Pixel 4|گوگل Pixel 4,True,curated_repair
+google-pixel-4-xl,Google,Pixel 4 XL,Pixel,smartphone,legacy,Pixel 4 XL|Google Pixel 4 XL|گوگل Pixel 4 XL,True,curated_repair
+honor-400,Honor,400,400,smartphone,new,400|Honor 400|آنر 400,True,iran_market_2026
+honor-400-lite,Honor,400 Lite,400,smartphone,new,400 Lite|Honor 400 Lite|آنر 400 Lite,True,iran_market_2026
+honor-400-pro,Honor,400 Pro,400,smartphone,new,400 Pro|Honor 400 Pro|آنر 400 Pro,True,iran_market_2026
+honor-200,Honor,200,200,smartphone,core,200|Honor 200|آنر 200,True,iran_market_and_common_repair
+honor-200-lite,Honor,200 Lite,200,smartphone,core,200 Lite|Honor 200 Lite|آنر 200 Lite,True,iran_market_and_common_repair
+honor-200-pro,Honor,200 Pro,200,smartphone,core,200 Pro|Honor 200 Pro|آنر 200 Pro,True,iran_market_and_common_repair
+honor-50,Honor,50,50,smartphone,core,50|Honor 50|آنر 50,True,iran_market_and_common_repair
+honor-50-lite,Honor,50 Lite,50,smartphone,core,50 Lite|Honor 50 Lite|آنر 50 Lite,True,iran_market_and_common_repair
+honor-70,Honor,70,70,smartphone,core,70|Honor 70|آنر 70,True,iran_market_and_common_repair
+honor-70-lite,Honor,70 Lite,70,smartphone,core,70 Lite|Honor 70 Lite|آنر 70 Lite,True,iran_market_and_common_repair
+honor-90,Honor,90,90,smartphone,core,90|Honor 90|آنر 90,True,iran_market_and_common_repair
+honor-90-lite,Honor,90 Lite,90,smartphone,core,90 Lite|Honor 90 Lite|آنر 90 Lite,True,iran_market_and_common_repair
+honor-magic4-lite,Honor,Magic4 Lite,Magic,smartphone,core,Magic4 Lite|Honor Magic4 Lite|آنر Magic4 Lite,True,iran_market_and_common_repair
+honor-magic4-pro,Honor,Magic4 Pro,Magic,smartphone,core,Magic4 Pro|Honor Magic4 Pro|آنر Magic4 Pro,True,iran_market_and_common_repair
+honor-magic5-lite,Honor,Magic5 Lite,Magic,smartphone,core,Magic5 Lite|Honor Magic5 Lite|آنر Magic5 Lite,True,iran_market_and_common_repair
+honor-magic5-pro,Honor,Magic5 Pro,Magic,smartphone,core,Magic5 Pro|Honor Magic5 Pro|آنر Magic5 Pro,True,iran_market_and_common_repair
+honor-magic6-lite,Honor,Magic6 Lite,Magic,smartphone,core,Magic6 Lite|Honor Magic6 Lite|آنر Magic6 Lite,True,iran_market_and_common_repair
+honor-magic6-pro,Honor,Magic6 Pro,Magic,smartphone,core,Magic6 Pro|Honor Magic6 Pro|آنر Magic6 Pro,True,iran_market_and_common_repair
+honor-magic7-lite,Honor,Magic7 Lite,Magic,smartphone,core,Magic7 Lite|Honor Magic7 Lite|آنر Magic7 Lite,True,iran_market_and_common_repair
+honor-magic7-pro,Honor,Magic7 Pro,Magic,smartphone,core,Magic7 Pro|Honor Magic7 Pro|آنر Magic7 Pro,True,iran_market_and_common_repair
+honor-90-smart,Honor,90 Smart,Smart,smartphone,core,90 Smart|Honor 90 Smart|آنر 90 Smart,True,iran_market_and_common_repair
+honor-x5,Honor,X5,X5,smartphone,core,X5|Honor X5|آنر X5,True,iran_market_and_common_repair
+honor-x5-plus,Honor,X5 Plus,X5,smartphone,core,X5 Plus|Honor X5 Plus|آنر X5 Plus,True,iran_market_and_common_repair
+honor-x5b,Honor,X5b,X5b,smartphone,core,X5b|Honor X5b|آنر X5b,True,iran_market_and_common_repair
+honor-x5b-plus,Honor,X5b Plus,X5b,smartphone,core,X5b Plus|Honor X5b Plus|آنر X5b Plus,True,iran_market_and_common_repair
+honor-x6,Honor,X6,X6,smartphone,core,X6|Honor X6|آنر X6,True,iran_market_and_common_repair
+honor-x6a,Honor,X6a,X6a,smartphone,core,X6a|Honor X6a|آنر X6a,True,iran_market_and_common_repair
+honor-x6b,Honor,X6b,X6b,smartphone,core,X6b|Honor X6b|آنر X6b,True,iran_market_and_common_repair
+honor-x7,Honor,X7,X7,smartphone,core,X7|Honor X7|آنر X7,True,iran_market_and_common_repair
+honor-x7a,Honor,X7a,X7a,smartphone,core,X7a|Honor X7a|آنر X7a,True,iran_market_and_common_repair
+honor-x7b,Honor,X7b,X7b,smartphone,core,X7b|Honor X7b|آنر X7b,True,iran_market_and_common_repair
+honor-x7c,Honor,X7c,X7c,smartphone,core,X7c|Honor X7c|آنر X7c,True,iran_market_and_common_repair
+honor-x8,Honor,X8,X8,smartphone,core,X8|Honor X8|آنر X8,True,iran_market_and_common_repair
+honor-x8a,Honor,X8a,X8a,smartphone,core,X8a|Honor X8a|آنر X8a,True,iran_market_and_common_repair
+honor-x8b,Honor,X8b,X8b,smartphone,core,X8b|Honor X8b|آنر X8b,True,iran_market_and_common_repair
+honor-x8c,Honor,X8c,X8c,smartphone,core,X8c|Honor X8c|آنر X8c,True,iran_market_and_common_repair
+honor-x9,Honor,X9,X9,smartphone,core,X9|Honor X9|آنر X9,True,iran_market_and_common_repair
+honor-x9a,Honor,X9a,X9a,smartphone,core,X9a|Honor X9a|آنر X9a,True,iran_market_and_common_repair
+honor-x9b,Honor,X9b,X9b,smartphone,core,X9b|Honor X9b|آنر X9b,True,iran_market_and_common_repair
+honor-x9c,Honor,X9c,X9c,smartphone,core,X9c|Honor X9c|آنر X9c,True,iran_market_and_common_repair
+honor-honor-10,Honor,Honor 10,Honor,smartphone,legacy,10|Honor 10|آنر 10,True,curated_repair
+honor-honor-10-lite,Honor,Honor 10 Lite,Honor,smartphone,legacy,10 Lite|Honor 10 Lite|آنر 10 Lite,True,curated_repair
+honor-honor-20,Honor,Honor 20,Honor,smartphone,legacy,20|Honor 20|آنر 20,True,curated_repair
+honor-honor-20-lite,Honor,Honor 20 Lite,Honor,smartphone,legacy,20 Lite|Honor 20 Lite|آنر 20 Lite,True,curated_repair
+honor-honor-20-pro,Honor,Honor 20 Pro,Honor,smartphone,legacy,20 Pro|Honor 20 Pro|آنر 20 Pro,True,curated_repair
+honor-honor-30,Honor,Honor 30,Honor,smartphone,legacy,30|Honor 30|آنر 30,True,curated_repair
+honor-honor-30-lite,Honor,Honor 30 Lite,Honor,smartphone,legacy,30 Lite|Honor 30 Lite|آنر 30 Lite,True,curated_repair
+honor-honor-7x,Honor,Honor 7X,Honor,smartphone,legacy,7X|Honor 7X|آنر 7X,True,curated_repair
+honor-honor-8x,Honor,Honor 8X,Honor,smartphone,legacy,8X|Honor 8X|آنر 8X,True,curated_repair
+honor-honor-9x,Honor,Honor 9X,Honor,smartphone,legacy,9X|Honor 9X|آنر 9X,True,curated_repair
+honor-honor-9x-lite,Honor,Honor 9X Lite,Honor,smartphone,legacy,9X Lite|Honor 9X Lite|آنر 9X Lite,True,curated_repair
+honor-play-4t,Honor,Play 4T,Play,smartphone,legacy,Play 4T|Honor Play 4T|آنر Play 4T,True,curated_repair
+honor-play-8a,Honor,Play 8A,Play,smartphone,legacy,Play 8A|Honor Play 8A|آنر Play 8A,True,curated_repair
+htc-10,HTC,10,10,smartphone,legacy,10|HTC 10|اچ‌تی‌سی 10,True,curated_repair
+htc-desire-10-pro,HTC,Desire 10 Pro,Desire,smartphone,legacy,Desire 10 Pro|HTC Desire 10 Pro|اچ‌تی‌سی Desire 10 Pro,True,curated_repair
+htc-desire-12,HTC,Desire 12+,Desire,smartphone,legacy,Desire 12+|HTC Desire 12+|اچ‌تی‌سی Desire 12+,True,curated_repair
+htc-desire-19,HTC,Desire 19+,Desire,smartphone,legacy,Desire 19+|HTC Desire 19+|اچ‌تی‌سی Desire 19+,True,curated_repair
+htc-desire-20-pro,HTC,Desire 20 Pro,Desire,smartphone,legacy,Desire 20 Pro|HTC Desire 20 Pro|اچ‌تی‌سی Desire 20 Pro,True,curated_repair
+htc-desire-820,HTC,Desire 820,Desire,smartphone,legacy,Desire 820|HTC Desire 820|اچ‌تی‌سی Desire 820,True,curated_repair
+htc-one-m8,HTC,One M8,One,smartphone,legacy,One M8|HTC One M8|اچ‌تی‌سی One M8,True,curated_repair
+htc-one-m9,HTC,One M9,One,smartphone,legacy,One M9|HTC One M9|اچ‌تی‌سی One M9,True,curated_repair
+htc-u-ultra,HTC,U Ultra,U,smartphone,legacy,U Ultra|HTC U Ultra|اچ‌تی‌سی U Ultra,True,curated_repair
+htc-u11,HTC,U11,U11,smartphone,legacy,U11|HTC U11|اچ‌تی‌سی U11,True,curated_repair
+htc-u12,HTC,U12+,U12+,smartphone,legacy,U12+|HTC U12+|اچ‌تی‌سی U12+,True,curated_repair
+huawei-mate-10-lite,Huawei,Mate 10 Lite,Mate,smartphone,core,Mate 10 Lite|Huawei Mate 10 Lite|هواوی Mate 10 Lite,True,common_repair
+huawei-mate-10-pro,Huawei,Mate 10 Pro,Mate,smartphone,core,Mate 10 Pro|Huawei Mate 10 Pro|هواوی Mate 10 Pro,True,common_repair
+huawei-mate-20,Huawei,Mate 20,Mate,smartphone,core,Mate 20|Huawei Mate 20|هواوی Mate 20,True,common_repair
+huawei-mate-20-lite,Huawei,Mate 20 Lite,Mate,smartphone,core,Mate 20 Lite|Huawei Mate 20 Lite|هواوی Mate 20 Lite,True,common_repair
+huawei-mate-20-pro,Huawei,Mate 20 Pro,Mate,smartphone,core,Mate 20 Pro|Huawei Mate 20 Pro|هواوی Mate 20 Pro,True,common_repair
+huawei-mate-30-pro,Huawei,Mate 30 Pro,Mate,smartphone,core,Mate 30 Pro|Huawei Mate 30 Pro|هواوی Mate 30 Pro,True,common_repair
+huawei-mate-40-pro,Huawei,Mate 40 Pro,Mate,smartphone,core,Mate 40 Pro|Huawei Mate 40 Pro|هواوی Mate 40 Pro,True,common_repair
+huawei-mate-50-pro,Huawei,Mate 50 Pro,Mate,smartphone,core,Mate 50 Pro|Huawei Mate 50 Pro|هواوی Mate 50 Pro,True,common_repair
+huawei-mate-60-pro,Huawei,Mate 60 Pro,Mate,smartphone,core,Mate 60 Pro|Huawei Mate 60 Pro|هواوی Mate 60 Pro,True,common_repair
+huawei-nova-10,Huawei,Nova 10,Nova,smartphone,core,Nova 10|Huawei Nova 10|هواوی Nova 10,True,common_repair
+huawei-nova-10-se,Huawei,Nova 10 SE,Nova,smartphone,core,Nova 10 SE|Huawei Nova 10 SE|هواوی Nova 10 SE,True,common_repair
+huawei-nova-11i,Huawei,Nova 11i,Nova,smartphone,core,Nova 11i|Huawei Nova 11i|هواوی Nova 11i,True,common_repair
+huawei-nova-12i,Huawei,Nova 12i,Nova,smartphone,core,Nova 12i|Huawei Nova 12i|هواوی Nova 12i,True,common_repair
+huawei-nova-3,Huawei,Nova 3,Nova,smartphone,core,Nova 3|Huawei Nova 3|هواوی Nova 3,True,common_repair
+huawei-nova-3i,Huawei,Nova 3i,Nova,smartphone,core,Nova 3i|Huawei Nova 3i|هواوی Nova 3i,True,common_repair
+huawei-nova-5t,Huawei,Nova 5T,Nova,smartphone,core,Nova 5T|Huawei Nova 5T|هواوی Nova 5T,True,common_repair
+huawei-nova-7i,Huawei,Nova 7i,Nova,smartphone,core,Nova 7i|Huawei Nova 7i|هواوی Nova 7i,True,common_repair
+huawei-nova-8,Huawei,Nova 8,Nova,smartphone,core,Nova 8|Huawei Nova 8|هواوی Nova 8,True,common_repair
+huawei-nova-8i,Huawei,Nova 8i,Nova,smartphone,core,Nova 8i|Huawei Nova 8i|هواوی Nova 8i,True,common_repair
+huawei-nova-9,Huawei,Nova 9,Nova,smartphone,core,Nova 9|Huawei Nova 9|هواوی Nova 9,True,common_repair
+huawei-nova-9-se,Huawei,Nova 9 SE,Nova,smartphone,core,Nova 9 SE|Huawei Nova 9 SE|هواوی Nova 9 SE,True,common_repair
+huawei-p20,Huawei,P20,P20,smartphone,core,P20|Huawei P20|هواوی P20,True,common_repair
+huawei-p20-lite,Huawei,P20 Lite,P20,smartphone,core,P20 Lite|Huawei P20 Lite|هواوی P20 Lite,True,common_repair
+huawei-p20-pro,Huawei,P20 Pro,P20,smartphone,core,P20 Pro|Huawei P20 Pro|هواوی P20 Pro,True,common_repair
+huawei-p30,Huawei,P30,P30,smartphone,core,P30|Huawei P30|هواوی P30,True,common_repair
+huawei-p30-lite,Huawei,P30 Lite,P30,smartphone,core,P30 Lite|Huawei P30 Lite|هواوی P30 Lite,True,common_repair
+huawei-p30-pro,Huawei,P30 Pro,P30,smartphone,core,P30 Pro|Huawei P30 Pro|هواوی P30 Pro,True,common_repair
+huawei-p40,Huawei,P40,P40,smartphone,core,P40|Huawei P40|هواوی P40,True,common_repair
+huawei-p40-lite,Huawei,P40 Lite,P40,smartphone,core,P40 Lite|Huawei P40 Lite|هواوی P40 Lite,True,common_repair
+huawei-p40-pro,Huawei,P40 Pro,P40,smartphone,core,P40 Pro|Huawei P40 Pro|هواوی P40 Pro,True,common_repair
+huawei-p50-pro,Huawei,P50 Pro,P50,smartphone,core,P50 Pro|Huawei P50 Pro|هواوی P50 Pro,True,common_repair
+huawei-p60-pro,Huawei,P60 Pro,P60,smartphone,core,P60 Pro|Huawei P60 Pro|هواوی P60 Pro,True,common_repair
+huawei-pura-70,Huawei,Pura 70,Pura,smartphone,core,Pura 70|Huawei Pura 70|هواوی Pura 70,True,common_repair
+huawei-pura-70-pro,Huawei,Pura 70 Pro,Pura,smartphone,core,Pura 70 Pro|Huawei Pura 70 Pro|هواوی Pura 70 Pro,True,common_repair
+huawei-y5-2019,Huawei,Y5 2019,Y5,smartphone,core,Y5 2019|Huawei Y5 2019|هواوی Y5 2019,True,common_repair
+huawei-y5p,Huawei,Y5p,Y5p,smartphone,core,Y5p|Huawei Y5p|هواوی Y5p,True,common_repair
+huawei-y6-2019,Huawei,Y6 2019,Y6,smartphone,core,Y6 2019|Huawei Y6 2019|هواوی Y6 2019,True,common_repair
+huawei-y6p,Huawei,Y6p,Y6p,smartphone,core,Y6p|Huawei Y6p|هواوی Y6p,True,common_repair
+huawei-y7-2019,Huawei,Y7 2019,Y7,smartphone,core,Y7 2019|Huawei Y7 2019|هواوی Y7 2019,True,common_repair
+huawei-y7-prime-2019,Huawei,Y7 Prime 2019,Y7,smartphone,core,Y7 Prime 2019|Huawei Y7 Prime 2019|هواوی Y7 Prime 2019,True,common_repair
+huawei-y7p,Huawei,Y7p,Y7p,smartphone,core,Y7p|Huawei Y7p|هواوی Y7p,True,common_repair
+huawei-y8p,Huawei,Y8p,Y8p,smartphone,core,Y8p|Huawei Y8p|هواوی Y8p,True,common_repair
+huawei-y8s,Huawei,Y8s,Y8s,smartphone,core,Y8s|Huawei Y8s|هواوی Y8s,True,common_repair
+huawei-y9-2019,Huawei,Y9 2019,Y9,smartphone,core,Y9 2019|Huawei Y9 2019|هواوی Y9 2019,True,common_repair
+huawei-y9-prime-2019,Huawei,Y9 Prime 2019,Y9,smartphone,core,Y9 Prime 2019|Huawei Y9 Prime 2019|هواوی Y9 Prime 2019,True,common_repair
+huawei-y9a,Huawei,Y9a,Y9a,smartphone,core,Y9a|Huawei Y9a|هواوی Y9a,True,common_repair
+huawei-y9s,Huawei,Y9s,Y9s,smartphone,core,Y9s|Huawei Y9s|هواوی Y9s,True,common_repair
+huawei-mate-8,Huawei,Mate 8,Mate,smartphone,legacy,Mate 8|Huawei Mate 8|هواوی Mate 8,True,curated_repair
+huawei-mate-9,Huawei,Mate 9,Mate,smartphone,legacy,Mate 9|Huawei Mate 9|هواوی Mate 9,True,curated_repair
+huawei-nova-2-plus,Huawei,Nova 2 Plus,Nova,smartphone,legacy,Nova 2 Plus|Huawei Nova 2 Plus|هواوی Nova 2 Plus,True,curated_repair
+huawei-nova-4,Huawei,Nova 4,Nova,smartphone,legacy,Nova 4|Huawei Nova 4|هواوی Nova 4,True,curated_repair
+huawei-p10,Huawei,P10,P10,smartphone,legacy,P10|Huawei P10|هواوی P10,True,curated_repair
+huawei-p10-lite,Huawei,P10 Lite,P10,smartphone,legacy,P10 Lite|Huawei P10 Lite|هواوی P10 Lite,True,curated_repair
+huawei-p8-lite,Huawei,P8 Lite,P8,smartphone,legacy,P8 Lite|Huawei P8 Lite|هواوی P8 Lite,True,curated_repair
+huawei-p9,Huawei,P9,P9,smartphone,legacy,P9|Huawei P9|هواوی P9,True,curated_repair
+huawei-p9-lite,Huawei,P9 Lite,P9,smartphone,legacy,P9 Lite|Huawei P9 Lite|هواوی P9 Lite,True,curated_repair
+huawei-y3-2017,Huawei,Y3 2017,Y3,smartphone,legacy,Y3 2017|Huawei Y3 2017|هواوی Y3 2017,True,curated_repair
+huawei-y5-2017,Huawei,Y5 2017,Y5,smartphone,legacy,Y5 2017|Huawei Y5 2017|هواوی Y5 2017,True,curated_repair
+huawei-y5-2018,Huawei,Y5 2018,Y5,smartphone,legacy,Y5 2018|Huawei Y5 2018|هواوی Y5 2018,True,curated_repair
+huawei-y6-2018,Huawei,Y6 2018,Y6,smartphone,legacy,Y6 2018|Huawei Y6 2018|هواوی Y6 2018,True,curated_repair
+huawei-y7-2018,Huawei,Y7 2018,Y7,smartphone,legacy,Y7 2018|Huawei Y7 2018|هواوی Y7 2018,True,curated_repair
+huawei-y7-prime-2018,Huawei,Y7 Prime 2018,Y7,smartphone,legacy,Y7 Prime 2018|Huawei Y7 Prime 2018|هواوی Y7 Prime 2018,True,curated_repair
+huawei-y9-2018,Huawei,Y9 2018,Y9,smartphone,legacy,Y9 2018|Huawei Y9 2018|هواوی Y9 2018,True,curated_repair
+infinix-gt-10-pro,Infinix,GT 10 Pro,GT,smartphone,extended,GT 10 Pro|Infinix GT 10 Pro|اینفینیکس GT 10 Pro,True,common_repair
+infinix-gt-20-pro,Infinix,GT 20 Pro,GT,smartphone,extended,GT 20 Pro|Infinix GT 20 Pro|اینفینیکس GT 20 Pro,True,common_repair
+infinix-gt-30-pro,Infinix,GT 30 Pro,GT,smartphone,extended,GT 30 Pro|Infinix GT 30 Pro|اینفینیکس GT 30 Pro,True,common_repair
+infinix-hot-10,Infinix,Hot 10,Hot,smartphone,extended,Hot 10|Infinix Hot 10|اینفینیکس Hot 10,True,common_repair
+infinix-hot-11,Infinix,Hot 11,Hot,smartphone,extended,Hot 11|Infinix Hot 11|اینفینیکس Hot 11,True,common_repair
+infinix-hot-12,Infinix,Hot 12,Hot,smartphone,extended,Hot 12|Infinix Hot 12|اینفینیکس Hot 12,True,common_repair
+infinix-hot-20,Infinix,Hot 20,Hot,smartphone,extended,Hot 20|Infinix Hot 20|اینفینیکس Hot 20,True,common_repair
+infinix-hot-30,Infinix,Hot 30,Hot,smartphone,extended,Hot 30|Infinix Hot 30|اینفینیکس Hot 30,True,common_repair
+infinix-hot-40,Infinix,Hot 40,Hot,smartphone,extended,Hot 40|Infinix Hot 40|اینفینیکس Hot 40,True,common_repair
+infinix-hot-50,Infinix,Hot 50,Hot,smartphone,extended,Hot 50|Infinix Hot 50|اینفینیکس Hot 50,True,common_repair
+infinix-note-10,Infinix,Note 10,Note,smartphone,extended,Note 10|Infinix Note 10|اینفینیکس Note 10,True,common_repair
+infinix-note-11,Infinix,Note 11,Note,smartphone,extended,Note 11|Infinix Note 11|اینفینیکس Note 11,True,common_repair
+infinix-note-12,Infinix,Note 12,Note,smartphone,extended,Note 12|Infinix Note 12|اینفینیکس Note 12,True,common_repair
+infinix-note-30,Infinix,Note 30,Note,smartphone,extended,Note 30|Infinix Note 30|اینفینیکس Note 30,True,common_repair
+infinix-note-40,Infinix,Note 40,Note,smartphone,extended,Note 40|Infinix Note 40|اینفینیکس Note 40,True,common_repair
+infinix-note-50,Infinix,Note 50,Note,smartphone,extended,Note 50|Infinix Note 50|اینفینیکس Note 50,True,common_repair
+infinix-smart-5,Infinix,Smart 5,Smart,smartphone,extended,Smart 5|Infinix Smart 5|اینفینیکس Smart 5,True,common_repair
+infinix-smart-6,Infinix,Smart 6,Smart,smartphone,extended,Smart 6|Infinix Smart 6|اینفینیکس Smart 6,True,common_repair
+infinix-smart-7,Infinix,Smart 7,Smart,smartphone,extended,Smart 7|Infinix Smart 7|اینفینیکس Smart 7,True,common_repair
+infinix-smart-8,Infinix,Smart 8,Smart,smartphone,extended,Smart 8|Infinix Smart 8|اینفینیکس Smart 8,True,common_repair
+infinix-smart-9,Infinix,Smart 9,Smart,smartphone,extended,Smart 9|Infinix Smart 9|اینفینیکس Smart 9,True,common_repair
+infinix-zero-20,Infinix,Zero 20,Zero,smartphone,extended,Zero 20|Infinix Zero 20|اینفینیکس Zero 20,True,common_repair
+infinix-zero-30,Infinix,Zero 30,Zero,smartphone,extended,Zero 30|Infinix Zero 30|اینفینیکس Zero 30,True,common_repair
+infinix-zero-40,Infinix,Zero 40,Zero,smartphone,extended,Zero 40|Infinix Zero 40|اینفینیکس Zero 40,True,common_repair
+infinix-zero-8,Infinix,Zero 8,Zero,smartphone,extended,Zero 8|Infinix Zero 8|اینفینیکس Zero 8,True,common_repair
+infinix-zero-x-pro,Infinix,Zero X Pro,Zero,smartphone,extended,Zero X Pro|Infinix Zero X Pro|اینفینیکس Zero X Pro,True,common_repair
+lg-g4,LG,G4,G4,smartphone,legacy,G4|LG G4|ال‌جی G4,True,curated_repair
+lg-g5,LG,G5,G5,smartphone,legacy,G5|LG G5|ال‌جی G5,True,curated_repair
+lg-g6,LG,G6,G6,smartphone,legacy,G6|LG G6|ال‌جی G6,True,curated_repair
+lg-g7-thinq,LG,G7 ThinQ,G7,smartphone,legacy,G7 ThinQ|LG G7 ThinQ|ال‌جی G7 ThinQ,True,curated_repair
+lg-g8-thinq,LG,G8 ThinQ,G8,smartphone,legacy,G8 ThinQ|LG G8 ThinQ|ال‌جی G8 ThinQ,True,curated_repair
+lg-k10,LG,K10,K10,smartphone,legacy,K10|LG K10|ال‌جی K10,True,curated_repair
+lg-k41s,LG,K41s,K41s,smartphone,legacy,K41s|LG K41s|ال‌جی K41s,True,curated_repair
+lg-k51,LG,K51,K51,smartphone,legacy,K51|LG K51|ال‌جی K51,True,curated_repair
+lg-k61,LG,K61,K61,smartphone,legacy,K61|LG K61|ال‌جی K61,True,curated_repair
+lg-k8,LG,K8,K8,smartphone,legacy,K8|LG K8|ال‌جی K8,True,curated_repair
+lg-v30,LG,V30,V30,smartphone,legacy,V30|LG V30|ال‌جی V30,True,curated_repair
+lg-v40-thinq,LG,V40 ThinQ,V40,smartphone,legacy,V40 ThinQ|LG V40 ThinQ|ال‌جی V40 ThinQ,True,curated_repair
+lg-v50-thinq,LG,V50 ThinQ,V50,smartphone,legacy,V50 ThinQ|LG V50 ThinQ|ال‌جی V50 ThinQ,True,curated_repair
+lg-v60-thinq,LG,V60 ThinQ,V60,smartphone,legacy,V60 ThinQ|LG V60 ThinQ|ال‌جی V60 ThinQ,True,curated_repair
+lg-velvet,LG,Velvet,Velvet,smartphone,legacy,Velvet|LG Velvet|ال‌جی Velvet,True,curated_repair
+lg-wing,LG,Wing,Wing,smartphone,legacy,Wing|LG Wing|ال‌جی Wing,True,curated_repair
+motorola-edge-60-fusion,Motorola,Edge 60 Fusion,Edge,smartphone,new,Edge 60 Fusion|Motorola Edge 60 Fusion|موتورولا Edge 60 Fusion,True,current_global
+motorola-edge-60-pro,Motorola,Edge 60 Pro,Edge,smartphone,new,Edge 60 Pro|Motorola Edge 60 Pro|موتورولا Edge 60 Pro,True,current_global
+motorola-razr-60-ultra,Motorola,Razr 60 Ultra,Razr,smartphone,new,Razr 60 Ultra|Motorola Razr 60 Ultra|موتورولا Razr 60 Ultra,True,current_global
+motorola-edge-20,Motorola,Edge 20,Edge,smartphone,extended,Edge 20|Motorola Edge 20|موتورولا Edge 20,True,common_repair
+motorola-edge-20-lite,Motorola,Edge 20 Lite,Edge,smartphone,extended,Edge 20 Lite|Motorola Edge 20 Lite|موتورولا Edge 20 Lite,True,common_repair
+motorola-edge-20-pro,Motorola,Edge 20 Pro,Edge,smartphone,extended,Edge 20 Pro|Motorola Edge 20 Pro|موتورولا Edge 20 Pro,True,common_repair
+motorola-edge-30,Motorola,Edge 30,Edge,smartphone,extended,Edge 30|Motorola Edge 30|موتورولا Edge 30,True,common_repair
+motorola-edge-30-fusion,Motorola,Edge 30 Fusion,Edge,smartphone,extended,Edge 30 Fusion|Motorola Edge 30 Fusion|موتورولا Edge 30 Fusion,True,common_repair
+motorola-edge-30-neo,Motorola,Edge 30 Neo,Edge,smartphone,extended,Edge 30 Neo|Motorola Edge 30 Neo|موتورولا Edge 30 Neo,True,common_repair
+motorola-edge-30-pro,Motorola,Edge 30 Pro,Edge,smartphone,extended,Edge 30 Pro|Motorola Edge 30 Pro|موتورولا Edge 30 Pro,True,common_repair
+motorola-edge-30-ultra,Motorola,Edge 30 Ultra,Edge,smartphone,extended,Edge 30 Ultra|Motorola Edge 30 Ultra|موتورولا Edge 30 Ultra,True,common_repair
+motorola-edge-40,Motorola,Edge 40,Edge,smartphone,extended,Edge 40|Motorola Edge 40|موتورولا Edge 40,True,common_repair
+motorola-edge-40-neo,Motorola,Edge 40 Neo,Edge,smartphone,extended,Edge 40 Neo|Motorola Edge 40 Neo|موتورولا Edge 40 Neo,True,common_repair
+motorola-edge-40-pro,Motorola,Edge 40 Pro,Edge,smartphone,extended,Edge 40 Pro|Motorola Edge 40 Pro|موتورولا Edge 40 Pro,True,common_repair
+motorola-edge-50-fusion,Motorola,Edge 50 Fusion,Edge,smartphone,extended,Edge 50 Fusion|Motorola Edge 50 Fusion|موتورولا Edge 50 Fusion,True,common_repair
+motorola-edge-50-neo,Motorola,Edge 50 Neo,Edge,smartphone,extended,Edge 50 Neo|Motorola Edge 50 Neo|موتورولا Edge 50 Neo,True,common_repair
+motorola-edge-50-pro,Motorola,Edge 50 Pro,Edge,smartphone,extended,Edge 50 Pro|Motorola Edge 50 Pro|موتورولا Edge 50 Pro,True,common_repair
+motorola-edge-50-ultra,Motorola,Edge 50 Ultra,Edge,smartphone,extended,Edge 50 Ultra|Motorola Edge 50 Ultra|موتورولا Edge 50 Ultra,True,common_repair
+motorola-moto-e13,Motorola,Moto E13,Moto E,smartphone,extended,Moto E13|Motorola Moto E13|موتورولا Moto E13,True,common_repair
+motorola-moto-e20,Motorola,Moto E20,Moto E,smartphone,extended,Moto E20|Motorola Moto E20|موتورولا Moto E20,True,common_repair
+motorola-moto-e22,Motorola,Moto E22,Moto E,smartphone,extended,Moto E22|Motorola Moto E22|موتورولا Moto E22,True,common_repair
+motorola-moto-e32,Motorola,Moto E32,Moto E,smartphone,extended,Moto E32|Motorola Moto E32|موتورولا Moto E32,True,common_repair
+motorola-moto-e40,Motorola,Moto E40,Moto E,smartphone,extended,Moto E40|Motorola Moto E40|موتورولا Moto E40,True,common_repair
+motorola-moto-g10,Motorola,Moto G10,Moto G,smartphone,extended,Moto G10|Motorola Moto G10|موتورولا Moto G10,True,common_repair
+motorola-moto-g13,Motorola,Moto G13,Moto G,smartphone,extended,Moto G13|Motorola Moto G13|موتورولا Moto G13,True,common_repair
+motorola-moto-g14,Motorola,Moto G14,Moto G,smartphone,extended,Moto G14|Motorola Moto G14|موتورولا Moto G14,True,common_repair
+motorola-moto-g20,Motorola,Moto G20,Moto G,smartphone,extended,Moto G20|Motorola Moto G20|موتورولا Moto G20,True,common_repair
+motorola-moto-g22,Motorola,Moto G22,Moto G,smartphone,extended,Moto G22|Motorola Moto G22|موتورولا Moto G22,True,common_repair
+motorola-moto-g23,Motorola,Moto G23,Moto G,smartphone,extended,Moto G23|Motorola Moto G23|موتورولا Moto G23,True,common_repair
+motorola-moto-g24,Motorola,Moto G24,Moto G,smartphone,extended,Moto G24|Motorola Moto G24|موتورولا Moto G24,True,common_repair
+motorola-moto-g30,Motorola,Moto G30,Moto G,smartphone,extended,Moto G30|Motorola Moto G30|موتورولا Moto G30,True,common_repair
+motorola-moto-g31,Motorola,Moto G31,Moto G,smartphone,extended,Moto G31|Motorola Moto G31|موتورولا Moto G31,True,common_repair
+motorola-moto-g32,Motorola,Moto G32,Moto G,smartphone,extended,Moto G32|Motorola Moto G32|موتورولا Moto G32,True,common_repair
+motorola-moto-g34-5g,Motorola,Moto G34 5G,Moto G,smartphone,extended,Moto G34 5G|Motorola Moto G34 5G|موتورولا Moto G34 5G,True,common_repair
+motorola-moto-g40-fusion,Motorola,Moto G40 Fusion,Moto G,smartphone,extended,Moto G40 Fusion|Motorola Moto G40 Fusion|موتورولا Moto G40 Fusion,True,common_repair
+motorola-moto-g41,Motorola,Moto G41,Moto G,smartphone,extended,Moto G41|Motorola Moto G41|موتورولا Moto G41,True,common_repair
+motorola-moto-g42,Motorola,Moto G42,Moto G,smartphone,extended,Moto G42|Motorola Moto G42|موتورولا Moto G42,True,common_repair
+motorola-moto-g50-5g,Motorola,Moto G50 5G,Moto G,smartphone,extended,Moto G50 5G|Motorola Moto G50 5G|موتورولا Moto G50 5G,True,common_repair
+motorola-moto-g51-5g,Motorola,Moto G51 5G,Moto G,smartphone,extended,Moto G51 5G|Motorola Moto G51 5G|موتورولا Moto G51 5G,True,common_repair
+motorola-moto-g52,Motorola,Moto G52,Moto G,smartphone,extended,Moto G52|Motorola Moto G52|موتورولا Moto G52,True,common_repair
+motorola-moto-g53-5g,Motorola,Moto G53 5G,Moto G,smartphone,extended,Moto G53 5G|Motorola Moto G53 5G|موتورولا Moto G53 5G,True,common_repair
+motorola-moto-g54-5g,Motorola,Moto G54 5G,Moto G,smartphone,extended,Moto G54 5G|Motorola Moto G54 5G|موتورولا Moto G54 5G,True,common_repair
+motorola-moto-g55-5g,Motorola,Moto G55 5G,Moto G,smartphone,extended,Moto G55 5G|Motorola Moto G55 5G|موتورولا Moto G55 5G,True,common_repair
+motorola-moto-g60,Motorola,Moto G60,Moto G,smartphone,extended,Moto G60|Motorola Moto G60|موتورولا Moto G60,True,common_repair
+motorola-moto-g60s,Motorola,Moto G60s,Moto G,smartphone,extended,Moto G60s|Motorola Moto G60s|موتورولا Moto G60s,True,common_repair
+motorola-moto-g71-5g,Motorola,Moto G71 5G,Moto G,smartphone,extended,Moto G71 5G|Motorola Moto G71 5G|موتورولا Moto G71 5G,True,common_repair
+motorola-moto-g72,Motorola,Moto G72,Moto G,smartphone,extended,Moto G72|Motorola Moto G72|موتورولا Moto G72,True,common_repair
+motorola-moto-g73-5g,Motorola,Moto G73 5G,Moto G,smartphone,extended,Moto G73 5G|Motorola Moto G73 5G|موتورولا Moto G73 5G,True,common_repair
+motorola-moto-g74-5g,Motorola,Moto G74 5G,Moto G,smartphone,extended,Moto G74 5G|Motorola Moto G74 5G|موتورولا Moto G74 5G,True,common_repair
+motorola-moto-g75-5g,Motorola,Moto G75 5G,Moto G,smartphone,extended,Moto G75 5G|Motorola Moto G75 5G|موتورولا Moto G75 5G,True,common_repair
+motorola-moto-g84-5g,Motorola,Moto G84 5G,Moto G,smartphone,extended,Moto G84 5G|Motorola Moto G84 5G|موتورولا Moto G84 5G,True,common_repair
+motorola-moto-g85-5g,Motorola,Moto G85 5G,Moto G,smartphone,extended,Moto G85 5G|Motorola Moto G85 5G|موتورولا Moto G85 5G,True,common_repair
+motorola-razr-40,Motorola,Razr 40,Razr,smartphone,extended,Razr 40|Motorola Razr 40|موتورولا Razr 40,True,common_repair
+motorola-razr-40-ultra,Motorola,Razr 40 Ultra,Razr,smartphone,extended,Razr 40 Ultra|Motorola Razr 40 Ultra|موتورولا Razr 40 Ultra,True,common_repair
+motorola-razr-50,Motorola,Razr 50,Razr,smartphone,extended,Razr 50|Motorola Razr 50|موتورولا Razr 50,True,common_repair
+motorola-razr-50-ultra,Motorola,Razr 50 Ultra,Razr,smartphone,extended,Razr 50 Ultra|Motorola Razr 50 Ultra|موتورولا Razr 50 Ultra,True,common_repair
+motorola-moto-g100,Motorola,Moto G100,Moto G,smartphone,legacy,Moto G100|Motorola Moto G100|موتورولا Moto G100,True,curated_repair
+motorola-moto-g200-5g,Motorola,Moto G200 5G,Moto G,smartphone,legacy,Moto G200 5G|Motorola Moto G200 5G|موتورولا Moto G200 5G,True,curated_repair
+motorola-moto-g5,Motorola,Moto G5,Moto G,smartphone,legacy,Moto G5|Motorola Moto G5|موتورولا Moto G5,True,curated_repair
+motorola-moto-g5-plus,Motorola,Moto G5 Plus,Moto G,smartphone,legacy,Moto G5 Plus|Motorola Moto G5 Plus|موتورولا Moto G5 Plus,True,curated_repair
+motorola-moto-g5s-plus,Motorola,Moto G5s Plus,Moto G,smartphone,legacy,Moto G5s Plus|Motorola Moto G5s Plus|موتورولا Moto G5s Plus,True,curated_repair
+motorola-moto-g6,Motorola,Moto G6,Moto G,smartphone,legacy,Moto G6|Motorola Moto G6|موتورولا Moto G6,True,curated_repair
+motorola-moto-g6-plus,Motorola,Moto G6 Plus,Moto G,smartphone,legacy,Moto G6 Plus|Motorola Moto G6 Plus|موتورولا Moto G6 Plus,True,curated_repair
+motorola-moto-g7,Motorola,Moto G7,Moto G,smartphone,legacy,Moto G7|Motorola Moto G7|موتورولا Moto G7,True,curated_repair
+motorola-moto-g7-plus,Motorola,Moto G7 Plus,Moto G,smartphone,legacy,Moto G7 Plus|Motorola Moto G7 Plus|موتورولا Moto G7 Plus,True,curated_repair
+motorola-moto-g8,Motorola,Moto G8,Moto G,smartphone,legacy,Moto G8|Motorola Moto G8|موتورولا Moto G8,True,curated_repair
+motorola-moto-g8-power,Motorola,Moto G8 Power,Moto G,smartphone,legacy,Moto G8 Power|Motorola Moto G8 Power|موتورولا Moto G8 Power,True,curated_repair
+motorola-moto-g9-plus,Motorola,Moto G9 Plus,Moto G,smartphone,legacy,Moto G9 Plus|Motorola Moto G9 Plus|موتورولا Moto G9 Plus,True,curated_repair
+motorola-moto-g9-power,Motorola,Moto G9 Power,Moto G,smartphone,legacy,Moto G9 Power|Motorola Moto G9 Power|موتورولا Moto G9 Power,True,curated_repair
+motorola-razr-2019,Motorola,Razr (2019),Razr,smartphone,legacy,Razr (2019)|Motorola Razr (2019)|موتورولا Razr (2019),True,curated_repair
+motorola-razr-5g,Motorola,Razr 5G,Razr,smartphone,legacy,Razr 5G|Motorola Razr 5G|موتورولا Razr 5G,True,curated_repair
+nokia-1-4,Nokia,1.4,1.4,smartphone,extended,1.4|Nokia 1.4|نوکیا 1.4,True,common_repair
+nokia-2-4,Nokia,2.4,2.4,smartphone,extended,2.4|Nokia 2.4|نوکیا 2.4,True,common_repair
+nokia-3-4,Nokia,3.4,3.4,smartphone,extended,3.4|Nokia 3.4|نوکیا 3.4,True,common_repair
+nokia-5-3,Nokia,5.3,5.3,smartphone,extended,5.3|Nokia 5.3|نوکیا 5.3,True,common_repair
+nokia-5-4,Nokia,5.4,5.4,smartphone,extended,5.4|Nokia 5.4|نوکیا 5.4,True,common_repair
+nokia-6-2,Nokia,6.2,6.2,smartphone,extended,6.2|Nokia 6.2|نوکیا 6.2,True,common_repair
+nokia-7-2,Nokia,7.2,7.2,smartphone,extended,7.2|Nokia 7.2|نوکیا 7.2,True,common_repair
+nokia-8-3-5g,Nokia,8.3 5G,8.3,smartphone,extended,8.3 5G|Nokia 8.3 5G|نوکیا 8.3 5G,True,common_repair
+nokia-c10,Nokia,C10,C10,smartphone,extended,C10|Nokia C10|نوکیا C10,True,common_repair
+nokia-c20,Nokia,C20,C20,smartphone,extended,C20|Nokia C20|نوکیا C20,True,common_repair
+nokia-c21,Nokia,C21,C21,smartphone,extended,C21|Nokia C21|نوکیا C21,True,common_repair
+nokia-c30,Nokia,C30,C30,smartphone,extended,C30|Nokia C30|نوکیا C30,True,common_repair
+nokia-c31,Nokia,C31,C31,smartphone,extended,C31|Nokia C31|نوکیا C31,True,common_repair
+nokia-c32,Nokia,C32,C32,smartphone,extended,C32|Nokia C32|نوکیا C32,True,common_repair
+nokia-g10,Nokia,G10,G10,smartphone,extended,G10|Nokia G10|نوکیا G10,True,common_repair
+nokia-g11,Nokia,G11,G11,smartphone,extended,G11|Nokia G11|نوکیا G11,True,common_repair
+nokia-g20,Nokia,G20,G20,smartphone,extended,G20|Nokia G20|نوکیا G20,True,common_repair
+nokia-g21,Nokia,G21,G21,smartphone,extended,G21|Nokia G21|نوکیا G21,True,common_repair
+nokia-g22,Nokia,G22,G22,smartphone,extended,G22|Nokia G22|نوکیا G22,True,common_repair
+nokia-g42-5g,Nokia,G42 5G,G42,smartphone,extended,G42 5G|Nokia G42 5G|نوکیا G42 5G,True,common_repair
+nokia-g50-5g,Nokia,G50 5G,G50,smartphone,extended,G50 5G|Nokia G50 5G|نوکیا G50 5G,True,common_repair
+nokia-g60-5g,Nokia,G60 5G,G60,smartphone,extended,G60 5G|Nokia G60 5G|نوکیا G60 5G,True,common_repair
+nokia-x10-5g,Nokia,X10 5G,X10,smartphone,extended,X10 5G|Nokia X10 5G|نوکیا X10 5G,True,common_repair
+nokia-x20-5g,Nokia,X20 5G,X20,smartphone,extended,X20 5G|Nokia X20 5G|نوکیا X20 5G,True,common_repair
+nokia-x30-5g,Nokia,X30 5G,X30,smartphone,extended,X30 5G|Nokia X30 5G|نوکیا X30 5G,True,common_repair
+nokia-1,Nokia,1,1,smartphone,legacy,1|Nokia 1|نوکیا 1,True,curated_repair
+nokia-1-plus,Nokia,1 Plus,1,smartphone,legacy,1 Plus|Nokia 1 Plus|نوکیا 1 Plus,True,curated_repair
+nokia-1-3,Nokia,1.3,1.3,smartphone,legacy,1.3|Nokia 1.3|نوکیا 1.3,True,curated_repair
+nokia-105,Nokia,105,105,feature_phone,legacy,105|Nokia 105|نوکیا 105,True,curated_repair
+nokia-106,Nokia,106,106,feature_phone,legacy,106|Nokia 106|نوکیا 106,True,curated_repair
+nokia-110,Nokia,110,110,feature_phone,legacy,110|Nokia 110|نوکیا 110,True,curated_repair
+nokia-130,Nokia,130,130,feature_phone,legacy,130|Nokia 130|نوکیا 130,True,curated_repair
+nokia-150,Nokia,150,150,feature_phone,legacy,150|Nokia 150|نوکیا 150,True,curated_repair
+nokia-2,Nokia,2,2,smartphone,legacy,2|Nokia 2|نوکیا 2,True,curated_repair
+nokia-2-1,Nokia,2.1,2.1,smartphone,legacy,2.1|Nokia 2.1|نوکیا 2.1,True,curated_repair
+nokia-2-2,Nokia,2.2,2.2,smartphone,legacy,2.2|Nokia 2.2|نوکیا 2.2,True,curated_repair
+nokia-2-3,Nokia,2.3,2.3,smartphone,legacy,2.3|Nokia 2.3|نوکیا 2.3,True,curated_repair
+nokia-210,Nokia,210,210,feature_phone,legacy,210|Nokia 210|نوکیا 210,True,curated_repair
+nokia-225-4g,Nokia,225 4G,225,feature_phone,legacy,225 4G|Nokia 225 4G|نوکیا 225 4G,True,curated_repair
+nokia-2660-flip,Nokia,2660 Flip,2660,feature_phone,legacy,2660 Flip|Nokia 2660 Flip|نوکیا 2660 Flip,True,curated_repair
+nokia-2720-flip,Nokia,2720 Flip,2720,feature_phone,legacy,2720 Flip|Nokia 2720 Flip|نوکیا 2720 Flip,True,curated_repair
+nokia-3,Nokia,3,3,smartphone,legacy,3|Nokia 3|نوکیا 3,True,curated_repair
+nokia-3-1,Nokia,3.1,3.1,smartphone,legacy,3.1|Nokia 3.1|نوکیا 3.1,True,curated_repair
+nokia-3-2,Nokia,3.2,3.2,smartphone,legacy,3.2|Nokia 3.2|نوکیا 3.2,True,curated_repair
+nokia-3310-2017,Nokia,3310 (2017),3310,feature_phone,legacy,3310 (2017)|Nokia 3310 (2017)|نوکیا 3310 (2017),True,curated_repair
+nokia-5,Nokia,5,5,smartphone,legacy,5|Nokia 5|نوکیا 5,True,curated_repair
+nokia-5-1,Nokia,5.1,5.1,smartphone,legacy,5.1|Nokia 5.1|نوکیا 5.1,True,curated_repair
+nokia-5310-2020,Nokia,5310 (2020),5310,feature_phone,legacy,5310 (2020)|Nokia 5310 (2020)|نوکیا 5310 (2020),True,curated_repair
+nokia-6,Nokia,6,6,smartphone,legacy,6|Nokia 6|نوکیا 6,True,curated_repair
+nokia-6-1,Nokia,6.1,6.1,smartphone,legacy,6.1|Nokia 6.1|نوکیا 6.1,True,curated_repair
+nokia-6300-4g,Nokia,6300 4G,6300,feature_phone,legacy,6300 4G|Nokia 6300 4G|نوکیا 6300 4G,True,curated_repair
+nokia-7-plus,Nokia,7 Plus,7,smartphone,legacy,7 Plus|Nokia 7 Plus|نوکیا 7 Plus,True,curated_repair
+nokia-7-1,Nokia,7.1,7.1,smartphone,legacy,7.1|Nokia 7.1|نوکیا 7.1,True,curated_repair
+nokia-8,Nokia,8,8,smartphone,legacy,8|Nokia 8|نوکیا 8,True,curated_repair
+nokia-8-1,Nokia,8.1,8.1,smartphone,legacy,8.1|Nokia 8.1|نوکیا 8.1,True,curated_repair
+nokia-9-pureview,Nokia,9 PureView,9,smartphone,legacy,9 PureView|Nokia 9 PureView|نوکیا 9 PureView,True,curated_repair
+nothing-cmf-phone-1,Nothing,CMF Phone 1,CMF,smartphone,extended,CMF Phone 1|Nothing CMF Phone 1|ناتینگ CMF Phone 1,True,current_global_and_common_repair
+nothing-cmf-phone-2-pro,Nothing,CMF Phone 2 Pro,CMF,smartphone,extended,CMF Phone 2 Pro|Nothing CMF Phone 2 Pro|ناتینگ CMF Phone 2 Pro,True,current_global_and_common_repair
+nothing-phone-1,Nothing,Phone (1),Phone,smartphone,extended,Phone (1)|Nothing Phone (1)|ناتینگ Phone (1),True,current_global_and_common_repair
+nothing-phone-2,Nothing,Phone (2),Phone,smartphone,extended,Phone (2)|Nothing Phone (2)|ناتینگ Phone (2),True,current_global_and_common_repair
+nothing-phone-2a,Nothing,Phone (2a),Phone,smartphone,extended,Phone (2a)|Nothing Phone (2a)|ناتینگ Phone (2a),True,current_global_and_common_repair
+nothing-phone-2a-plus,Nothing,Phone (2a) Plus,Phone,smartphone,extended,Phone (2a) Plus|Nothing Phone (2a) Plus|ناتینگ Phone (2a) Plus,True,current_global_and_common_repair
+nothing-phone-3,Nothing,Phone (3),Phone,smartphone,extended,Phone (3)|Nothing Phone (3)|ناتینگ Phone (3),True,current_global_and_common_repair
+nothing-phone-3a,Nothing,Phone (3a),Phone,smartphone,extended,Phone (3a)|Nothing Phone (3a)|ناتینگ Phone (3a),True,current_global_and_common_repair
+nothing-phone-3a-pro,Nothing,Phone (3a) Pro,Phone,smartphone,extended,Phone (3a) Pro|Nothing Phone (3a) Pro|ناتینگ Phone (3a) Pro,True,current_global_and_common_repair
+oneplus-10-pro,OnePlus,10 Pro,10,smartphone,extended,10 Pro|OnePlus 10 Pro|وان پلاس 10 Pro,True,common_repair
+oneplus-10t,OnePlus,10T,10T,smartphone,extended,10T|OnePlus 10T|وان پلاس 10T,True,common_repair
+oneplus-11,OnePlus,11,11,smartphone,extended,11|OnePlus 11|وان پلاس 11,True,common_repair
+oneplus-11r,OnePlus,11R,11R,smartphone,extended,11R|OnePlus 11R|وان پلاس 11R,True,common_repair
+oneplus-12,OnePlus,12,12,smartphone,extended,12|OnePlus 12|وان پلاس 12,True,common_repair
+oneplus-12r,OnePlus,12R,12R,smartphone,extended,12R|OnePlus 12R|وان پلاس 12R,True,common_repair
+oneplus-13,OnePlus,13,13,smartphone,extended,13|OnePlus 13|وان پلاس 13,True,common_repair
+oneplus-13r,OnePlus,13R,13R,smartphone,extended,13R|OnePlus 13R|وان پلاس 13R,True,common_repair
+oneplus-14,OnePlus,14,14,smartphone,extended,14|OnePlus 14|وان پلاس 14,True,common_repair
+oneplus-8,OnePlus,8,8,smartphone,extended,8|OnePlus 8|وان پلاس 8,True,common_repair
+oneplus-8-pro,OnePlus,8 Pro,8,smartphone,extended,8 Pro|OnePlus 8 Pro|وان پلاس 8 Pro,True,common_repair
+oneplus-8t,OnePlus,8T,8T,smartphone,extended,8T|OnePlus 8T|وان پلاس 8T,True,common_repair
+oneplus-9,OnePlus,9,9,smartphone,extended,9|OnePlus 9|وان پلاس 9,True,common_repair
+oneplus-9-pro,OnePlus,9 Pro,9,smartphone,extended,9 Pro|OnePlus 9 Pro|وان پلاس 9 Pro,True,common_repair
+oneplus-9r,OnePlus,9R,9R,smartphone,extended,9R|OnePlus 9R|وان پلاس 9R,True,common_repair
+oneplus-nord,OnePlus,Nord,Nord,smartphone,extended,Nord|OnePlus Nord|وان پلاس Nord,True,common_repair
+oneplus-nord-2,OnePlus,Nord 2,Nord,smartphone,extended,Nord 2|OnePlus Nord 2|وان پلاس Nord 2,True,common_repair
+oneplus-nord-2t,OnePlus,Nord 2T,Nord,smartphone,extended,Nord 2T|OnePlus Nord 2T|وان پلاس Nord 2T,True,common_repair
+oneplus-nord-3,OnePlus,Nord 3,Nord,smartphone,extended,Nord 3|OnePlus Nord 3|وان پلاس Nord 3,True,common_repair
+oneplus-nord-4,OnePlus,Nord 4,Nord,smartphone,extended,Nord 4|OnePlus Nord 4|وان پلاس Nord 4,True,common_repair
+oneplus-nord-5,OnePlus,Nord 5,Nord,smartphone,extended,Nord 5|OnePlus Nord 5|وان پلاس Nord 5,True,common_repair
+oneplus-nord-ce2,OnePlus,Nord CE2,Nord,smartphone,extended,Nord CE2|OnePlus Nord CE2|وان پلاس Nord CE2,True,common_repair
+oneplus-nord-ce2-lite,OnePlus,Nord CE2 Lite,Nord,smartphone,extended,Nord CE2 Lite|OnePlus Nord CE2 Lite|وان پلاس Nord CE2 Lite,True,common_repair
+oneplus-nord-ce3-lite,OnePlus,Nord CE3 Lite,Nord,smartphone,extended,Nord CE3 Lite|OnePlus Nord CE3 Lite|وان پلاس Nord CE3 Lite,True,common_repair
+oneplus-nord-ce4,OnePlus,Nord CE4,Nord,smartphone,extended,Nord CE4|OnePlus Nord CE4|وان پلاس Nord CE4,True,common_repair
+oneplus-nord-ce4-lite,OnePlus,Nord CE4 Lite,Nord,smartphone,extended,Nord CE4 Lite|OnePlus Nord CE4 Lite|وان پلاس Nord CE4 Lite,True,common_repair
+oneplus-nord-ce5,OnePlus,Nord CE5,Nord,smartphone,extended,Nord CE5|OnePlus Nord CE5|وان پلاس Nord CE5,True,common_repair
+oneplus-nord-n10-5g,OnePlus,Nord N10 5G,Nord,smartphone,extended,Nord N10 5G|OnePlus Nord N10 5G|وان پلاس Nord N10 5G,True,common_repair
+oneplus-nord-n100,OnePlus,Nord N100,Nord,smartphone,extended,Nord N100|OnePlus Nord N100|وان پلاس Nord N100,True,common_repair
+oneplus-nord-n20-5g,OnePlus,Nord N20 5G,Nord,smartphone,extended,Nord N20 5G|OnePlus Nord N20 5G|وان پلاس Nord N20 5G,True,common_repair
+oneplus-nord-n200-5g,OnePlus,Nord N200 5G,Nord,smartphone,extended,Nord N200 5G|OnePlus Nord N200 5G|وان پلاس Nord N200 5G,True,common_repair
+oneplus-nord-n30-5g,OnePlus,Nord N30 5G,Nord,smartphone,extended,Nord N30 5G|OnePlus Nord N30 5G|وان پلاس Nord N30 5G,True,common_repair
+oneplus-5,OnePlus,5,5,smartphone,legacy,5|OnePlus 5|وان پلاس 5,True,curated_repair
+oneplus-5t,OnePlus,5T,5T,smartphone,legacy,5T|OnePlus 5T|وان پلاس 5T,True,curated_repair
+oneplus-6,OnePlus,6,6,smartphone,legacy,6|OnePlus 6|وان پلاس 6,True,curated_repair
+oneplus-6t,OnePlus,6T,6T,smartphone,legacy,6T|OnePlus 6T|وان پلاس 6T,True,curated_repair
+oneplus-7,OnePlus,7,7,smartphone,legacy,7|OnePlus 7|وان پلاس 7,True,curated_repair
+oneplus-7-pro,OnePlus,7 Pro,7,smartphone,legacy,7 Pro|OnePlus 7 Pro|وان پلاس 7 Pro,True,curated_repair
+oneplus-7t,OnePlus,7T,7T,smartphone,legacy,7T|OnePlus 7T|وان پلاس 7T,True,curated_repair
+oneplus-7t-pro,OnePlus,7T Pro,7T,smartphone,legacy,7T Pro|OnePlus 7T Pro|وان پلاس 7T Pro,True,curated_repair
+oppo-a12,OPPO,A12,A12,smartphone,extended,A12|OPPO A12|اوپو A12,True,common_repair
+oppo-a15,OPPO,A15,A15,smartphone,extended,A15|OPPO A15|اوپو A15,True,common_repair
+oppo-a16,OPPO,A16,A16,smartphone,extended,A16|OPPO A16|اوپو A16,True,common_repair
+oppo-a17,OPPO,A17,A17,smartphone,extended,A17|OPPO A17|اوپو A17,True,common_repair
+oppo-a18,OPPO,A18,A18,smartphone,extended,A18|OPPO A18|اوپو A18,True,common_repair
+oppo-a31,OPPO,A31,A31,smartphone,extended,A31|OPPO A31|اوپو A31,True,common_repair
+oppo-a5-2020,OPPO,A5 2020,A5,smartphone,extended,A5 2020|OPPO A5 2020|اوپو A5 2020,True,common_repair
+oppo-a53,OPPO,A53,A53,smartphone,extended,A53|OPPO A53|اوپو A53,True,common_repair
+oppo-a54,OPPO,A54,A54,smartphone,extended,A54|OPPO A54|اوپو A54,True,common_repair
+oppo-a55,OPPO,A55,A55,smartphone,extended,A55|OPPO A55|اوپو A55,True,common_repair
+oppo-a57,OPPO,A57,A57,smartphone,extended,A57|OPPO A57|اوپو A57,True,common_repair
+oppo-a58,OPPO,A58,A58,smartphone,extended,A58|OPPO A58|اوپو A58,True,common_repair
+oppo-a60,OPPO,A60,A60,smartphone,extended,A60|OPPO A60|اوپو A60,True,common_repair
+oppo-a74,OPPO,A74,A74,smartphone,extended,A74|OPPO A74|اوپو A74,True,common_repair
+oppo-a76,OPPO,A76,A76,smartphone,extended,A76|OPPO A76|اوپو A76,True,common_repair
+oppo-a77,OPPO,A77,A77,smartphone,extended,A77|OPPO A77|اوپو A77,True,common_repair
+oppo-a78,OPPO,A78,A78,smartphone,extended,A78|OPPO A78|اوپو A78,True,common_repair
+oppo-a79-5g,OPPO,A79 5G,A79,smartphone,extended,A79 5G|OPPO A79 5G|اوپو A79 5G,True,common_repair
+oppo-a9-2020,OPPO,A9 2020,A9,smartphone,extended,A9 2020|OPPO A9 2020|اوپو A9 2020,True,common_repair
+oppo-a96,OPPO,A96,A96,smartphone,extended,A96|OPPO A96|اوپو A96,True,common_repair
+oppo-find-x2-pro,OPPO,Find X2 Pro,Find,smartphone,extended,Find X2 Pro|OPPO Find X2 Pro|اوپو Find X2 Pro,True,common_repair
+oppo-find-x3-pro,OPPO,Find X3 Pro,Find,smartphone,extended,Find X3 Pro|OPPO Find X3 Pro|اوپو Find X3 Pro,True,common_repair
+oppo-find-x5-pro,OPPO,Find X5 Pro,Find,smartphone,extended,Find X5 Pro|OPPO Find X5 Pro|اوپو Find X5 Pro,True,common_repair
+oppo-find-x6-pro,OPPO,Find X6 Pro,Find,smartphone,extended,Find X6 Pro|OPPO Find X6 Pro|اوپو Find X6 Pro,True,common_repair
+oppo-find-x7-ultra,OPPO,Find X7 Ultra,Find,smartphone,extended,Find X7 Ultra|OPPO Find X7 Ultra|اوپو Find X7 Ultra,True,common_repair
+oppo-find-x8-pro,OPPO,Find X8 Pro,Find,smartphone,extended,Find X8 Pro|OPPO Find X8 Pro|اوپو Find X8 Pro,True,common_repair
+oppo-reno10,OPPO,Reno10,Reno,smartphone,extended,Reno10|OPPO Reno10|اوپو Reno10,True,common_repair
+oppo-reno11,OPPO,Reno11,Reno,smartphone,extended,Reno11|OPPO Reno11|اوپو Reno11,True,common_repair
+oppo-reno12,OPPO,Reno12,Reno,smartphone,extended,Reno12|OPPO Reno12|اوپو Reno12,True,common_repair
+oppo-reno13,OPPO,Reno13,Reno,smartphone,extended,Reno13|OPPO Reno13|اوپو Reno13,True,common_repair
+oppo-reno14,OPPO,Reno14,Reno,smartphone,extended,Reno14|OPPO Reno14|اوپو Reno14,True,common_repair
+oppo-reno2,OPPO,Reno2,Reno,smartphone,extended,Reno2|OPPO Reno2|اوپو Reno2,True,common_repair
+oppo-reno3,OPPO,Reno3,Reno,smartphone,extended,Reno3|OPPO Reno3|اوپو Reno3,True,common_repair
+oppo-reno4,OPPO,Reno4,Reno,smartphone,extended,Reno4|OPPO Reno4|اوپو Reno4,True,common_repair
+oppo-reno5,OPPO,Reno5,Reno,smartphone,extended,Reno5|OPPO Reno5|اوپو Reno5,True,common_repair
+oppo-reno6,OPPO,Reno6,Reno,smartphone,extended,Reno6|OPPO Reno6|اوپو Reno6,True,common_repair
+oppo-reno7,OPPO,Reno7,Reno,smartphone,extended,Reno7|OPPO Reno7|اوپو Reno7,True,common_repair
+oppo-reno8,OPPO,Reno8,Reno,smartphone,extended,Reno8|OPPO Reno8|اوپو Reno8,True,common_repair
+oppo-reno8-t,OPPO,Reno8 T,Reno,smartphone,extended,Reno8 T|OPPO Reno8 T|اوپو Reno8 T,True,common_repair
+poco-c81-pro,POCO,C81 Pro,C81,smartphone,new,C81 Pro|POCO C81 Pro|پوکو C81 Pro,True,official_xiaomi_and_iran_market
+poco-c85,POCO,C85,C85,smartphone,new,C85|POCO C85|پوکو C85,True,official_xiaomi_and_iran_market
+poco-m8-5g,POCO,M8 5G,M8,smartphone,new,M8 5G|POCO M8 5G|پوکو M8 5G|M8,True,official_xiaomi_and_iran_market
+poco-m8-pro-5g,POCO,M8 Pro 5G,M8,smartphone,new,M8 Pro 5G|POCO M8 Pro 5G|پوکو M8 Pro 5G|M8 Pro,True,official_xiaomi_and_iran_market
+poco-m8s-5g,POCO,M8s 5G,M8s,smartphone,new,M8s 5G|POCO M8s 5G|پوکو M8s 5G|M8s,True,official_xiaomi_and_iran_market
+poco-x8-pro,POCO,X8 Pro,X8,smartphone,new,X8 Pro|POCO X8 Pro|پوکو X8 Pro,True,official_xiaomi_and_iran_market
+poco-x8-pro-max,POCO,X8 Pro Max,X8,smartphone,new,X8 Pro Max|POCO X8 Pro Max|پوکو X8 Pro Max,True,official_xiaomi_and_iran_market
+poco-c31,POCO,C31,C31,smartphone,core,C31|POCO C31|پوکو C31,True,iran_market_and_common_repair
+poco-c40,POCO,C40,C40,smartphone,core,C40|POCO C40|پوکو C40,True,iran_market_and_common_repair
+poco-c50,POCO,C50,C50,smartphone,core,C50|POCO C50|پوکو C50,True,iran_market_and_common_repair
+poco-c51,POCO,C51,C51,smartphone,core,C51|POCO C51|پوکو C51,True,iran_market_and_common_repair
+poco-c55,POCO,C55,C55,smartphone,core,C55|POCO C55|پوکو C55,True,iran_market_and_common_repair
+poco-c61,POCO,C61,C61,smartphone,core,C61|POCO C61|پوکو C61,True,iran_market_and_common_repair
+poco-c65,POCO,C65,C65,smartphone,core,C65|POCO C65|پوکو C65,True,iran_market_and_common_repair
+poco-c75,POCO,C75,C75,smartphone,core,C75|POCO C75|پوکو C75,True,iran_market_and_common_repair
+poco-f1,POCO,F1,F1,smartphone,core,F1|POCO F1|پوکو F1,True,iran_market_and_common_repair
+poco-f2-pro,POCO,F2 Pro,F2,smartphone,core,F2 Pro|POCO F2 Pro|پوکو F2 Pro,True,iran_market_and_common_repair
+poco-f3,POCO,F3,F3,smartphone,core,F3|POCO F3|پوکو F3,True,iran_market_and_common_repair
+poco-f3-gt,POCO,F3 GT,F3,smartphone,core,F3 GT|POCO F3 GT|پوکو F3 GT,True,iran_market_and_common_repair
+poco-f4,POCO,F4,F4,smartphone,core,F4|POCO F4|پوکو F4,True,iran_market_and_common_repair
+poco-f4-gt,POCO,F4 GT,F4,smartphone,core,F4 GT|POCO F4 GT|پوکو F4 GT,True,iran_market_and_common_repair
+poco-f5,POCO,F5,F5,smartphone,core,F5|POCO F5|پوکو F5,True,iran_market_and_common_repair
+poco-f5-pro,POCO,F5 Pro,F5,smartphone,core,F5 Pro|POCO F5 Pro|پوکو F5 Pro,True,iran_market_and_common_repair
+poco-f6,POCO,F6,F6,smartphone,core,F6|POCO F6|پوکو F6,True,iran_market_and_common_repair
+poco-f6-pro,POCO,F6 Pro,F6,smartphone,core,F6 Pro|POCO F6 Pro|پوکو F6 Pro,True,iran_market_and_common_repair
+poco-f7,POCO,F7,F7,smartphone,core,F7|POCO F7|پوکو F7,True,iran_market_and_common_repair
+poco-f7-pro,POCO,F7 Pro,F7,smartphone,core,F7 Pro|POCO F7 Pro|پوکو F7 Pro,True,iran_market_and_common_repair
+poco-f7-ultra,POCO,F7 Ultra,F7,smartphone,core,F7 Ultra|POCO F7 Ultra|پوکو F7 Ultra,True,iran_market_and_common_repair
+poco-m3,POCO,M3,M3,smartphone,core,M3|POCO M3|پوکو M3,True,iran_market_and_common_repair
+poco-m3-pro-5g,POCO,M3 Pro 5G,M3,smartphone,core,M3 Pro 5G|POCO M3 Pro 5G|پوکو M3 Pro 5G|M3 Pro,True,iran_market_and_common_repair
+poco-m4-5g,POCO,M4 5G,M4,smartphone,core,M4 5G|POCO M4 5G|پوکو M4 5G|M4,True,iran_market_and_common_repair
+poco-m4-pro-4g,POCO,M4 Pro 4G,M4,smartphone,core,M4 Pro 4G|POCO M4 Pro 4G|پوکو M4 Pro 4G,True,iran_market_and_common_repair
+poco-m4-pro-5g,POCO,M4 Pro 5G,M4,smartphone,core,M4 Pro 5G|POCO M4 Pro 5G|پوکو M4 Pro 5G|M4 Pro,True,iran_market_and_common_repair
+poco-m5,POCO,M5,M5,smartphone,core,M5|POCO M5|پوکو M5,True,iran_market_and_common_repair
+poco-m5s,POCO,M5s,M5s,smartphone,core,M5s|POCO M5s|پوکو M5s,True,iran_market_and_common_repair
+poco-m6,POCO,M6,M6,smartphone,core,M6|POCO M6|پوکو M6,True,iran_market_and_common_repair
+poco-m6-pro,POCO,M6 Pro,M6,smartphone,core,M6 Pro|POCO M6 Pro|پوکو M6 Pro,True,iran_market_and_common_repair
+poco-m7-pro-5g,POCO,M7 Pro 5G,M7,smartphone,core,M7 Pro 5G|POCO M7 Pro 5G|پوکو M7 Pro 5G|M7 Pro,True,iran_market_and_common_repair
+poco-x3-gt,POCO,X3 GT,X3,smartphone,core,X3 GT|POCO X3 GT|پوکو X3 GT,True,iran_market_and_common_repair
+poco-x3-nfc,POCO,X3 NFC,X3,smartphone,core,X3 NFC|POCO X3 NFC|پوکو X3 NFC,True,iran_market_and_common_repair
+poco-x3-pro,POCO,X3 Pro,X3,smartphone,core,X3 Pro|POCO X3 Pro|پوکو X3 Pro,True,iran_market_and_common_repair
+poco-x4-gt,POCO,X4 GT,X4,smartphone,core,X4 GT|POCO X4 GT|پوکو X4 GT,True,iran_market_and_common_repair
+poco-x4-pro-5g,POCO,X4 Pro 5G,X4,smartphone,core,X4 Pro 5G|POCO X4 Pro 5G|پوکو X4 Pro 5G|X4 Pro,True,iran_market_and_common_repair
+poco-x5-5g,POCO,X5 5G,X5,smartphone,core,X5 5G|POCO X5 5G|پوکو X5 5G|X5,True,iran_market_and_common_repair
+poco-x5-pro-5g,POCO,X5 Pro 5G,X5,smartphone,core,X5 Pro 5G|POCO X5 Pro 5G|پوکو X5 Pro 5G|X5 Pro,True,iran_market_and_common_repair
+poco-x6-5g,POCO,X6 5G,X6,smartphone,core,X6 5G|POCO X6 5G|پوکو X6 5G|X6,True,iran_market_and_common_repair
+poco-x6-pro-5g,POCO,X6 Pro 5G,X6,smartphone,core,X6 Pro 5G|POCO X6 Pro 5G|پوکو X6 Pro 5G|X6 Pro,True,iran_market_and_common_repair
+poco-x7,POCO,X7,X7,smartphone,core,X7|POCO X7|پوکو X7,True,iran_market_and_common_repair
+poco-x7-pro-5g,POCO,X7 Pro 5G,X7,smartphone,core,X7 Pro 5G|POCO X7 Pro 5G|پوکو X7 Pro 5G|X7 Pro,True,iran_market_and_common_repair
+poco-c3,POCO,C3,C3,smartphone,legacy,C3|POCO C3|پوکو C3,True,curated_repair
+poco-m2,POCO,M2,M2,smartphone,legacy,M2|POCO M2|پوکو M2,True,curated_repair
+poco-m2-pro,POCO,M2 Pro,M2,smartphone,legacy,M2 Pro|POCO M2 Pro|پوکو M2 Pro,True,curated_repair
+poco-x2,POCO,X2,X2,smartphone,legacy,X2|POCO X2|پوکو X2,True,curated_repair
+realme-10,realme,10,10,smartphone,extended,10|realme 10|ریلمی 10,True,common_repair
+realme-10-pro,realme,10 Pro,10,smartphone,extended,10 Pro|realme 10 Pro|ریلمی 10 Pro,True,common_repair
+realme-11,realme,11,11,smartphone,extended,11|realme 11|ریلمی 11,True,common_repair
+realme-11-pro,realme,11 Pro,11,smartphone,extended,11 Pro|realme 11 Pro|ریلمی 11 Pro,True,common_repair
+realme-12,realme,12,12,smartphone,extended,12|realme 12|ریلمی 12,True,common_repair
+realme-12-pro,realme,12 Pro,12,smartphone,extended,12 Pro|realme 12 Pro|ریلمی 12 Pro,True,common_repair
+realme-13,realme,13,13,smartphone,extended,13|realme 13|ریلمی 13,True,common_repair
+realme-13-pro,realme,13 Pro,13,smartphone,extended,13 Pro|realme 13 Pro|ریلمی 13 Pro,True,common_repair
+realme-14,realme,14,14,smartphone,extended,14|realme 14|ریلمی 14,True,common_repair
+realme-14-pro,realme,14 Pro,14,smartphone,extended,14 Pro|realme 14 Pro|ریلمی 14 Pro,True,common_repair
+realme-15-pro,realme,15 Pro,15,smartphone,extended,15 Pro|realme 15 Pro|ریلمی 15 Pro,True,common_repair
+realme-7,realme,7,7,smartphone,extended,7|realme 7|ریلمی 7,True,common_repair
+realme-7i,realme,7i,7i,smartphone,extended,7i|realme 7i|ریلمی 7i,True,common_repair
+realme-8,realme,8,8,smartphone,extended,8|realme 8|ریلمی 8,True,common_repair
+realme-8i,realme,8i,8i,smartphone,extended,8i|realme 8i|ریلمی 8i,True,common_repair
+realme-9,realme,9,9,smartphone,extended,9|realme 9|ریلمی 9,True,common_repair
+realme-9-pro,realme,9 Pro,9,smartphone,extended,9 Pro|realme 9 Pro|ریلمی 9 Pro,True,common_repair
+realme-9i,realme,9i,9i,smartphone,extended,9i|realme 9i|ریلمی 9i,True,common_repair
+realme-c21,realme,C21,C21,smartphone,extended,C21|realme C21|ریلمی C21,True,common_repair
+realme-c25,realme,C25,C25,smartphone,extended,C25|realme C25|ریلمی C25,True,common_repair
+realme-c30,realme,C30,C30,smartphone,extended,C30|realme C30|ریلمی C30,True,common_repair
+realme-c31,realme,C31,C31,smartphone,extended,C31|realme C31|ریلمی C31,True,common_repair
+realme-c33,realme,C33,C33,smartphone,extended,C33|realme C33|ریلمی C33,True,common_repair
+realme-c35,realme,C35,C35,smartphone,extended,C35|realme C35|ریلمی C35,True,common_repair
+realme-c51,realme,C51,C51,smartphone,extended,C51|realme C51|ریلمی C51,True,common_repair
+realme-c53,realme,C53,C53,smartphone,extended,C53|realme C53|ریلمی C53,True,common_repair
+realme-c55,realme,C55,C55,smartphone,extended,C55|realme C55|ریلمی C55,True,common_repair
+realme-c61,realme,C61,C61,smartphone,extended,C61|realme C61|ریلمی C61,True,common_repair
+realme-c63,realme,C63,C63,smartphone,extended,C63|realme C63|ریلمی C63,True,common_repair
+realme-c65,realme,C65,C65,smartphone,extended,C65|realme C65|ریلمی C65,True,common_repair
+realme-c67,realme,C67,C67,smartphone,extended,C67|realme C67|ریلمی C67,True,common_repair
+realme-c71,realme,C71,C71,smartphone,extended,C71|realme C71|ریلمی C71,True,common_repair
+realme-c75,realme,C75,C75,smartphone,extended,C75|realme C75|ریلمی C75,True,common_repair
+realme-gt-2,realme,GT 2,GT,smartphone,extended,GT 2|realme GT 2|ریلمی GT 2,True,common_repair
+realme-gt-2-pro,realme,GT 2 Pro,GT,smartphone,extended,GT 2 Pro|realme GT 2 Pro|ریلمی GT 2 Pro,True,common_repair
+realme-gt-3,realme,GT 3,GT,smartphone,extended,GT 3|realme GT 3|ریلمی GT 3,True,common_repair
+realme-gt-5,realme,GT 5,GT,smartphone,extended,GT 5|realme GT 5|ریلمی GT 5,True,common_repair
+realme-gt-6,realme,GT 6,GT,smartphone,extended,GT 6|realme GT 6|ریلمی GT 6,True,common_repair
+realme-gt-7,realme,GT 7,GT,smartphone,extended,GT 7|realme GT 7|ریلمی GT 7,True,common_repair
+realme-gt-master-edition,realme,GT Master Edition,GT,smartphone,extended,GT Master Edition|realme GT Master Edition|ریلمی GT Master Edition,True,common_repair
+realme-gt-neo-2,realme,GT Neo 2,GT,smartphone,extended,GT Neo 2|realme GT Neo 2|ریلمی GT Neo 2,True,common_repair
+realme-narzo-50a,realme,Narzo 50A,Narzo,smartphone,extended,Narzo 50A|realme Narzo 50A|ریلمی Narzo 50A,True,common_repair
+realme-narzo-50i,realme,Narzo 50i,Narzo,smartphone,extended,Narzo 50i|realme Narzo 50i|ریلمی Narzo 50i,True,common_repair
+realme-narzo-60,realme,Narzo 60,Narzo,smartphone,extended,Narzo 60|realme Narzo 60|ریلمی Narzo 60,True,common_repair
+realme-narzo-60x,realme,Narzo 60x,Narzo,smartphone,extended,Narzo 60x|realme Narzo 60x|ریلمی Narzo 60x,True,common_repair
+realme-narzo-70-pro,realme,Narzo 70 Pro,Narzo,smartphone,extended,Narzo 70 Pro|realme Narzo 70 Pro|ریلمی Narzo 70 Pro,True,common_repair
+realme-5,realme,5,5,smartphone,legacy,5|realme 5|ریلمی 5,True,curated_repair
+realme-5i,realme,5i,5i,smartphone,legacy,5i|realme 5i|ریلمی 5i,True,curated_repair
+realme-6,realme,6,6,smartphone,legacy,6|realme 6|ریلمی 6,True,curated_repair
+realme-6i,realme,6i,6i,smartphone,legacy,6i|realme 6i|ریلمی 6i,True,curated_repair
+realme-c11,realme,C11,C11,smartphone,legacy,C11|realme C11|ریلمی C11,True,curated_repair
+realme-c12,realme,C12,C12,smartphone,legacy,C12|realme C12|ریلمی C12,True,curated_repair
+realme-c15,realme,C15,C15,smartphone,legacy,C15|realme C15|ریلمی C15,True,curated_repair
+realme-c17,realme,C17,C17,smartphone,legacy,C17|realme C17|ریلمی C17,True,curated_repair
+realme-x2-pro,realme,X2 Pro,X2,smartphone,legacy,X2 Pro|realme X2 Pro|ریلمی X2 Pro,True,curated_repair
+realme-x3-superzoom,realme,X3 SuperZoom,X3,smartphone,legacy,X3 SuperZoom|realme X3 SuperZoom|ریلمی X3 SuperZoom,True,curated_repair
+redmi-15,Redmi,15,15,smartphone,new,15|Redmi 15|ردمی 15,True,iran_market_2026
+redmi-15c,Redmi,15C,15C,smartphone,new,15C|Redmi 15C|ردمی 15C,True,iran_market_2026
+redmi-a5-4g,Redmi,A5 4G,A5,smartphone,new,A5 4G|Redmi A5 4G|ردمی A5 4G,True,iran_market_2026
+redmi-note-15,Redmi,Note 15,Note,smartphone,new,Note 15|Redmi Note 15|ردمی Note 15,True,iran_market_2026
+redmi-note-15-pro-5g,Redmi,Note 15 Pro 5G,Note,smartphone,new,Note 15 Pro 5G|Redmi Note 15 Pro 5G|ردمی Note 15 Pro 5G|Note 15 Pro,True,iran_market_2026
+redmi-10,Redmi,10,10,smartphone,core,10|Redmi 10|ردمی 10,True,iran_market_and_common_repair
+redmi-10a,Redmi,10A,10A,smartphone,core,10A|Redmi 10A|ردمی 10A,True,iran_market_and_common_repair
+redmi-10c,Redmi,10C,10C,smartphone,core,10C|Redmi 10C|ردمی 10C,True,iran_market_and_common_repair
+redmi-12,Redmi,12,12,smartphone,core,12|Redmi 12|ردمی 12,True,iran_market_and_common_repair
+redmi-12c,Redmi,12C,12C,smartphone,core,12C|Redmi 12C|ردمی 12C,True,iran_market_and_common_repair
+redmi-13,Redmi,13,13,smartphone,core,13|Redmi 13|ردمی 13,True,iran_market_and_common_repair
+redmi-13c,Redmi,13C,13C,smartphone,core,13C|Redmi 13C|ردمی 13C,True,iran_market_and_common_repair
+redmi-14c,Redmi,14C,14C,smartphone,core,14C|Redmi 14C|ردمی 14C,True,iran_market_and_common_repair
+redmi-8,Redmi,8,8,smartphone,core,8|Redmi 8|ردمی 8,True,iran_market_and_common_repair
+redmi-8a,Redmi,8A,8A,smartphone,core,8A|Redmi 8A|ردمی 8A,True,iran_market_and_common_repair
+redmi-8a-dual,Redmi,8A Dual,8A,smartphone,core,8A Dual|Redmi 8A Dual|ردمی 8A Dual,True,iran_market_and_common_repair
+redmi-9,Redmi,9,9,smartphone,core,9|Redmi 9|ردمی 9,True,iran_market_and_common_repair
+redmi-9a,Redmi,9A,9A,smartphone,core,9A|Redmi 9A|ردمی 9A,True,iran_market_and_common_repair
+redmi-9at,Redmi,9AT,9AT,smartphone,core,9AT|Redmi 9AT|ردمی 9AT,True,iran_market_and_common_repair
+redmi-9c,Redmi,9C,9C,smartphone,core,9C|Redmi 9C|ردمی 9C,True,iran_market_and_common_repair
+redmi-9t,Redmi,9T,9T,smartphone,core,9T|Redmi 9T|ردمی 9T,True,iran_market_and_common_repair
+redmi-a1,Redmi,A1,A1,smartphone,core,A1|Redmi A1|ردمی A1,True,iran_market_and_common_repair
+redmi-a1,Redmi,A1+,A1+,smartphone,core,A1+|Redmi A1+|ردمی A1+,True,iran_market_and_common_repair
+redmi-a2,Redmi,A2,A2,smartphone,core,A2|Redmi A2|ردمی A2,True,iran_market_and_common_repair
+redmi-a2,Redmi,A2+,A2+,smartphone,core,A2+|Redmi A2+|ردمی A2+,True,iran_market_and_common_repair
+redmi-a3,Redmi,A3,A3,smartphone,core,A3|Redmi A3|ردمی A3,True,iran_market_and_common_repair
+redmi-a3x,Redmi,A3x,A3x,smartphone,core,A3x|Redmi A3x|ردمی A3x,True,iran_market_and_common_repair
+redmi-a4,Redmi,A4,A4,smartphone,core,A4|Redmi A4|ردمی A4,True,iran_market_and_common_repair
+redmi-note-10,Redmi,Note 10,Note,smartphone,core,Note 10|Redmi Note 10|ردمی Note 10,True,iran_market_and_common_repair
+redmi-note-10-5g,Redmi,Note 10 5G,Note,smartphone,core,Note 10 5G|Redmi Note 10 5G|ردمی Note 10 5G|Note 10,True,iran_market_and_common_repair
+redmi-note-10-pro,Redmi,Note 10 Pro,Note,smartphone,core,Note 10 Pro|Redmi Note 10 Pro|ردمی Note 10 Pro,True,iran_market_and_common_repair
+redmi-note-10s,Redmi,Note 10S,Note,smartphone,core,Note 10S|Redmi Note 10S|ردمی Note 10S,True,iran_market_and_common_repair
+redmi-note-11,Redmi,Note 11,Note,smartphone,core,Note 11|Redmi Note 11|ردمی Note 11,True,iran_market_and_common_repair
+redmi-note-11-pro,Redmi,Note 11 Pro,Note,smartphone,core,Note 11 Pro|Redmi Note 11 Pro|ردمی Note 11 Pro,True,iran_market_and_common_repair
+redmi-note-11-pro-5g,Redmi,Note 11 Pro 5G,Note,smartphone,core,Note 11 Pro 5G|Redmi Note 11 Pro 5G|ردمی Note 11 Pro 5G|Note 11 Pro,True,iran_market_and_common_repair
+redmi-note-11-pro-5g,Redmi,Note 11 Pro+ 5G,Note,smartphone,core,Note 11 Pro+ 5G|Redmi Note 11 Pro+ 5G|ردمی Note 11 Pro+ 5G|Note 11 Pro+,True,iran_market_and_common_repair
+redmi-note-11s,Redmi,Note 11S,Note,smartphone,core,Note 11S|Redmi Note 11S|ردمی Note 11S,True,iran_market_and_common_repair
+redmi-note-12-4g,Redmi,Note 12 4G,Note,smartphone,core,Note 12 4G|Redmi Note 12 4G|ردمی Note 12 4G,True,iran_market_and_common_repair
+redmi-note-12-5g,Redmi,Note 12 5G,Note,smartphone,core,Note 12 5G|Redmi Note 12 5G|ردمی Note 12 5G|Note 12,True,iran_market_and_common_repair
+redmi-note-12-pro-4g,Redmi,Note 12 Pro 4G,Note,smartphone,core,Note 12 Pro 4G|Redmi Note 12 Pro 4G|ردمی Note 12 Pro 4G,True,iran_market_and_common_repair
+redmi-note-12-pro-5g,Redmi,Note 12 Pro 5G,Note,smartphone,core,Note 12 Pro 5G|Redmi Note 12 Pro 5G|ردمی Note 12 Pro 5G|Note 12 Pro,True,iran_market_and_common_repair
+redmi-note-12-pro-5g,Redmi,Note 12 Pro+ 5G,Note,smartphone,core,Note 12 Pro+ 5G|Redmi Note 12 Pro+ 5G|ردمی Note 12 Pro+ 5G|Note 12 Pro+,True,iran_market_and_common_repair
+redmi-note-12s,Redmi,Note 12S,Note,smartphone,core,Note 12S|Redmi Note 12S|ردمی Note 12S,True,iran_market_and_common_repair
+redmi-note-13-4g,Redmi,Note 13 4G,Note,smartphone,core,Note 13 4G|Redmi Note 13 4G|ردمی Note 13 4G,True,iran_market_and_common_repair
+redmi-note-13-5g,Redmi,Note 13 5G,Note,smartphone,core,Note 13 5G|Redmi Note 13 5G|ردمی Note 13 5G|Note 13,True,iran_market_and_common_repair
+redmi-note-13-pro-4g,Redmi,Note 13 Pro 4G,Note,smartphone,core,Note 13 Pro 4G|Redmi Note 13 Pro 4G|ردمی Note 13 Pro 4G,True,iran_market_and_common_repair
+redmi-note-13-pro-5g,Redmi,Note 13 Pro 5G,Note,smartphone,core,Note 13 Pro 5G|Redmi Note 13 Pro 5G|ردمی Note 13 Pro 5G|Note 13 Pro,True,iran_market_and_common_repair
+redmi-note-13-pro-5g,Redmi,Note 13 Pro+ 5G,Note,smartphone,core,Note 13 Pro+ 5G|Redmi Note 13 Pro+ 5G|ردمی Note 13 Pro+ 5G|Note 13 Pro+,True,iran_market_and_common_repair
+redmi-note-14-4g,Redmi,Note 14 4G,Note,smartphone,core,Note 14 4G|Redmi Note 14 4G|ردمی Note 14 4G,True,iran_market_and_common_repair
+redmi-note-14-5g,Redmi,Note 14 5G,Note,smartphone,core,Note 14 5G|Redmi Note 14 5G|ردمی Note 14 5G|Note 14,True,iran_market_and_common_repair
+redmi-note-14-pro-4g,Redmi,Note 14 Pro 4G,Note,smartphone,core,Note 14 Pro 4G|Redmi Note 14 Pro 4G|ردمی Note 14 Pro 4G,True,iran_market_and_common_repair
+redmi-note-14-pro-5g,Redmi,Note 14 Pro 5G,Note,smartphone,core,Note 14 Pro 5G|Redmi Note 14 Pro 5G|ردمی Note 14 Pro 5G|Note 14 Pro,True,iran_market_and_common_repair
+redmi-note-14-pro-5g,Redmi,Note 14 Pro+ 5G,Note,smartphone,core,Note 14 Pro+ 5G|Redmi Note 14 Pro+ 5G|ردمی Note 14 Pro+ 5G|Note 14 Pro+,True,iran_market_and_common_repair
+redmi-note-14s,Redmi,Note 14S,Note,smartphone,core,Note 14S|Redmi Note 14S|ردمی Note 14S,True,iran_market_and_common_repair
+redmi-note-9,Redmi,Note 9,Note,smartphone,core,Note 9|Redmi Note 9|ردمی Note 9,True,iran_market_and_common_repair
+redmi-note-9-pro,Redmi,Note 9 Pro,Note,smartphone,core,Note 9 Pro|Redmi Note 9 Pro|ردمی Note 9 Pro,True,iran_market_and_common_repair
+redmi-note-9-pro-max,Redmi,Note 9 Pro Max,Note,smartphone,core,Note 9 Pro Max|Redmi Note 9 Pro Max|ردمی Note 9 Pro Max,True,iran_market_and_common_repair
+redmi-note-9s,Redmi,Note 9S,Note,smartphone,core,Note 9S|Redmi Note 9S|ردمی Note 9S,True,iran_market_and_common_repair
+redmi-5,Redmi,5,5,smartphone,legacy,5|Redmi 5|ردمی 5,True,curated_repair
+redmi-5-plus,Redmi,5 Plus,5,smartphone,legacy,5 Plus|Redmi 5 Plus|ردمی 5 Plus,True,curated_repair
+redmi-5a,Redmi,5A,5A,smartphone,legacy,5A|Redmi 5A|ردمی 5A,True,curated_repair
+redmi-6,Redmi,6,6,smartphone,legacy,6|Redmi 6|ردمی 6,True,curated_repair
+redmi-6a,Redmi,6A,6A,smartphone,legacy,6A|Redmi 6A|ردمی 6A,True,curated_repair
+redmi-7,Redmi,7,7,smartphone,legacy,7|Redmi 7|ردمی 7,True,curated_repair
+redmi-7a,Redmi,7A,7A,smartphone,legacy,7A|Redmi 7A|ردمی 7A,True,curated_repair
+redmi-k20,Redmi,K20,K20,smartphone,legacy,K20|Redmi K20|ردمی K20,True,curated_repair
+redmi-k20-pro,Redmi,K20 Pro,K20,smartphone,legacy,K20 Pro|Redmi K20 Pro|ردمی K20 Pro,True,curated_repair
+redmi-k30,Redmi,K30,K30,smartphone,legacy,K30|Redmi K30|ردمی K30,True,curated_repair
+redmi-k30-pro,Redmi,K30 Pro,K30,smartphone,legacy,K30 Pro|Redmi K30 Pro|ردمی K30 Pro,True,curated_repair
+redmi-k40,Redmi,K40,K40,smartphone,legacy,K40|Redmi K40|ردمی K40,True,curated_repair
+redmi-k40-gaming,Redmi,K40 Gaming,K40,smartphone,legacy,K40 Gaming|Redmi K40 Gaming|ردمی K40 Gaming,True,curated_repair
+redmi-k50,Redmi,K50,K50,smartphone,legacy,K50|Redmi K50|ردمی K50,True,curated_repair
+redmi-k50-gaming,Redmi,K50 Gaming,K50,smartphone,legacy,K50 Gaming|Redmi K50 Gaming|ردمی K50 Gaming,True,curated_repair
+redmi-k60,Redmi,K60,K60,smartphone,legacy,K60|Redmi K60|ردمی K60,True,curated_repair
+redmi-k60-pro,Redmi,K60 Pro,K60,smartphone,legacy,K60 Pro|Redmi K60 Pro|ردمی K60 Pro,True,curated_repair
+redmi-k70,Redmi,K70,K70,smartphone,legacy,K70|Redmi K70|ردمی K70,True,curated_repair
+redmi-k70-pro,Redmi,K70 Pro,K70,smartphone,legacy,K70 Pro|Redmi K70 Pro|ردمی K70 Pro,True,curated_repair
+redmi-note-4,Redmi,Note 4,Note,smartphone,legacy,Note 4|Redmi Note 4|ردمی Note 4,True,curated_repair
+redmi-note-4x,Redmi,Note 4X,Note,smartphone,legacy,Note 4X|Redmi Note 4X|ردمی Note 4X,True,curated_repair
+redmi-note-5,Redmi,Note 5,Note,smartphone,legacy,Note 5|Redmi Note 5|ردمی Note 5,True,curated_repair
+redmi-note-5-pro,Redmi,Note 5 Pro,Note,smartphone,legacy,Note 5 Pro|Redmi Note 5 Pro|ردمی Note 5 Pro,True,curated_repair
+redmi-note-6-pro,Redmi,Note 6 Pro,Note,smartphone,legacy,Note 6 Pro|Redmi Note 6 Pro|ردمی Note 6 Pro,True,curated_repair
+redmi-note-7,Redmi,Note 7,Note,smartphone,legacy,Note 7|Redmi Note 7|ردمی Note 7,True,curated_repair
+redmi-note-7-pro,Redmi,Note 7 Pro,Note,smartphone,legacy,Note 7 Pro|Redmi Note 7 Pro|ردمی Note 7 Pro,True,curated_repair
+redmi-note-8,Redmi,Note 8,Note,smartphone,legacy,Note 8|Redmi Note 8|ردمی Note 8,True,curated_repair
+redmi-note-8-pro,Redmi,Note 8 Pro,Note,smartphone,legacy,Note 8 Pro|Redmi Note 8 Pro|ردمی Note 8 Pro,True,curated_repair
+redmi-note-8t,Redmi,Note 8T,Note,smartphone,legacy,Note 8T|Redmi Note 8T|ردمی Note 8T,True,curated_repair
+samsung-galaxy-a17-4g,Samsung,Galaxy A17 4G,Galaxy A,smartphone,new,A17 4G|Samsung A17 4G|سامسونگ A17 4G,True,official_2026_and_iran_market
+samsung-galaxy-a17-5g,Samsung,Galaxy A17 5G,Galaxy A,smartphone,new,A17 5G|Samsung A17 5G|سامسونگ A17 5G|A17,True,official_2026_and_iran_market
+samsung-galaxy-a27-5g,Samsung,Galaxy A27 5G,Galaxy A,smartphone,new,A27 5G|Samsung A27 5G|سامسونگ A27 5G|A27,True,official_2026_and_iran_market
+samsung-galaxy-a37-5g,Samsung,Galaxy A37 5G,Galaxy A,smartphone,new,A37 5G|Samsung A37 5G|سامسونگ A37 5G|A37,True,official_2026_and_iran_market
+samsung-galaxy-a57-5g,Samsung,Galaxy A57 5G,Galaxy A,smartphone,new,A57 5G|Samsung A57 5G|سامسونگ A57 5G|A57,True,official_2026_and_iran_market
+samsung-galaxy-s25-fe,Samsung,Galaxy S25 FE,Galaxy S,smartphone,new,S25 FE|Samsung S25 FE|سامسونگ S25 FE,True,official_2026_and_iran_market
+samsung-galaxy-s26,Samsung,Galaxy S26,Galaxy S,smartphone,new,S26|Samsung S26|سامسونگ S26,True,official_2026_and_iran_market
+samsung-galaxy-s26-ultra,Samsung,Galaxy S26 Ultra,Galaxy S,smartphone,new,S26 Ultra|Samsung S26 Ultra|سامسونگ S26 Ultra,True,official_2026_and_iran_market
+samsung-galaxy-s26,Samsung,Galaxy S26+,Galaxy S,smartphone,new,S26+|Samsung S26+|سامسونگ S26+,True,official_2026_and_iran_market
+samsung-galaxy-z-flip7,Samsung,Galaxy Z Flip7,Galaxy Z Flip,smartphone,new,Z Flip7|Samsung Z Flip7|سامسونگ Z Flip7,True,official_2026_and_iran_market
+samsung-galaxy-z-fold7,Samsung,Galaxy Z Fold7,Galaxy Z Fold,smartphone,new,Z Fold7|Samsung Z Fold7|سامسونگ Z Fold7,True,official_2026_and_iran_market
+samsung-galaxy-a01,Samsung,Galaxy A01,Galaxy A,smartphone,core,A01|Samsung A01|سامسونگ A01,True,iran_market_and_common_repair
+samsung-galaxy-a01-core,Samsung,Galaxy A01 Core,Galaxy A,smartphone,core,A01 Core|Samsung A01 Core|سامسونگ A01 Core,True,iran_market_and_common_repair
+samsung-galaxy-a02,Samsung,Galaxy A02,Galaxy A,smartphone,core,A02|Samsung A02|سامسونگ A02,True,iran_market_and_common_repair
+samsung-galaxy-a02s,Samsung,Galaxy A02s,Galaxy A,smartphone,core,A02s|Samsung A02s|سامسونگ A02s,True,iran_market_and_common_repair
+samsung-galaxy-a03,Samsung,Galaxy A03,Galaxy A,smartphone,core,A03|Samsung A03|سامسونگ A03,True,iran_market_and_common_repair
+samsung-galaxy-a03-core,Samsung,Galaxy A03 Core,Galaxy A,smartphone,core,A03 Core|Samsung A03 Core|سامسونگ A03 Core,True,iran_market_and_common_repair
+samsung-galaxy-a03s,Samsung,Galaxy A03s,Galaxy A,smartphone,core,A03s|Samsung A03s|سامسونگ A03s,True,iran_market_and_common_repair
+samsung-galaxy-a04,Samsung,Galaxy A04,Galaxy A,smartphone,core,A04|Samsung A04|سامسونگ A04,True,iran_market_and_common_repair
+samsung-galaxy-a04e,Samsung,Galaxy A04e,Galaxy A,smartphone,core,A04e|Samsung A04e|سامسونگ A04e,True,iran_market_and_common_repair
+samsung-galaxy-a04s,Samsung,Galaxy A04s,Galaxy A,smartphone,core,A04s|Samsung A04s|سامسونگ A04s,True,iran_market_and_common_repair
+samsung-galaxy-a05,Samsung,Galaxy A05,Galaxy A,smartphone,core,A05|Samsung A05|سامسونگ A05,True,iran_market_and_common_repair
+samsung-galaxy-a05s,Samsung,Galaxy A05s,Galaxy A,smartphone,core,A05s|Samsung A05s|سامسونگ A05s,True,iran_market_and_common_repair
+samsung-galaxy-a06,Samsung,Galaxy A06,Galaxy A,smartphone,core,A06|Samsung A06|سامسونگ A06,True,iran_market_and_common_repair
+samsung-galaxy-a07-4g,Samsung,Galaxy A07 4G,Galaxy A,smartphone,core,A07 4G|Samsung A07 4G|سامسونگ A07 4G,True,iran_market_and_common_repair
+samsung-galaxy-a10,Samsung,Galaxy A10,Galaxy A,smartphone,core,A10|Samsung A10|سامسونگ A10,True,iran_market_and_common_repair
+samsung-galaxy-a10s,Samsung,Galaxy A10s,Galaxy A,smartphone,core,A10s|Samsung A10s|سامسونگ A10s,True,iran_market_and_common_repair
+samsung-galaxy-a11,Samsung,Galaxy A11,Galaxy A,smartphone,core,A11|Samsung A11|سامسونگ A11,True,iran_market_and_common_repair
+samsung-galaxy-a12,Samsung,Galaxy A12,Galaxy A,smartphone,core,A12|Samsung A12|سامسونگ A12,True,iran_market_and_common_repair
+samsung-galaxy-a13,Samsung,Galaxy A13,Galaxy A,smartphone,core,A13|Samsung A13|سامسونگ A13,True,iran_market_and_common_repair
+samsung-galaxy-a13-5g,Samsung,Galaxy A13 5G,Galaxy A,smartphone,core,A13 5G|Samsung A13 5G|سامسونگ A13 5G|A13,True,iran_market_and_common_repair
+samsung-galaxy-a14-4g,Samsung,Galaxy A14 4G,Galaxy A,smartphone,core,A14 4G|Samsung A14 4G|سامسونگ A14 4G,True,iran_market_and_common_repair
+samsung-galaxy-a14-5g,Samsung,Galaxy A14 5G,Galaxy A,smartphone,core,A14 5G|Samsung A14 5G|سامسونگ A14 5G|A14,True,iran_market_and_common_repair
+samsung-galaxy-a15-4g,Samsung,Galaxy A15 4G,Galaxy A,smartphone,core,A15 4G|Samsung A15 4G|سامسونگ A15 4G,True,iran_market_and_common_repair
+samsung-galaxy-a15-5g,Samsung,Galaxy A15 5G,Galaxy A,smartphone,core,A15 5G|Samsung A15 5G|سامسونگ A15 5G|A15,True,iran_market_and_common_repair
+samsung-galaxy-a16-4g,Samsung,Galaxy A16 4G,Galaxy A,smartphone,core,A16 4G|Samsung A16 4G|سامسونگ A16 4G,True,iran_market_and_common_repair
+samsung-galaxy-a16-5g,Samsung,Galaxy A16 5G,Galaxy A,smartphone,core,A16 5G|Samsung A16 5G|سامسونگ A16 5G|A16,True,iran_market_and_common_repair
+samsung-galaxy-a20,Samsung,Galaxy A20,Galaxy A,smartphone,core,A20|Samsung A20|سامسونگ A20,True,iran_market_and_common_repair
+samsung-galaxy-a20s,Samsung,Galaxy A20s,Galaxy A,smartphone,core,A20s|Samsung A20s|سامسونگ A20s,True,iran_market_and_common_repair
+samsung-galaxy-a21s,Samsung,Galaxy A21s,Galaxy A,smartphone,core,A21s|Samsung A21s|سامسونگ A21s,True,iran_market_and_common_repair
+samsung-galaxy-a22,Samsung,Galaxy A22,Galaxy A,smartphone,core,A22|Samsung A22|سامسونگ A22,True,iran_market_and_common_repair
+samsung-galaxy-a22-5g,Samsung,Galaxy A22 5G,Galaxy A,smartphone,core,A22 5G|Samsung A22 5G|سامسونگ A22 5G|A22,True,iran_market_and_common_repair
+samsung-galaxy-a23,Samsung,Galaxy A23,Galaxy A,smartphone,core,A23|Samsung A23|سامسونگ A23,True,iran_market_and_common_repair
+samsung-galaxy-a23-5g,Samsung,Galaxy A23 5G,Galaxy A,smartphone,core,A23 5G|Samsung A23 5G|سامسونگ A23 5G|A23,True,iran_market_and_common_repair
+samsung-galaxy-a24,Samsung,Galaxy A24,Galaxy A,smartphone,core,A24|Samsung A24|سامسونگ A24,True,iran_market_and_common_repair
+samsung-galaxy-a25-5g,Samsung,Galaxy A25 5G,Galaxy A,smartphone,core,A25 5G|Samsung A25 5G|سامسونگ A25 5G|A25,True,iran_market_and_common_repair
+samsung-galaxy-a26-5g,Samsung,Galaxy A26 5G,Galaxy A,smartphone,core,A26 5G|Samsung A26 5G|سامسونگ A26 5G|A26,True,iran_market_and_common_repair
+samsung-galaxy-a30,Samsung,Galaxy A30,Galaxy A,smartphone,core,A30|Samsung A30|سامسونگ A30,True,iran_market_and_common_repair
+samsung-galaxy-a30s,Samsung,Galaxy A30s,Galaxy A,smartphone,core,A30s|Samsung A30s|سامسونگ A30s,True,iran_market_and_common_repair
+samsung-galaxy-a31,Samsung,Galaxy A31,Galaxy A,smartphone,core,A31|Samsung A31|سامسونگ A31,True,iran_market_and_common_repair
+samsung-galaxy-a32,Samsung,Galaxy A32,Galaxy A,smartphone,core,A32|Samsung A32|سامسونگ A32,True,iran_market_and_common_repair
+samsung-galaxy-a32-5g,Samsung,Galaxy A32 5G,Galaxy A,smartphone,core,A32 5G|Samsung A32 5G|سامسونگ A32 5G|A32,True,iran_market_and_common_repair
+samsung-galaxy-a33-5g,Samsung,Galaxy A33 5G,Galaxy A,smartphone,core,A33 5G|Samsung A33 5G|سامسونگ A33 5G|A33,True,iran_market_and_common_repair
+samsung-galaxy-a34-5g,Samsung,Galaxy A34 5G,Galaxy A,smartphone,core,A34 5G|Samsung A34 5G|سامسونگ A34 5G|A34,True,iran_market_and_common_repair
+samsung-galaxy-a35-5g,Samsung,Galaxy A35 5G,Galaxy A,smartphone,core,A35 5G|Samsung A35 5G|سامسونگ A35 5G|A35,True,iran_market_and_common_repair
+samsung-galaxy-a36-5g,Samsung,Galaxy A36 5G,Galaxy A,smartphone,core,A36 5G|Samsung A36 5G|سامسونگ A36 5G|A36,True,iran_market_and_common_repair
+samsung-galaxy-a51,Samsung,Galaxy A51,Galaxy A,smartphone,core,A51|Samsung A51|سامسونگ A51,True,iran_market_and_common_repair
+samsung-galaxy-a52,Samsung,Galaxy A52,Galaxy A,smartphone,core,A52|Samsung A52|سامسونگ A52,True,iran_market_and_common_repair
+samsung-galaxy-a52-5g,Samsung,Galaxy A52 5G,Galaxy A,smartphone,core,A52 5G|Samsung A52 5G|سامسونگ A52 5G|A52,True,iran_market_and_common_repair
+samsung-galaxy-a52s-5g,Samsung,Galaxy A52s 5G,Galaxy A,smartphone,core,A52s 5G|Samsung A52s 5G|سامسونگ A52s 5G|A52s,True,iran_market_and_common_repair
+samsung-galaxy-a53-5g,Samsung,Galaxy A53 5G,Galaxy A,smartphone,core,A53 5G|Samsung A53 5G|سامسونگ A53 5G|A53,True,iran_market_and_common_repair
+samsung-galaxy-a54-5g,Samsung,Galaxy A54 5G,Galaxy A,smartphone,core,A54 5G|Samsung A54 5G|سامسونگ A54 5G|A54,True,iran_market_and_common_repair
+samsung-galaxy-a55-5g,Samsung,Galaxy A55 5G,Galaxy A,smartphone,core,A55 5G|Samsung A55 5G|سامسونگ A55 5G|A55,True,iran_market_and_common_repair
+samsung-galaxy-a56-5g,Samsung,Galaxy A56 5G,Galaxy A,smartphone,core,A56 5G|Samsung A56 5G|سامسونگ A56 5G|A56,True,iran_market_and_common_repair
+samsung-galaxy-fold,Samsung,Galaxy Fold,Galaxy F,smartphone,core,Fold|Samsung Fold|سامسونگ Fold,True,iran_market_and_common_repair
+samsung-galaxy-m10,Samsung,Galaxy M10,Galaxy M,smartphone,core,M10|Samsung M10|سامسونگ M10,True,iran_market_and_common_repair
+samsung-galaxy-m11,Samsung,Galaxy M11,Galaxy M,smartphone,core,M11|Samsung M11|سامسونگ M11,True,iran_market_and_common_repair
+samsung-galaxy-m12,Samsung,Galaxy M12,Galaxy M,smartphone,core,M12|Samsung M12|سامسونگ M12,True,iran_market_and_common_repair
+samsung-galaxy-m13,Samsung,Galaxy M13,Galaxy M,smartphone,core,M13|Samsung M13|سامسونگ M13,True,iran_market_and_common_repair
+samsung-galaxy-m14-5g,Samsung,Galaxy M14 5G,Galaxy M,smartphone,core,M14 5G|Samsung M14 5G|سامسونگ M14 5G|M14,True,iran_market_and_common_repair
+samsung-galaxy-m15-5g,Samsung,Galaxy M15 5G,Galaxy M,smartphone,core,M15 5G|Samsung M15 5G|سامسونگ M15 5G|M15,True,iran_market_and_common_repair
+samsung-galaxy-m20,Samsung,Galaxy M20,Galaxy M,smartphone,core,M20|Samsung M20|سامسونگ M20,True,iran_market_and_common_repair
+samsung-galaxy-m21,Samsung,Galaxy M21,Galaxy M,smartphone,core,M21|Samsung M21|سامسونگ M21,True,iran_market_and_common_repair
+samsung-galaxy-m22,Samsung,Galaxy M22,Galaxy M,smartphone,core,M22|Samsung M22|سامسونگ M22,True,iran_market_and_common_repair
+samsung-galaxy-m23-5g,Samsung,Galaxy M23 5G,Galaxy M,smartphone,core,M23 5G|Samsung M23 5G|سامسونگ M23 5G|M23,True,iran_market_and_common_repair
+samsung-galaxy-m30,Samsung,Galaxy M30,Galaxy M,smartphone,core,M30|Samsung M30|سامسونگ M30,True,iran_market_and_common_repair
+samsung-galaxy-m30s,Samsung,Galaxy M30s,Galaxy M,smartphone,core,M30s|Samsung M30s|سامسونگ M30s,True,iran_market_and_common_repair
+samsung-galaxy-m31,Samsung,Galaxy M31,Galaxy M,smartphone,core,M31|Samsung M31|سامسونگ M31,True,iran_market_and_common_repair
+samsung-galaxy-m32,Samsung,Galaxy M32,Galaxy M,smartphone,core,M32|Samsung M32|سامسونگ M32,True,iran_market_and_common_repair
+samsung-galaxy-m33-5g,Samsung,Galaxy M33 5G,Galaxy M,smartphone,core,M33 5G|Samsung M33 5G|سامسونگ M33 5G|M33,True,iran_market_and_common_repair
+samsung-galaxy-m34-5g,Samsung,Galaxy M34 5G,Galaxy M,smartphone,core,M34 5G|Samsung M34 5G|سامسونگ M34 5G|M34,True,iran_market_and_common_repair
+samsung-galaxy-m35-5g,Samsung,Galaxy M35 5G,Galaxy M,smartphone,core,M35 5G|Samsung M35 5G|سامسونگ M35 5G|M35,True,iran_market_and_common_repair
+samsung-galaxy-m51,Samsung,Galaxy M51,Galaxy M,smartphone,core,M51|Samsung M51|سامسونگ M51,True,iran_market_and_common_repair
+samsung-galaxy-m52-5g,Samsung,Galaxy M52 5G,Galaxy M,smartphone,core,M52 5G|Samsung M52 5G|سامسونگ M52 5G|M52,True,iran_market_and_common_repair
+samsung-galaxy-m53-5g,Samsung,Galaxy M53 5G,Galaxy M,smartphone,core,M53 5G|Samsung M53 5G|سامسونگ M53 5G|M53,True,iran_market_and_common_repair
+samsung-galaxy-m54-5g,Samsung,Galaxy M54 5G,Galaxy M,smartphone,core,M54 5G|Samsung M54 5G|سامسونگ M54 5G|M54,True,iran_market_and_common_repair
+samsung-galaxy-m55-5g,Samsung,Galaxy M55 5G,Galaxy M,smartphone,core,M55 5G|Samsung M55 5G|سامسونگ M55 5G|M55,True,iran_market_and_common_repair
+samsung-galaxy-s20,Samsung,Galaxy S20,Galaxy S,smartphone,core,S20|Samsung S20|سامسونگ S20,True,iran_market_and_common_repair
+samsung-galaxy-s20-fe,Samsung,Galaxy S20 FE,Galaxy S,smartphone,core,S20 FE|Samsung S20 FE|سامسونگ S20 FE,True,iran_market_and_common_repair
+samsung-galaxy-s20-fe-5g,Samsung,Galaxy S20 FE 5G,Galaxy S,smartphone,core,S20 FE 5G|Samsung S20 FE 5G|سامسونگ S20 FE 5G|S20 FE,True,iran_market_and_common_repair
+samsung-galaxy-s20-ultra,Samsung,Galaxy S20 Ultra,Galaxy S,smartphone,core,S20 Ultra|Samsung S20 Ultra|سامسونگ S20 Ultra,True,iran_market_and_common_repair
+samsung-galaxy-s20,Samsung,Galaxy S20+,Galaxy S,smartphone,core,S20+|Samsung S20+|سامسونگ S20+,True,iran_market_and_common_repair
+samsung-galaxy-s21,Samsung,Galaxy S21,Galaxy S,smartphone,core,S21|Samsung S21|سامسونگ S21,True,iran_market_and_common_repair
+samsung-galaxy-s21-fe-5g,Samsung,Galaxy S21 FE 5G,Galaxy S,smartphone,core,S21 FE 5G|Samsung S21 FE 5G|سامسونگ S21 FE 5G|S21 FE,True,iran_market_and_common_repair
+samsung-galaxy-s21-ultra,Samsung,Galaxy S21 Ultra,Galaxy S,smartphone,core,S21 Ultra|Samsung S21 Ultra|سامسونگ S21 Ultra,True,iran_market_and_common_repair
+samsung-galaxy-s21,Samsung,Galaxy S21+,Galaxy S,smartphone,core,S21+|Samsung S21+|سامسونگ S21+,True,iran_market_and_common_repair
+samsung-galaxy-s22,Samsung,Galaxy S22,Galaxy S,smartphone,core,S22|Samsung S22|سامسونگ S22,True,iran_market_and_common_repair
+samsung-galaxy-s22-ultra,Samsung,Galaxy S22 Ultra,Galaxy S,smartphone,core,S22 Ultra|Samsung S22 Ultra|سامسونگ S22 Ultra,True,iran_market_and_common_repair
+samsung-galaxy-s22,Samsung,Galaxy S22+,Galaxy S,smartphone,core,S22+|Samsung S22+|سامسونگ S22+,True,iran_market_and_common_repair
+samsung-galaxy-s23,Samsung,Galaxy S23,Galaxy S,smartphone,core,S23|Samsung S23|سامسونگ S23,True,iran_market_and_common_repair
+samsung-galaxy-s23-fe,Samsung,Galaxy S23 FE,Galaxy S,smartphone,core,S23 FE|Samsung S23 FE|سامسونگ S23 FE,True,iran_market_and_common_repair
+samsung-galaxy-s23-ultra,Samsung,Galaxy S23 Ultra,Galaxy S,smartphone,core,S23 Ultra|Samsung S23 Ultra|سامسونگ S23 Ultra,True,iran_market_and_common_repair
+samsung-galaxy-s23,Samsung,Galaxy S23+,Galaxy S,smartphone,core,S23+|Samsung S23+|سامسونگ S23+,True,iran_market_and_common_repair
+samsung-galaxy-s24,Samsung,Galaxy S24,Galaxy S,smartphone,core,S24|Samsung S24|سامسونگ S24,True,iran_market_and_common_repair
+samsung-galaxy-s24-fe,Samsung,Galaxy S24 FE,Galaxy S,smartphone,core,S24 FE|Samsung S24 FE|سامسونگ S24 FE,True,iran_market_and_common_repair
+samsung-galaxy-s24-ultra,Samsung,Galaxy S24 Ultra,Galaxy S,smartphone,core,S24 Ultra|Samsung S24 Ultra|سامسونگ S24 Ultra,True,iran_market_and_common_repair
+samsung-galaxy-s24,Samsung,Galaxy S24+,Galaxy S,smartphone,core,S24+|Samsung S24+|سامسونگ S24+,True,iran_market_and_common_repair
+samsung-galaxy-s25,Samsung,Galaxy S25,Galaxy S,smartphone,core,S25|Samsung S25|سامسونگ S25,True,iran_market_and_common_repair
+samsung-galaxy-s25-edge,Samsung,Galaxy S25 Edge,Galaxy S,smartphone,core,S25 Edge|Samsung S25 Edge|سامسونگ S25 Edge,True,iran_market_and_common_repair
+samsung-galaxy-s25-ultra,Samsung,Galaxy S25 Ultra,Galaxy S,smartphone,core,S25 Ultra|Samsung S25 Ultra|سامسونگ S25 Ultra,True,iran_market_and_common_repair
+samsung-galaxy-s25,Samsung,Galaxy S25+,Galaxy S,smartphone,core,S25+|Samsung S25+|سامسونگ S25+,True,iran_market_and_common_repair
+samsung-galaxy-z-flip,Samsung,Galaxy Z Flip,Galaxy Z Flip,smartphone,core,Z Flip|Samsung Z Flip|سامسونگ Z Flip,True,iran_market_and_common_repair
+samsung-galaxy-z-flip-5g,Samsung,Galaxy Z Flip 5G,Galaxy Z Flip,smartphone,core,Z Flip 5G|Samsung Z Flip 5G|سامسونگ Z Flip 5G|Z Flip,True,iran_market_and_common_repair
+samsung-galaxy-z-flip3-5g,Samsung,Galaxy Z Flip3 5G,Galaxy Z Flip,smartphone,core,Z Flip3 5G|Samsung Z Flip3 5G|سامسونگ Z Flip3 5G|Z Flip3,True,iran_market_and_common_repair
+samsung-galaxy-z-flip4,Samsung,Galaxy Z Flip4,Galaxy Z Flip,smartphone,core,Z Flip4|Samsung Z Flip4|سامسونگ Z Flip4,True,iran_market_and_common_repair
+samsung-galaxy-z-flip5,Samsung,Galaxy Z Flip5,Galaxy Z Flip,smartphone,core,Z Flip5|Samsung Z Flip5|سامسونگ Z Flip5,True,iran_market_and_common_repair
+samsung-galaxy-z-flip6,Samsung,Galaxy Z Flip6,Galaxy Z Flip,smartphone,core,Z Flip6|Samsung Z Flip6|سامسونگ Z Flip6,True,iran_market_and_common_repair
+samsung-galaxy-z-fold2-5g,Samsung,Galaxy Z Fold2 5G,Galaxy Z Fold,smartphone,core,Z Fold2 5G|Samsung Z Fold2 5G|سامسونگ Z Fold2 5G|Z Fold2,True,iran_market_and_common_repair
+samsung-galaxy-z-fold3-5g,Samsung,Galaxy Z Fold3 5G,Galaxy Z Fold,smartphone,core,Z Fold3 5G|Samsung Z Fold3 5G|سامسونگ Z Fold3 5G|Z Fold3,True,iran_market_and_common_repair
+samsung-galaxy-z-fold4,Samsung,Galaxy Z Fold4,Galaxy Z Fold,smartphone,core,Z Fold4|Samsung Z Fold4|سامسونگ Z Fold4,True,iran_market_and_common_repair
+samsung-galaxy-z-fold5,Samsung,Galaxy Z Fold5,Galaxy Z Fold,smartphone,core,Z Fold5|Samsung Z Fold5|سامسونگ Z Fold5,True,iran_market_and_common_repair
+samsung-galaxy-z-fold6,Samsung,Galaxy Z Fold6,Galaxy Z Fold,smartphone,core,Z Fold6|Samsung Z Fold6|سامسونگ Z Fold6,True,iran_market_and_common_repair
+samsung-galaxy-c5-pro,Samsung,Galaxy C5 Pro,Galaxy,smartphone,legacy,C5 Pro|Samsung C5 Pro|سامسونگ C5 Pro,True,curated_repair
+samsung-galaxy-c7-pro,Samsung,Galaxy C7 Pro,Galaxy,smartphone,legacy,C7 Pro|Samsung C7 Pro|سامسونگ C7 Pro,True,curated_repair
+samsung-galaxy-core-prime,Samsung,Galaxy Core Prime,Galaxy,smartphone,legacy,Core Prime|Samsung Core Prime|سامسونگ Core Prime,True,curated_repair
+samsung-galaxy-grand-prime,Samsung,Galaxy Grand Prime,Galaxy,smartphone,legacy,Grand Prime|Samsung Grand Prime|سامسونگ Grand Prime,True,curated_repair
+samsung-galaxy-on7,Samsung,Galaxy On7,Galaxy,smartphone,legacy,On7|Samsung On7|سامسونگ On7,True,curated_repair
+samsung-galaxy-a3-2016,Samsung,Galaxy A3 (2016),Galaxy A,smartphone,legacy,A3 (2016)|Samsung A3 (2016)|سامسونگ A3 (2016),True,curated_repair
+samsung-galaxy-a3-2017,Samsung,Galaxy A3 (2017),Galaxy A,smartphone,legacy,A3 (2017)|Samsung A3 (2017)|سامسونگ A3 (2017),True,curated_repair
+samsung-galaxy-a40,Samsung,Galaxy A40,Galaxy A,smartphone,legacy,A40|Samsung A40|سامسونگ A40,True,curated_repair
+samsung-galaxy-a41,Samsung,Galaxy A41,Galaxy A,smartphone,legacy,A41|Samsung A41|سامسونگ A41,True,curated_repair
+samsung-galaxy-a42-5g,Samsung,Galaxy A42 5G,Galaxy A,smartphone,legacy,A42 5G|Samsung A42 5G|سامسونگ A42 5G|A42,True,curated_repair
+samsung-galaxy-a5-2016,Samsung,Galaxy A5 (2016),Galaxy A,smartphone,legacy,A5 (2016)|Samsung A5 (2016)|سامسونگ A5 (2016),True,curated_repair
+samsung-galaxy-a5-2017,Samsung,Galaxy A5 (2017),Galaxy A,smartphone,legacy,A5 (2017)|Samsung A5 (2017)|سامسونگ A5 (2017),True,curated_repair
+samsung-galaxy-a50,Samsung,Galaxy A50,Galaxy A,smartphone,legacy,A50|Samsung A50|سامسونگ A50,True,curated_repair
+samsung-galaxy-a50s,Samsung,Galaxy A50s,Galaxy A,smartphone,legacy,A50s|Samsung A50s|سامسونگ A50s,True,curated_repair
+samsung-galaxy-a7-2016,Samsung,Galaxy A7 (2016),Galaxy A,smartphone,legacy,A7 (2016)|Samsung A7 (2016)|سامسونگ A7 (2016),True,curated_repair
+samsung-galaxy-a7-2017,Samsung,Galaxy A7 (2017),Galaxy A,smartphone,legacy,A7 (2017)|Samsung A7 (2017)|سامسونگ A7 (2017),True,curated_repair
+samsung-galaxy-a7-2018,Samsung,Galaxy A7 (2018),Galaxy A,smartphone,legacy,A7 (2018)|Samsung A7 (2018)|سامسونگ A7 (2018),True,curated_repair
+samsung-galaxy-a70,Samsung,Galaxy A70,Galaxy A,smartphone,legacy,A70|Samsung A70|سامسونگ A70,True,curated_repair
+samsung-galaxy-a70s,Samsung,Galaxy A70s,Galaxy A,smartphone,legacy,A70s|Samsung A70s|سامسونگ A70s,True,curated_repair
+samsung-galaxy-a71,Samsung,Galaxy A71,Galaxy A,smartphone,legacy,A71|Samsung A71|سامسونگ A71,True,curated_repair
+samsung-galaxy-a72,Samsung,Galaxy A72,Galaxy A,smartphone,legacy,A72|Samsung A72|سامسونگ A72,True,curated_repair
+samsung-galaxy-a73-5g,Samsung,Galaxy A73 5G,Galaxy A,smartphone,legacy,A73 5G|Samsung A73 5G|سامسونگ A73 5G|A73,True,curated_repair
+samsung-galaxy-a8-2018,Samsung,Galaxy A8 (2018),Galaxy A,smartphone,legacy,A8 (2018)|Samsung A8 (2018)|سامسونگ A8 (2018),True,curated_repair
+samsung-galaxy-a8-2018,Samsung,Galaxy A8+ (2018),Galaxy A,smartphone,legacy,A8+ (2018)|Samsung A8+ (2018)|سامسونگ A8+ (2018),True,curated_repair
+samsung-galaxy-a80,Samsung,Galaxy A80,Galaxy A,smartphone,legacy,A80|Samsung A80|سامسونگ A80,True,curated_repair
+samsung-galaxy-a9-2018,Samsung,Galaxy A9 (2018),Galaxy A,smartphone,legacy,A9 (2018)|Samsung A9 (2018)|سامسونگ A9 (2018),True,curated_repair
+samsung-galaxy-f12,Samsung,Galaxy F12,Galaxy F,smartphone,legacy,F12|Samsung F12|سامسونگ F12,True,curated_repair
+samsung-galaxy-f13,Samsung,Galaxy F13,Galaxy F,smartphone,legacy,F13|Samsung F13|سامسونگ F13,True,curated_repair
+samsung-galaxy-f14-5g,Samsung,Galaxy F14 5G,Galaxy F,smartphone,legacy,F14 5G|Samsung F14 5G|سامسونگ F14 5G|F14,True,curated_repair
+samsung-galaxy-f15-5g,Samsung,Galaxy F15 5G,Galaxy F,smartphone,legacy,F15 5G|Samsung F15 5G|سامسونگ F15 5G|F15,True,curated_repair
+samsung-galaxy-f22,Samsung,Galaxy F22,Galaxy F,smartphone,legacy,F22|Samsung F22|سامسونگ F22,True,curated_repair
+samsung-galaxy-f23-5g,Samsung,Galaxy F23 5G,Galaxy F,smartphone,legacy,F23 5G|Samsung F23 5G|سامسونگ F23 5G|F23,True,curated_repair
+samsung-galaxy-f34-5g,Samsung,Galaxy F34 5G,Galaxy F,smartphone,legacy,F34 5G|Samsung F34 5G|سامسونگ F34 5G|F34,True,curated_repair
+samsung-galaxy-f54-5g,Samsung,Galaxy F54 5G,Galaxy F,smartphone,legacy,F54 5G|Samsung F54 5G|سامسونگ F54 5G|F54,True,curated_repair
+samsung-galaxy-f55-5g,Samsung,Galaxy F55 5G,Galaxy F,smartphone,legacy,F55 5G|Samsung F55 5G|سامسونگ F55 5G|F55,True,curated_repair
+samsung-galaxy-j2,Samsung,Galaxy J2,Galaxy J,smartphone,legacy,J2|Samsung J2|سامسونگ J2,True,curated_repair
+samsung-galaxy-j2-prime,Samsung,Galaxy J2 Prime,Galaxy J,smartphone,legacy,J2 Prime|Samsung J2 Prime|سامسونگ J2 Prime,True,curated_repair
+samsung-galaxy-j2-pro,Samsung,Galaxy J2 Pro,Galaxy J,smartphone,legacy,J2 Pro|Samsung J2 Pro|سامسونگ J2 Pro,True,curated_repair
+samsung-galaxy-j3,Samsung,Galaxy J3,Galaxy J,smartphone,legacy,J3|Samsung J3|سامسونگ J3,True,curated_repair
+samsung-galaxy-j4,Samsung,Galaxy J4,Galaxy J,smartphone,legacy,J4|Samsung J4|سامسونگ J4,True,curated_repair
+samsung-galaxy-j4,Samsung,Galaxy J4+,Galaxy J,smartphone,legacy,J4+|Samsung J4+|سامسونگ J4+,True,curated_repair
+samsung-galaxy-j5,Samsung,Galaxy J5,Galaxy J,smartphone,legacy,J5|Samsung J5|سامسونگ J5,True,curated_repair
+samsung-galaxy-j5-prime,Samsung,Galaxy J5 Prime,Galaxy J,smartphone,legacy,J5 Prime|Samsung J5 Prime|سامسونگ J5 Prime,True,curated_repair
+samsung-galaxy-j6,Samsung,Galaxy J6,Galaxy J,smartphone,legacy,J6|Samsung J6|سامسونگ J6,True,curated_repair
+samsung-galaxy-j6,Samsung,Galaxy J6+,Galaxy J,smartphone,legacy,J6+|Samsung J6+|سامسونگ J6+,True,curated_repair
+samsung-galaxy-j7,Samsung,Galaxy J7,Galaxy J,smartphone,legacy,J7|Samsung J7|سامسونگ J7,True,curated_repair
+samsung-galaxy-j7-prime,Samsung,Galaxy J7 Prime,Galaxy J,smartphone,legacy,J7 Prime|Samsung J7 Prime|سامسونگ J7 Prime,True,curated_repair
+samsung-galaxy-j7-pro,Samsung,Galaxy J7 Pro,Galaxy J,smartphone,legacy,J7 Pro|Samsung J7 Pro|سامسونگ J7 Pro,True,curated_repair
+samsung-galaxy-j8,Samsung,Galaxy J8,Galaxy J,smartphone,legacy,J8|Samsung J8|سامسونگ J8,True,curated_repair
+samsung-galaxy-note-fe,Samsung,Galaxy Note FE,Galaxy Note,smartphone,legacy,Note FE|Samsung Note FE|سامسونگ Note FE,True,curated_repair
+samsung-galaxy-note10,Samsung,Galaxy Note10,Galaxy Note,smartphone,legacy,Note10|Samsung Note10|سامسونگ Note10,True,curated_repair
+samsung-galaxy-note10,Samsung,Galaxy Note10+,Galaxy Note,smartphone,legacy,Note10+|Samsung Note10+|سامسونگ Note10+,True,curated_repair
+samsung-galaxy-note20,Samsung,Galaxy Note20,Galaxy Note,smartphone,legacy,Note20|Samsung Note20|سامسونگ Note20,True,curated_repair
+samsung-galaxy-note20-ultra,Samsung,Galaxy Note20 Ultra,Galaxy Note,smartphone,legacy,Note20 Ultra|Samsung Note20 Ultra|سامسونگ Note20 Ultra,True,curated_repair
+samsung-galaxy-note5,Samsung,Galaxy Note5,Galaxy Note,smartphone,legacy,Note5|Samsung Note5|سامسونگ Note5,True,curated_repair
+samsung-galaxy-note8,Samsung,Galaxy Note8,Galaxy Note,smartphone,legacy,Note8|Samsung Note8|سامسونگ Note8,True,curated_repair
+samsung-galaxy-note9,Samsung,Galaxy Note9,Galaxy Note,smartphone,legacy,Note9|Samsung Note9|سامسونگ Note9,True,curated_repair
+samsung-galaxy-s10,Samsung,Galaxy S10,Galaxy S,smartphone,legacy,S10|Samsung S10|سامسونگ S10,True,curated_repair
+samsung-galaxy-s10-5g,Samsung,Galaxy S10 5G,Galaxy S,smartphone,legacy,S10 5G|Samsung S10 5G|سامسونگ S10 5G|S10,True,curated_repair
+samsung-galaxy-s10,Samsung,Galaxy S10+,Galaxy S,smartphone,legacy,S10+|Samsung S10+|سامسونگ S10+,True,curated_repair
+samsung-galaxy-s10e,Samsung,Galaxy S10e,Galaxy S,smartphone,legacy,S10e|Samsung S10e|سامسونگ S10e,True,curated_repair
+samsung-galaxy-s6,Samsung,Galaxy S6,Galaxy S,smartphone,legacy,S6|Samsung S6|سامسونگ S6,True,curated_repair
+samsung-galaxy-s6-edge,Samsung,Galaxy S6 edge,Galaxy S,smartphone,legacy,S6 edge|Samsung S6 edge|سامسونگ S6 edge,True,curated_repair
+samsung-galaxy-s7,Samsung,Galaxy S7,Galaxy S,smartphone,legacy,S7|Samsung S7|سامسونگ S7,True,curated_repair
+samsung-galaxy-s7-edge,Samsung,Galaxy S7 edge,Galaxy S,smartphone,legacy,S7 edge|Samsung S7 edge|سامسونگ S7 edge,True,curated_repair
+samsung-galaxy-s8,Samsung,Galaxy S8,Galaxy S,smartphone,legacy,S8|Samsung S8|سامسونگ S8,True,curated_repair
+samsung-galaxy-s8,Samsung,Galaxy S8+,Galaxy S,smartphone,legacy,S8+|Samsung S8+|سامسونگ S8+,True,curated_repair
+samsung-galaxy-s9,Samsung,Galaxy S9,Galaxy S,smartphone,legacy,S9|Samsung S9|سامسونگ S9,True,curated_repair
+samsung-galaxy-s9,Samsung,Galaxy S9+,Galaxy S,smartphone,legacy,S9+|Samsung S9+|سامسونگ S9+,True,curated_repair
+sony-xperia-1-iv,Sony,Xperia 1 IV,Xperia,smartphone,legacy,Xperia 1 IV|Sony Xperia 1 IV|سونی Xperia 1 IV,True,curated_repair
+sony-xperia-1-v,Sony,Xperia 1 V,Xperia,smartphone,legacy,Xperia 1 V|Sony Xperia 1 V|سونی Xperia 1 V,True,curated_repair
+sony-xperia-10-iv,Sony,Xperia 10 IV,Xperia,smartphone,legacy,Xperia 10 IV|Sony Xperia 10 IV|سونی Xperia 10 IV,True,curated_repair
+sony-xperia-5-iv,Sony,Xperia 5 IV,Xperia,smartphone,legacy,Xperia 5 IV|Sony Xperia 5 IV|سونی Xperia 5 IV,True,curated_repair
+sony-xperia-x,Sony,Xperia X,Xperia,smartphone,legacy,Xperia X|Sony Xperia X|سونی Xperia X,True,curated_repair
+sony-xperia-xa1,Sony,Xperia XA1,Xperia,smartphone,legacy,Xperia XA1|Sony Xperia XA1|سونی Xperia XA1,True,curated_repair
+sony-xperia-xa2,Sony,Xperia XA2,Xperia,smartphone,legacy,Xperia XA2|Sony Xperia XA2|سونی Xperia XA2,True,curated_repair
+sony-xperia-xz-premium,Sony,Xperia XZ Premium,Xperia,smartphone,legacy,Xperia XZ Premium|Sony Xperia XZ Premium|سونی Xperia XZ Premium,True,curated_repair
+sony-xperia-xz1,Sony,Xperia XZ1,Xperia,smartphone,legacy,Xperia XZ1|Sony Xperia XZ1|سونی Xperia XZ1,True,curated_repair
+sony-xperia-xz2,Sony,Xperia XZ2,Xperia,smartphone,legacy,Xperia XZ2|Sony Xperia XZ2|سونی Xperia XZ2,True,curated_repair
+sony-xperia-xz3,Sony,Xperia XZ3,Xperia,smartphone,legacy,Xperia XZ3|Sony Xperia XZ3|سونی Xperia XZ3,True,curated_repair
+sony-xperia-z3,Sony,Xperia Z3,Xperia,smartphone,legacy,Xperia Z3|Sony Xperia Z3|سونی Xperia Z3,True,curated_repair
+sony-xperia-z5,Sony,Xperia Z5,Xperia,smartphone,legacy,Xperia Z5|Sony Xperia Z5|سونی Xperia Z5,True,curated_repair
+tecno-camon-16,Tecno,Camon 16,Camon,smartphone,extended,Camon 16|Tecno Camon 16|تکنو Camon 16,True,common_repair
+tecno-camon-17,Tecno,Camon 17,Camon,smartphone,extended,Camon 17|Tecno Camon 17|تکنو Camon 17,True,common_repair
+tecno-camon-18,Tecno,Camon 18,Camon,smartphone,extended,Camon 18|Tecno Camon 18|تکنو Camon 18,True,common_repair
+tecno-camon-19,Tecno,Camon 19,Camon,smartphone,extended,Camon 19|Tecno Camon 19|تکنو Camon 19,True,common_repair
+tecno-camon-20,Tecno,Camon 20,Camon,smartphone,extended,Camon 20|Tecno Camon 20|تکنو Camon 20,True,common_repair
+tecno-camon-30,Tecno,Camon 30,Camon,smartphone,extended,Camon 30|Tecno Camon 30|تکنو Camon 30,True,common_repair
+tecno-camon-40,Tecno,Camon 40,Camon,smartphone,extended,Camon 40|Tecno Camon 40|تکنو Camon 40,True,common_repair
+tecno-phantom-v-flip,Tecno,Phantom V Flip,Phantom,smartphone,extended,Phantom V Flip|Tecno Phantom V Flip|تکنو Phantom V Flip,True,common_repair
+tecno-phantom-v-fold,Tecno,Phantom V Fold,Phantom,smartphone,extended,Phantom V Fold|Tecno Phantom V Fold|تکنو Phantom V Fold,True,common_repair
+tecno-phantom-x,Tecno,Phantom X,Phantom,smartphone,extended,Phantom X|Tecno Phantom X|تکنو Phantom X,True,common_repair
+tecno-phantom-x2,Tecno,Phantom X2,Phantom,smartphone,extended,Phantom X2|Tecno Phantom X2|تکنو Phantom X2,True,common_repair
+tecno-phantom-x2-pro,Tecno,Phantom X2 Pro,Phantom,smartphone,extended,Phantom X2 Pro|Tecno Phantom X2 Pro|تکنو Phantom X2 Pro,True,common_repair
+tecno-pova-2,Tecno,Pova 2,Pova,smartphone,extended,Pova 2|Tecno Pova 2|تکنو Pova 2,True,common_repair
+tecno-pova-3,Tecno,Pova 3,Pova,smartphone,extended,Pova 3|Tecno Pova 3|تکنو Pova 3,True,common_repair
+tecno-pova-4,Tecno,Pova 4,Pova,smartphone,extended,Pova 4|Tecno Pova 4|تکنو Pova 4,True,common_repair
+tecno-pova-5,Tecno,Pova 5,Pova,smartphone,extended,Pova 5|Tecno Pova 5|تکنو Pova 5,True,common_repair
+tecno-pova-6,Tecno,Pova 6,Pova,smartphone,extended,Pova 6|Tecno Pova 6|تکنو Pova 6,True,common_repair
+tecno-pova-7,Tecno,Pova 7,Pova,smartphone,extended,Pova 7|Tecno Pova 7|تکنو Pova 7,True,common_repair
+tecno-spark-10,Tecno,Spark 10,Spark,smartphone,extended,Spark 10|Tecno Spark 10|تکنو Spark 10,True,common_repair
+tecno-spark-20,Tecno,Spark 20,Spark,smartphone,extended,Spark 20|Tecno Spark 20|تکنو Spark 20,True,common_repair
+tecno-spark-30,Tecno,Spark 30,Spark,smartphone,extended,Spark 30|Tecno Spark 30|تکنو Spark 30,True,common_repair
+tecno-spark-40,Tecno,Spark 40,Spark,smartphone,extended,Spark 40|Tecno Spark 40|تکنو Spark 40,True,common_repair
+tecno-spark-7,Tecno,Spark 7,Spark,smartphone,extended,Spark 7|Tecno Spark 7|تکنو Spark 7,True,common_repair
+tecno-spark-8,Tecno,Spark 8,Spark,smartphone,extended,Spark 8|Tecno Spark 8|تکنو Spark 8,True,common_repair
+tecno-spark-9,Tecno,Spark 9,Spark,smartphone,extended,Spark 9|Tecno Spark 9|تکنو Spark 9,True,common_repair
+vivo-v20,vivo,V20,V20,smartphone,extended,V20|vivo V20|ویوو V20,True,common_repair
+vivo-v21,vivo,V21,V21,smartphone,extended,V21|vivo V21|ویوو V21,True,common_repair
+vivo-v23,vivo,V23,V23,smartphone,extended,V23|vivo V23|ویوو V23,True,common_repair
+vivo-v25,vivo,V25,V25,smartphone,extended,V25|vivo V25|ویوو V25,True,common_repair
+vivo-v27,vivo,V27,V27,smartphone,extended,V27|vivo V27|ویوو V27,True,common_repair
+vivo-v29,vivo,V29,V29,smartphone,extended,V29|vivo V29|ویوو V29,True,common_repair
+vivo-v30,vivo,V30,V30,smartphone,extended,V30|vivo V30|ویوو V30,True,common_repair
+vivo-v40,vivo,V40,V40,smartphone,extended,V40|vivo V40|ویوو V40,True,common_repair
+vivo-v50,vivo,V50,V50,smartphone,extended,V50|vivo V50|ویوو V50,True,common_repair
+vivo-v60,vivo,V60,V60,smartphone,extended,V60|vivo V60|ویوو V60,True,common_repair
+vivo-x100-pro,vivo,X100 Pro,X100,smartphone,extended,X100 Pro|vivo X100 Pro|ویوو X100 Pro,True,common_repair
+vivo-x200-pro,vivo,X200 Pro,X200,smartphone,extended,X200 Pro|vivo X200 Pro|ویوو X200 Pro,True,common_repair
+vivo-x60-pro,vivo,X60 Pro,X60,smartphone,extended,X60 Pro|vivo X60 Pro|ویوو X60 Pro,True,common_repair
+vivo-x70-pro,vivo,X70 Pro,X70,smartphone,extended,X70 Pro|vivo X70 Pro|ویوو X70 Pro,True,common_repair
+vivo-x80-pro,vivo,X80 Pro,X80,smartphone,extended,X80 Pro|vivo X80 Pro|ویوو X80 Pro,True,common_repair
+vivo-x90-pro,vivo,X90 Pro,X90,smartphone,extended,X90 Pro|vivo X90 Pro|ویوو X90 Pro,True,common_repair
+vivo-y100,vivo,Y100,Y100,smartphone,extended,Y100|vivo Y100|ویوو Y100,True,common_repair
+vivo-y12,vivo,Y12,Y12,smartphone,extended,Y12|vivo Y12|ویوو Y12,True,common_repair
+vivo-y15,vivo,Y15,Y15,smartphone,extended,Y15|vivo Y15|ویوو Y15,True,common_repair
+vivo-y16,vivo,Y16,Y16,smartphone,extended,Y16|vivo Y16|ویوو Y16,True,common_repair
+vivo-y17,vivo,Y17,Y17,smartphone,extended,Y17|vivo Y17|ویوو Y17,True,common_repair
+vivo-y19,vivo,Y19,Y19,smartphone,extended,Y19|vivo Y19|ویوو Y19,True,common_repair
+vivo-y20,vivo,Y20,Y20,smartphone,extended,Y20|vivo Y20|ویوو Y20,True,common_repair
+vivo-y21,vivo,Y21,Y21,smartphone,extended,Y21|vivo Y21|ویوو Y21,True,common_repair
+vivo-y22,vivo,Y22,Y22,smartphone,extended,Y22|vivo Y22|ویوو Y22,True,common_repair
+vivo-y33s,vivo,Y33s,Y33s,smartphone,extended,Y33s|vivo Y33s|ویوو Y33s,True,common_repair
+vivo-y35,vivo,Y35,Y35,smartphone,extended,Y35|vivo Y35|ویوو Y35,True,common_repair
+vivo-y36,vivo,Y36,Y36,smartphone,extended,Y36|vivo Y36|ویوو Y36,True,common_repair
+vivo-y53s,vivo,Y53s,Y53s,smartphone,extended,Y53s|vivo Y53s|ویوو Y53s,True,common_repair
+vivo-y73,vivo,Y73,Y73,smartphone,extended,Y73|vivo Y73|ویوو Y73,True,common_repair
+vivo-y75,vivo,Y75,Y75,smartphone,extended,Y75|vivo Y75|ویوو Y75,True,common_repair
+xiaomi-15t-pro,Xiaomi,15T Pro,15T,smartphone,new,15T Pro|Xiaomi 15T Pro|شیائومی 15T Pro,True,official_xiaomi_and_iran_market
+xiaomi-17t,Xiaomi,17T,17T,smartphone,new,17T|Xiaomi 17T|شیائومی 17T,True,official_xiaomi_and_iran_market
+xiaomi-11,Xiaomi,11,11,smartphone,core,11|Xiaomi 11|شیائومی 11,True,official_xiaomi_and_common_repair
+xiaomi-11-lite-4g,Xiaomi,11 Lite 4G,11,smartphone,core,11 Lite 4G|Xiaomi 11 Lite 4G|شیائومی 11 Lite 4G,True,official_xiaomi_and_common_repair
+xiaomi-11-lite-5g,Xiaomi,11 Lite 5G,11,smartphone,core,11 Lite 5G|Xiaomi 11 Lite 5G|شیائومی 11 Lite 5G|11 Lite,True,official_xiaomi_and_common_repair
+xiaomi-11-lite-5g-ne,Xiaomi,11 Lite 5G NE,11,smartphone,core,11 Lite 5G NE|Xiaomi 11 Lite 5G NE|شیائومی 11 Lite 5G NE|11 Lite NE,True,official_xiaomi_and_common_repair
+xiaomi-11t,Xiaomi,11T,11T,smartphone,core,11T|Xiaomi 11T|شیائومی 11T,True,official_xiaomi_and_common_repair
+xiaomi-11t-pro,Xiaomi,11T Pro,11T,smartphone,core,11T Pro|Xiaomi 11T Pro|شیائومی 11T Pro,True,official_xiaomi_and_common_repair
+xiaomi-12,Xiaomi,12,12,smartphone,core,12|Xiaomi 12|شیائومی 12,True,official_xiaomi_and_common_repair
+xiaomi-12-lite,Xiaomi,12 Lite,12,smartphone,core,12 Lite|Xiaomi 12 Lite|شیائومی 12 Lite,True,official_xiaomi_and_common_repair
+xiaomi-12-pro,Xiaomi,12 Pro,12,smartphone,core,12 Pro|Xiaomi 12 Pro|شیائومی 12 Pro,True,official_xiaomi_and_common_repair
+xiaomi-12t,Xiaomi,12T,12T,smartphone,core,12T|Xiaomi 12T|شیائومی 12T,True,official_xiaomi_and_common_repair
+xiaomi-12t-pro,Xiaomi,12T Pro,12T,smartphone,core,12T Pro|Xiaomi 12T Pro|شیائومی 12T Pro,True,official_xiaomi_and_common_repair
+xiaomi-12x,Xiaomi,12X,12X,smartphone,core,12X|Xiaomi 12X|شیائومی 12X,True,official_xiaomi_and_common_repair
+xiaomi-13,Xiaomi,13,13,smartphone,core,13|Xiaomi 13|شیائومی 13,True,official_xiaomi_and_common_repair
+xiaomi-13-lite,Xiaomi,13 Lite,13,smartphone,core,13 Lite|Xiaomi 13 Lite|شیائومی 13 Lite,True,official_xiaomi_and_common_repair
+xiaomi-13-pro,Xiaomi,13 Pro,13,smartphone,core,13 Pro|Xiaomi 13 Pro|شیائومی 13 Pro,True,official_xiaomi_and_common_repair
+xiaomi-13-ultra,Xiaomi,13 Ultra,13,smartphone,core,13 Ultra|Xiaomi 13 Ultra|شیائومی 13 Ultra,True,official_xiaomi_and_common_repair
+xiaomi-13t,Xiaomi,13T,13T,smartphone,core,13T|Xiaomi 13T|شیائومی 13T,True,official_xiaomi_and_common_repair
+xiaomi-13t-pro,Xiaomi,13T Pro,13T,smartphone,core,13T Pro|Xiaomi 13T Pro|شیائومی 13T Pro,True,official_xiaomi_and_common_repair
+xiaomi-14,Xiaomi,14,14,smartphone,core,14|Xiaomi 14|شیائومی 14,True,official_xiaomi_and_common_repair
+xiaomi-14-pro,Xiaomi,14 Pro,14,smartphone,core,14 Pro|Xiaomi 14 Pro|شیائومی 14 Pro,True,official_xiaomi_and_common_repair
+xiaomi-14-ultra,Xiaomi,14 Ultra,14,smartphone,core,14 Ultra|Xiaomi 14 Ultra|شیائومی 14 Ultra,True,official_xiaomi_and_common_repair
+xiaomi-14t,Xiaomi,14T,14T,smartphone,core,14T|Xiaomi 14T|شیائومی 14T,True,official_xiaomi_and_common_repair
+xiaomi-14t-pro,Xiaomi,14T Pro,14T,smartphone,core,14T Pro|Xiaomi 14T Pro|شیائومی 14T Pro,True,official_xiaomi_and_common_repair
+xiaomi-15,Xiaomi,15,15,smartphone,core,15|Xiaomi 15|شیائومی 15,True,official_xiaomi_and_common_repair
+xiaomi-15-pro,Xiaomi,15 Pro,15,smartphone,core,15 Pro|Xiaomi 15 Pro|شیائومی 15 Pro,True,official_xiaomi_and_common_repair
+xiaomi-15-ultra,Xiaomi,15 Ultra,15,smartphone,core,15 Ultra|Xiaomi 15 Ultra|شیائومی 15 Ultra,True,official_xiaomi_and_common_repair
+xiaomi-mi-10,Xiaomi,Mi 10,Mi,smartphone,core,Mi 10|Xiaomi Mi 10|شیائومی Mi 10,True,official_xiaomi_and_common_repair
+xiaomi-mi-10-lite-5g,Xiaomi,Mi 10 Lite 5G,Mi,smartphone,core,Mi 10 Lite 5G|Xiaomi Mi 10 Lite 5G|شیائومی Mi 10 Lite 5G|Mi 10 Lite,True,official_xiaomi_and_common_repair
+xiaomi-mi-10-pro,Xiaomi,Mi 10 Pro,Mi,smartphone,core,Mi 10 Pro|Xiaomi Mi 10 Pro|شیائومی Mi 10 Pro,True,official_xiaomi_and_common_repair
+xiaomi-mi-10t,Xiaomi,Mi 10T,Mi,smartphone,core,Mi 10T|Xiaomi Mi 10T|شیائومی Mi 10T,True,official_xiaomi_and_common_repair
+xiaomi-mi-10t-lite,Xiaomi,Mi 10T Lite,Mi,smartphone,core,Mi 10T Lite|Xiaomi Mi 10T Lite|شیائومی Mi 10T Lite,True,official_xiaomi_and_common_repair
+xiaomi-mi-10t-pro,Xiaomi,Mi 10T Pro,Mi,smartphone,core,Mi 10T Pro|Xiaomi Mi 10T Pro|شیائومی Mi 10T Pro,True,official_xiaomi_and_common_repair
+xiaomi-mi-9,Xiaomi,Mi 9,Mi,smartphone,core,Mi 9|Xiaomi Mi 9|شیائومی Mi 9,True,official_xiaomi_and_common_repair
+xiaomi-mi-9-lite,Xiaomi,Mi 9 Lite,Mi,smartphone,core,Mi 9 Lite|Xiaomi Mi 9 Lite|شیائومی Mi 9 Lite,True,official_xiaomi_and_common_repair
+xiaomi-mi-9-se,Xiaomi,Mi 9 SE,Mi,smartphone,core,Mi 9 SE|Xiaomi Mi 9 SE|شیائومی Mi 9 SE,True,official_xiaomi_and_common_repair
+xiaomi-mi-9t,Xiaomi,Mi 9T,Mi,smartphone,core,Mi 9T|Xiaomi Mi 9T|شیائومی Mi 9T,True,official_xiaomi_and_common_repair
+xiaomi-mi-9t-pro,Xiaomi,Mi 9T Pro,Mi,smartphone,core,Mi 9T Pro|Xiaomi Mi 9T Pro|شیائومی Mi 9T Pro,True,official_xiaomi_and_common_repair
+xiaomi-black-shark-2,Xiaomi,Black Shark 2,Black,smartphone,extended,Black Shark 2|Xiaomi Black Shark 2|شیائومی Black Shark 2,True,curated_repair
+xiaomi-black-shark-3,Xiaomi,Black Shark 3,Black,smartphone,extended,Black Shark 3|Xiaomi Black Shark 3|شیائومی Black Shark 3,True,curated_repair
+xiaomi-black-shark-4,Xiaomi,Black Shark 4,Black,smartphone,extended,Black Shark 4|Xiaomi Black Shark 4|شیائومی Black Shark 4,True,curated_repair
+xiaomi-black-shark-5-pro,Xiaomi,Black Shark 5 Pro,Black,smartphone,extended,Black Shark 5 Pro|Xiaomi Black Shark 5 Pro|شیائومی Black Shark 5 Pro,True,curated_repair
+xiaomi-mi-5,Xiaomi,Mi 5,Mi,smartphone,extended,Mi 5|Xiaomi Mi 5|شیائومی Mi 5,True,curated_repair
+xiaomi-mi-5s,Xiaomi,Mi 5s,Mi,smartphone,extended,Mi 5s|Xiaomi Mi 5s|شیائومی Mi 5s,True,curated_repair
+xiaomi-mi-6,Xiaomi,Mi 6,Mi,smartphone,extended,Mi 6|Xiaomi Mi 6|شیائومی Mi 6,True,curated_repair
+xiaomi-mi-8,Xiaomi,Mi 8,Mi,smartphone,extended,Mi 8|Xiaomi Mi 8|شیائومی Mi 8,True,curated_repair
+xiaomi-mi-8-lite,Xiaomi,Mi 8 Lite,Mi,smartphone,extended,Mi 8 Lite|Xiaomi Mi 8 Lite|شیائومی Mi 8 Lite,True,curated_repair
+xiaomi-mi-8-se,Xiaomi,Mi 8 SE,Mi,smartphone,extended,Mi 8 SE|Xiaomi Mi 8 SE|شیائومی Mi 8 SE,True,curated_repair
+xiaomi-mi-a1,Xiaomi,Mi A1,Mi,smartphone,extended,Mi A1|Xiaomi Mi A1|شیائومی Mi A1,True,curated_repair
+xiaomi-mi-a2,Xiaomi,Mi A2,Mi,smartphone,extended,Mi A2|Xiaomi Mi A2|شیائومی Mi A2,True,curated_repair
+xiaomi-mi-a2-lite,Xiaomi,Mi A2 Lite,Mi,smartphone,extended,Mi A2 Lite|Xiaomi Mi A2 Lite|شیائومی Mi A2 Lite,True,curated_repair
+xiaomi-mi-a3,Xiaomi,Mi A3,Mi,smartphone,extended,Mi A3|Xiaomi Mi A3|شیائومی Mi A3,True,curated_repair
+xiaomi-mi-mix,Xiaomi,Mi Mix,Mi,smartphone,extended,Mi Mix|Xiaomi Mi Mix|شیائومی Mi Mix,True,curated_repair
+xiaomi-mi-mix-2,Xiaomi,Mi Mix 2,Mi,smartphone,extended,Mi Mix 2|Xiaomi Mi Mix 2|شیائومی Mi Mix 2,True,curated_repair
+xiaomi-mi-mix-2s,Xiaomi,Mi Mix 2S,Mi,smartphone,extended,Mi Mix 2S|Xiaomi Mi Mix 2S|شیائومی Mi Mix 2S,True,curated_repair
+xiaomi-mi-mix-3,Xiaomi,Mi Mix 3,Mi,smartphone,extended,Mi Mix 3|Xiaomi Mi Mix 3|شیائومی Mi Mix 3,True,curated_repair
+xiaomi-mix-4,Xiaomi,Mix 4,Mix,smartphone,extended,Mix 4|Xiaomi Mix 4|شیائومی Mix 4,True,curated_repair

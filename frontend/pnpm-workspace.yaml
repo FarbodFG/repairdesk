@@ -1,0 +1,7 @@
+storeDir: .pnpm-store
+registry: https://registry.yarnpkg.com/
+minimumReleaseAgeExclude:
+  - '@vitejs/plugin-react@6.1.1'
+  - lucide-react@1.35.0
+  - react-router@7.18.3
+  - zod@4.5.1

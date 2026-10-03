@@ -2,3 +2,9 @@
 Django==5.2.16
 djangorestframework==3.17.1
 djangorestframework_simplejwt==5.5.1
+
+# Mysql
+mysqlclient==2.2.8
+
+# Cors
+django-cors-headers==4.9.0

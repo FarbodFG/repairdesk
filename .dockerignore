@@ -1,0 +1,17 @@
+.git
+.venv
+.env
+.env.*
+**/.env
+**/.env.*
+**/__pycache__
+**/*.pyc
+**/node_modules
+**/.pnpm-store
+frontend/dist
+frontend/test-results*
+frontend/playwright-report
+staticfiles
+images
+artifacts
+**/*.sqlite3

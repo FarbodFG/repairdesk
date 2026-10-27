@@ -8,3 +8,7 @@ mysqlclient==2.2.8
 
 # Cors
 django-cors-headers==4.9.0
+
+# Production serving
+gunicorn==26.2.0; sys_platform != "win32"
+whitenoise==6.12.0

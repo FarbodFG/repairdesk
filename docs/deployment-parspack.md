@@ -82,20 +82,16 @@ python -c "import secrets; print(secrets.token_urlsafe(64))"
 gunicorn --config gunicorn.conf.py repair_desk.wsgi:application
 ```
 
-اگر قالب Gunicorn خودش collectstatic را اجرا می‌کند، لاگ را بررسی کنید که موفق بوده باشد.
-در غیر این صورت، در مرحلهٔ آماده‌سازی اجرا با دسترسی به متغیرهای Runtime یا ترمینال
-سرویس، این فرمان را اجرا کنید؛ فایل‌های static باید در همان release اجراشونده حاضر باشند:
+فایل `gunicorn.conf.py` در هر شروع کانتینر، پیش از ایجاد Workerهای وب، فرمان
+`collectstatic --noinput` را خودکار اجرا می‌کند. در لاگ باید پیام
+`Collecting static files before starting application workers` و نتیجهٔ موفق جمع‌آوری
+فایل‌ها را ببینید. شکست این مرحله مانع شروع سرویس با فایل‌های ناقص می‌شود.
 
-```sh
-python manage.py collectstatic --noinput
-```
-
-این کار را در هر release تکرار کنید، مگر قالب خودش انجامش دهد. WhiteNoise فایل‌های
-استاتیک Django/admin را ارائه می‌کند؛ نیازی به اشتراک دیسک static بین Nginx و Django نیست.
-اگر collectstatic را بعد از شروع سرویس در ترمینال اجرا کردید، Django را restart کنید
-تا WhiteNoise فهرست فایل‌های جدید را هنگام شروع بخواند.
-اگر build پیش از تزریق Runtime env انجام می‌شود، SECRET_KEY و رمز DB را برای
-collectstatic به Build منتقل نکنید؛ از مرحلهٔ startup/pre-start مورد پشتیبانی پنل استفاده کنید.
+این مرحله با متغیرهای Runtime انجام می‌شود؛ SECRET_KEY و رمز DB را به Build منتقل نکنید.
+WhiteNoise فایل‌های static پنل مدیریت را بعد از آماده شدن فهرست آن‌ها بارگذاری می‌کند.
+دیسک ماندگار یا اشتراک دیسک static بین Nginx و Django لازم نیست؛ فایل‌ها در هر کانتینر
+جدید از کد و بسته‌های نصب‌شده دوباره ساخته می‌شوند. اجرای دستی collectstatic بعد از
+شروع Workerها جایگزین این مرحله نیست، چون فهرست فایل‌ها در حافظهٔ آن‌ها بارگذاری شده است.
 
 پس از آماده بودن دیتابیس، در ترمینال Django و با همین متغیرهای production اجرا کنید:
 

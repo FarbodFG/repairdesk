@@ -1,13 +1,18 @@
 export const site = {
   productName: 'RepairDesk',
   name: 'میز تعمیر',
-  shopName: 'نام تعمیرگاه شما',
-  phone: null as string | null,
-  address: 'آدرس تعمیرگاه هنوز ثبت نشده است.',
-  hours: 'ساعت کاری هنوز ثبت نشده است.',
+  shopName: import.meta.env.VITE_SHOP_NAME || 'شهر آفتاب',
+  phone: import.meta.env.VITE_SHOP_PHONE || '09191861006',
+  address: (import.meta.env.VITE_SHOP_ADDRESS || null) as string | null,
+  hours: import.meta.env.VITE_SHOP_HOURS || 'شنبه تا پنجشنبه، ۱۰:۰۰ تا ۱۳:۰۰ و ۱۷:۰۰ تا ۲۱:۰۰',
   currency: import.meta.env.VITE_CURRENCY_LABEL || 'واحد پول تنظیم نشده',
   timezone: 'Asia/Tehran',
   services: [
+    {
+      title: 'تعمیر انواع موبایل',
+      description: 'پذیرش و بررسی مشکل انواع گوشی موبایل و پیگیری مراحل تعمیر با کد سفارش.',
+      icon: 'phone',
+    },
     {
       title: 'نمایشگر و لمس',
       description: 'بررسی مشکلات تصویر، شکستگی نمایشگر و عملکرد لمس.',
@@ -19,15 +24,10 @@ export const site = {
       icon: 'battery',
     },
     {
-      title: 'برد و سخت‌افزار',
-      description: 'عیب‌یابی اجزای داخلی و مشکلات سخت‌افزاری دستگاه.',
-      icon: 'cpu',
-    },
-    {
-      title: 'نرم‌افزار و سیستم',
-      description: 'بررسی اختلال‌های سیستم‌عامل و عملکرد نرم‌افزاری.',
-      icon: 'software',
+      title: 'لوازم جانبی موبایل',
+      description: 'فروش لوازم جانبی موبایل؛ برای اطلاع از موجودی و قیمت با فروشگاه تماس بگیرید.',
+      icon: 'accessories',
     },
   ],
-  servicesNotice: 'دسته‌بندی‌های قابل بررسی؛ پذیرش هر خدمت به تأیید تعمیرگاه بستگی دارد.',
+  servicesNotice: 'برای هماهنگی پذیرش دستگاه یا پرسش دربارهٔ موجودی لوازم جانبی، در ساعت کاری با ما تماس بگیرید.',
 } as const

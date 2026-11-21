@@ -14,4 +14,6 @@ frontend/playwright-report
 staticfiles
 images
 artifacts
+.playwright-cli
+output/playwright
 **/*.sqlite3

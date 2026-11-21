@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router'
 import { ProtectedRoute, RoleGuard } from '../features/auth/Guards'
 import { Loading } from '../components/ui/Feedback'
+import { site } from '../config/site'
 const PublicLayout = lazy(() => import('../components/layout/PublicLayout'))
 const AppShell = lazy(() => import('../components/layout/AppShell'))
 const LandingPage = lazy(() => import('../features/landing/LandingPage'))
@@ -38,7 +39,7 @@ export function App() {
                     : pathname.includes('account')
                       ? 'حساب کاربری'
                       : 'فضای کاری'
-    document.title = `${title} | RepairDesk`
+    document.title = `${title} | ${pathname === '/' || pathname === '/track' ? site.shopName : site.productName}`
     if (!hash) window.scrollTo({ top: 0, behavior: 'instant' })
   }, [pathname, hash])
   return (

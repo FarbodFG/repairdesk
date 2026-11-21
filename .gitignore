@@ -2,9 +2,24 @@
 .env
 .env.*
 !.env.example
+!frontend/.env.production
 __pycache__/
 *.py[cod]
 staticfiles/
 images/
 *.sqlite3
 artifacts/
+
+# Local browser inspection logs and snapshots.
+/.playwright-cli/
+
+# Local screenshots and review output.
+/output/
+
+# Presentation source and generated deliverables kept locally.
+/docs/RepairDesk_Entrepreneurship_Research_FA.docx
+/docs/entrepreneurship-presentation-fa.md
+/docs/presentation-final/
+
+# Microsoft Office temporary lock files.
+~$*

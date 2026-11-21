@@ -25,7 +25,7 @@ from .providers import (
     SmsIrProvider,
     SmsProvider,
 )
-from .templates import render_template
+from .templates import REPAIR_CANCELLED, render_template
 
 
 logger = logging.getLogger(__name__)
@@ -396,6 +396,28 @@ def dispatch_notification_with_outcome(
             )
 
         now = timezone.now()
+        if REPAIR_CANCELLED in (notification.event_type, notification.template_key):
+            # Do not supersede a provider call already in progress.
+            if (
+                notification.status == Notification.Status.PROCESSING
+                and notification.updated_at > now - get_processing_timeout()
+            ):
+                return NotificationDispatchResult(
+                    notification=notification,
+                    outcome=DispatchOutcome.SKIPPED_PROCESSING,
+                )
+            notification.status = Notification.Status.CANCELLED
+            notification.is_retryable = False
+            notification.error_code = "event_disabled"
+            notification.last_error = "ارسال پیامک لغو سفارش غیرفعال شده است."
+            notification.save(update_fields=(
+                "status", "is_retryable", "error_code", "last_error", "updated_at",
+            ))
+            return NotificationDispatchResult(
+                notification=notification,
+                outcome=DispatchOutcome.SKIPPED_INELIGIBLE,
+            )
+
         if notification.scheduled_at > now and not force:
             return NotificationDispatchResult(
                 notification=notification,

@@ -201,10 +201,6 @@ SMSIR_TEMPLATE_IDS = {
             '',
         ),
         'repair_ready': os.getenv('SMSIR_TEMPLATE_REPAIR_READY', ''),
-        'repair_cancelled': os.getenv(
-            'SMSIR_TEMPLATE_REPAIR_CANCELLED',
-            '',
-        ),
     }.items()
     if template_id
 }
@@ -226,10 +222,6 @@ KAVENEGAR_TEMPLATES = {
             '',
         ),
         'repair_ready': os.getenv('KAVENEGAR_TEMPLATE_REPAIR_READY', ''),
-        'repair_cancelled': os.getenv(
-            'KAVENEGAR_TEMPLATE_REPAIR_CANCELLED',
-            '',
-        ),
     }.items()
     if template_name
 }

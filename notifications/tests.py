@@ -259,7 +259,7 @@ class NotificationApiTests(NotificationTestDataMixin, TestCase):
         self.assertEqual(list_response.data["count"], 0)
         self.assertEqual(retry_response.status_code, status.HTTP_404_NOT_FOUND)
 
-    def test_status_change_creates_one_history_and_one_notification(self):
+    def test_cancelling_order_records_history_without_notification(self):
         url = reverse(
             "repair-order-detail",
             kwargs={"repair_order_id": self.order.pk},
@@ -283,15 +283,9 @@ class NotificationApiTests(NotificationTestDataMixin, TestCase):
             RepairStatusHistory.objects.filter(repair_order=self.order).count(),
             1,
         )
-        status_notifications = Notification.objects.filter(
-            repair_order=self.order,
-            event_type=REPAIR_CANCELLED,
-        )
-        self.assertEqual(status_notifications.count(), 1)
-        self.assertEqual(
-            status_notifications.get().status,
-            Notification.Status.SIMULATED,
-        )
+        self.order.refresh_from_db()
+        self.assertEqual(self.order.repair_status, RepairOrder.CANCELLED)
+        self.assertFalse(Notification.objects.filter(repair_order=self.order).exists())
 
     def test_order_creation_creates_and_dispatches_one_notification(self):
         with self.captureOnCommitCallbacks(execute=True):
@@ -417,6 +411,63 @@ class NotificationProcessorTests(NotificationTestDataMixin, TestCase):
         self.assertEqual(notification.attempt_count, 1)
         self.assertIn("selected=1", output)
         self.assertIn("succeeded=1", output)
+
+    @patch("notifications.services.get_provider")
+    def test_legacy_cancellation_is_retired_without_sending_or_retrying(self, get_provider):
+        for old_status, force in (
+            (Notification.Status.PENDING, False),
+            (Notification.Status.FAILED, True),
+            (Notification.Status.PROCESSING, False),
+        ):
+            with self.subTest(status=old_status, force=force):
+                notification = self.create_notification(f"old-cancel-{old_status}")
+                Notification.objects.filter(pk=notification.pk).update(
+                    event_type=REPAIR_CANCELLED,
+                    template_key=REPAIR_CANCELLED,
+                    status=old_status,
+                    attempt_count=1,
+                    is_retryable=True,
+                    updated_at=timezone.now() - timedelta(minutes=10),
+                )
+
+                result = dispatch_notification_with_outcome(notification.pk, force=force)
+
+                notification.refresh_from_db()
+                self.assertEqual(result.outcome, DispatchOutcome.SKIPPED_INELIGIBLE)
+                self.assertEqual(notification.status, Notification.Status.CANCELLED)
+                self.assertEqual(notification.attempt_count, 1)
+                self.assertFalse(notification.is_retryable)
+                self.assertEqual(notification.error_code, "event_disabled")
+                self.assertNotIn(notification.pk, get_due_notification_ids())
+                self.assertEqual(
+                    dispatch_notification_with_outcome(notification.pk, force=True).outcome,
+                    DispatchOutcome.SKIPPED_TERMINAL,
+                )
+        get_provider.assert_not_called()
+
+    @patch("notifications.services.get_provider")
+    def test_legacy_cancellation_preserves_sent_records_and_active_claims(self, get_provider):
+        for old_status, outcome in (
+            (Notification.Status.SENT, DispatchOutcome.SKIPPED_TERMINAL),
+            (Notification.Status.PROCESSING, DispatchOutcome.SKIPPED_PROCESSING),
+        ):
+            with self.subTest(status=old_status):
+                notification = self.create_notification(f"preserve-cancel-{old_status}")
+                Notification.objects.filter(pk=notification.pk).update(
+                    event_type=REPAIR_CANCELLED,
+                    template_key=REPAIR_CANCELLED,
+                    status=old_status,
+                    attempt_count=1,
+                    updated_at=timezone.now(),
+                )
+
+                result = dispatch_notification_with_outcome(notification.pk, force=True)
+
+                notification.refresh_from_db()
+                self.assertEqual(result.outcome, outcome)
+                self.assertEqual(notification.status, old_status)
+                self.assertEqual(notification.attempt_count, 1)
+        get_provider.assert_not_called()
 
     def test_processor_does_not_dispatch_a_future_notification(self):
         notification = self.create_notification("processor-future")
@@ -997,7 +1048,7 @@ class NotificationEventCoverageTests(NotificationTestDataMixin, TestCase):
             (RepairOrder.WAITING_FOR_PARTS, REPAIR_WAITING_FOR_PARTS),
             (RepairOrder.REPAIRING, None),
             (RepairOrder.READY_FOR_DELIVERY, REPAIR_READY),
-            (RepairOrder.CANCELLED, REPAIR_CANCELLED),
+            (RepairOrder.CANCELLED, None),
         )
 
         for repair_status, expected_event in transitions:
@@ -1033,10 +1084,10 @@ class NotificationEventCoverageTests(NotificationTestDataMixin, TestCase):
         notifications = Notification.objects.filter(
             repair_order=self.order,
         ).order_by("pk")
-        self.assertEqual(notifications.count(), 3)
+        self.assertEqual(notifications.count(), 2)
         self.assertEqual(
             notifications.values("idempotency_key").distinct().count(),
-            3,
+            2,
         )
 
     def test_provider_registry_resolves_smsir_and_rejects_unknown_name(self):
@@ -1089,7 +1140,6 @@ class KavenegarProviderTests(TestCase):
         REPAIR_CREATED: "RepairCreated",
         REPAIR_WAITING_FOR_PARTS: "RepairWaiting",
         REPAIR_READY: "RepairReady",
-        REPAIR_CANCELLED: "RepairCancelled",
     }
 
     def make_provider(self, *, opener, **overrides):
@@ -1386,12 +1436,71 @@ class SmsIrProviderTests(TestCase):
             {
                 "NAME": self.context["customer_name"],
                 "CODE": self.context["tracking_code"],
-                "LINK": self.context["tracking_url"],
+                "LINK": "track?code=RDTEST123456",
             },
         )
         self.assertEqual(result.status.value, "sent")
         self.assertEqual(result.provider_message_id, "123456")
         self.assertEqual(result.provider_template_id, "98765")
+
+    def test_fixed_domain_template_reconstructs_the_original_tracking_url(self):
+        context = {
+            **self.context,
+            "tracking_code": "RDABCDEFGHJKLM",
+            "tracking_url": "https://suncitymobile.ir/track?code=RDABCDEFGHJKLM",
+        }
+        original_context = dict(context)
+        captured = {}
+
+        def opener(request, timeout):
+            captured.update(json.loads(request.data.decode("utf-8")))
+            return StubHttpResponse({"status": 1, "data": {"messageId": 123456}})
+
+        provider = SmsIrProvider(
+            api_key="test-secret",
+            template_ids={REPAIR_CREATED: 98765},
+            opener=opener,
+        )
+        provider.send(
+            recipient="+989120000000",
+            template_key=REPAIR_CREATED,
+            context=context,
+            rendered_message="ignored",
+            idempotency_key="smsir-fixed-domain",
+        )
+        parameters = {item["name"]: item["value"] for item in captured["parameters"]}
+        self.assertEqual(parameters["LINK"], "track?code=RDABCDEFGHJKLM")
+        self.assertEqual("https://suncitymobile.ir/" + parameters["LINK"], context["tracking_url"])
+        self.assertEqual(context, original_context)
+
+    def test_parameter_length_limit_is_checked_after_extracting_the_link_suffix(self):
+        captured = []
+
+        def opener(request, timeout):
+            captured.append(request)
+            return StubHttpResponse({"status": 1, "data": {"messageId": 123456}})
+
+        provider = SmsIrProvider(
+            api_key="test-secret",
+            template_ids={REPAIR_CREATED: 98765},
+            opener=opener,
+        )
+        for length in (40, 41):
+            with self.subTest(length=length):
+                context = {**self.context, "customer_name": "ا" * length}
+                arguments = {
+                    "recipient": "+989120000000",
+                    "template_key": REPAIR_CREATED,
+                    "context": context,
+                    "rendered_message": "ignored",
+                    "idempotency_key": "smsir-parameter-length",
+                }
+                if length == 40:
+                    provider.send(**arguments)
+                else:
+                    with self.assertRaisesMessage(NotificationConfigurationError, "40 characters"):
+                        provider.send(**arguments)
+        self.assertEqual(len(captured), 1)
 
     def test_rate_limit_is_a_transient_provider_error(self):
         error_body = io.BytesIO(
@@ -1642,7 +1751,7 @@ class NotificationConfigurationCheckTests(TestCase):
         self.assertIn("notifications.E005", check_ids)
         self.assertIn("notifications.E006", check_ids)
 
-    def test_complete_smsir_configuration_passes_notification_checks(self):
+    def test_smsir_configuration_needs_only_three_templates(self):
         with self.settings(
             NOTIFICATION_PROVIDER=Notification.Provider.SMS_IR,
             PUBLIC_TRACKING_BASE_URL="https://repairs.example.com/track",
@@ -1651,7 +1760,6 @@ class NotificationConfigurationCheckTests(TestCase):
                 REPAIR_CREATED,
                 REPAIR_WAITING_FOR_PARTS,
                 REPAIR_READY,
-                REPAIR_CANCELLED,
             ))},
         ):
             check_ids = self.notification_check_ids()
@@ -1665,7 +1773,6 @@ class NotificationConfigurationCheckTests(TestCase):
                 REPAIR_CREATED,
                 REPAIR_WAITING_FOR_PARTS,
                 REPAIR_READY,
-                REPAIR_CANCELLED,
             ), start=1)
         }
         with self.settings(
@@ -1689,7 +1796,6 @@ class NotificationConfigurationCheckTests(TestCase):
                 REPAIR_CREATED,
                 REPAIR_WAITING_FOR_PARTS,
                 REPAIR_READY,
-                REPAIR_CANCELLED,
             ), start=1)
         }
         with self.settings(

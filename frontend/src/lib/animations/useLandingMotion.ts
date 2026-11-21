@@ -24,12 +24,6 @@ export function useLandingMotion(ref: RefObject<HTMLDivElement | null>) {
             clearProps: 'all',
           })
         })
-        gsap.to('.hero-model', {
-          y: 28,
-          rotate: 2,
-          ease: 'none',
-          scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.8 },
-        })
       }, ref)
       return () => context.revert()
     })

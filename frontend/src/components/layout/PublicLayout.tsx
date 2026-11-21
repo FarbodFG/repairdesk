@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router'
-import { ArrowUpLeft } from 'lucide-react'
+import { LogIn, Phone } from 'lucide-react'
 import { Brand } from './Brand'
 import { site } from '../../config/site'
 export default function PublicLayout() {
@@ -7,14 +7,15 @@ export default function PublicLayout() {
     <div className="public-site">
       <header className="public-header">
         <div className="container public-nav">
-          <Brand light />
+          <Brand light storefront />
           <nav aria-label="منوی سایت">
             <a href="/#services">خدمات</a>
-            <a href="/#process">مسیر تعمیر</a>
+            <a href="/#about">درباره ما</a>
+            <a href="/#contact">تماس با ما</a>
             <Link to="/track">پیگیری سفارش</Link>
           </nav>
           <Link className="button header-login" to="/login">
-            ورود کارکنان <ArrowUpLeft size={16} />
+            ورود کارکنان <LogIn size={17} />
           </Link>
         </div>
       </header>
@@ -23,29 +24,36 @@ export default function PublicLayout() {
       </main>
       <footer className="public-footer">
         <div className="container footer-grid">
-          <div>
-            <Brand light />
-            <p>از پذیرش تا تحویل؛ یک مسیر قابل پیگیری.</p>
+          <div className="footer-brand">
+            <Brand light storefront />
+            <p>تعمیر انواع موبایل و فروش لوازم جانبی موبایل در {site.shopName}.</p>
           </div>
-          <div>
-            <h3>{site.shopName}</h3>
-            <p>{site.address}</p>
-            <p>{site.hours}</p>
+          <div className="footer-contact">
+            <h3>تماس و ساعت کاری</h3>
             {site.phone && (
-              <a href={`tel:${site.phone}`} dir="ltr">
-                {site.phone}
+              <a className="footer-phone" href={`tel:${site.phone}`}>
+                <Phone size={16} aria-hidden="true" />
+                <bdi>{site.phone}</bdi>
               </a>
             )}
+            {site.hours && <p>{site.hours}</p>}
+            {site.address && <p>{site.address}</p>}
           </div>
           <div>
             <h3>دسترسی سریع</h3>
-            <Link to="/track">پیگیری تعمیر</Link>
-            <Link to="/login">فضای کاری کارکنان</Link>
+            <nav className="footer-links" aria-label="دسترسی‌های فوتر">
+              <a href="/#services">خدمات</a>
+              <a href="/#about">درباره ما</a>
+              <a href="/#contact">تماس با ما</a>
+              <a href="/#faq">پرسش‌های متداول</a>
+              <Link to="/track">پیگیری تعمیر</Link>
+              <Link to="/login">ورود کارکنان</Link>
+            </nav>
           </div>
         </div>
         <div className="container footer-bottom">
-          <span>RepairDesk · سامانه مدیریت تعمیرات</span>
-          <span dir="ltr">DESIGNED AROUND THE DETAILS.</span>
+          <span>{site.shopName} · تعمیر موبایل و فروش لوازم جانبی</span>
+          <span>پیگیری سفارش با RepairDesk</span>
         </div>
       </footer>
     </div>

@@ -5,6 +5,7 @@ import socket
 from collections.abc import Callable, Mapping
 from typing import Any
 from urllib.error import HTTPError, URLError
+from urllib.parse import urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
 from django.conf import settings
@@ -164,6 +165,28 @@ class SmsIrProvider(SmsProvider):
                 raise NotificationConfigurationError(
                     f"SMS.ir parameter {context_name!r} is empty."
                 )
+            parameter_value = str(value)
+            if context_name == "tracking_url":
+                # The approved template contains the fixed site origin followed
+                # by /#LINK#. Only the relative tracking link is dynamic.
+                try:
+                    tracking_url = urlsplit(parameter_value)
+                except ValueError as error:
+                    raise NotificationConfigurationError(
+                        "SMS.ir tracking URL is invalid."
+                    ) from error
+                parameter_value = urlunsplit((
+                    "", "", tracking_url.path.lstrip("/"),
+                    tracking_url.query, tracking_url.fragment,
+                ))
+            if not parameter_value.strip():
+                raise NotificationConfigurationError(
+                    f"SMS.ir parameter {context_name!r} is empty."
+                )
+            if len(parameter_value) > 40:
+                raise NotificationConfigurationError(
+                    f"SMS.ir parameter {context_name!r} exceeds 40 characters."
+                )
             provider_name = self.parameter_names[context_name]
             if not isinstance(provider_name, str) or not provider_name.strip():
                 raise NotificationConfigurationError(
@@ -178,7 +201,7 @@ class SmsIrProvider(SmsProvider):
             parameters.append(
                 {
                     "name": provider_name,
-                    "value": str(value),
+                    "value": parameter_value,
                 }
             )
 

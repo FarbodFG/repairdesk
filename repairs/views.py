@@ -16,7 +16,6 @@ from notifications.services import (
     schedule_notification_dispatch,
 )
 from notifications.templates import (
-    REPAIR_CANCELLED,
     REPAIR_READY,
     REPAIR_WAITING_FOR_PARTS,
 )
@@ -248,7 +247,6 @@ class RepairOrderDetailView(APIView):
                 notification_event = {
                     RepairOrder.WAITING_FOR_PARTS: REPAIR_WAITING_FOR_PARTS,
                     RepairOrder.READY_FOR_DELIVERY: REPAIR_READY,
-                    RepairOrder.CANCELLED: REPAIR_CANCELLED,
                 }.get(new_status)
 
                 if notification_event:

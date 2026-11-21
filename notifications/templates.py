@@ -10,6 +10,7 @@ from .exceptions import NotificationTemplateError
 REPAIR_CREATED = "repair_created"
 REPAIR_WAITING_FOR_PARTS = "repair_waiting_for_parts"
 REPAIR_READY = "repair_ready"
+# Retained to recognize historical outbox records; this event is no longer sent.
 REPAIR_CANCELLED = "repair_cancelled"
 
 
@@ -88,16 +89,6 @@ TEMPLATES: Mapping[str, NotificationTemplate] = MappingProxyType({
         key=REPAIR_READY,
         body=(
             "{customer_name} عزیز، سفارش {tracking_code} آماده تحویل است. "
-            "جزئیات:\n{tracking_url}"
-        ),
-        required_context=frozenset(
-            {"customer_name", "tracking_code", "tracking_url"}
-        ),
-    ),
-    REPAIR_CANCELLED: NotificationTemplate(
-        key=REPAIR_CANCELLED,
-        body=(
-            "{customer_name} عزیز، فرایند سفارش {tracking_code} لغو شد. "
             "جزئیات:\n{tracking_url}"
         ),
         required_context=frozenset(

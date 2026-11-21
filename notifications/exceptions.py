@@ -25,6 +25,12 @@ class PermanentNotificationProviderError(NotificationProviderError):
     retryable = False
 
 
+class AmbiguousNotificationProviderError(NotificationProviderError):
+    """The request may have been accepted; automatic resend is unsafe."""
+
+    retryable = False
+
+
 class NotificationTemplateError(ValueError):
     pass
 

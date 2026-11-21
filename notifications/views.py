@@ -1,3 +1,5 @@
+from collections.abc import Mapping
+
 from django.db import transaction
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
@@ -103,6 +105,11 @@ class NotificationRetryView(APIView):
     permission_classes = [IsAuthenticated, IsManagerOrReceptionist]
 
     def post(self, request, notification_id):
+        if not isinstance(request.data, Mapping):
+            return Response(
+                {"detail": "بدنهٔ درخواست ارسال مجدد باید یک شیء JSON باشد."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
         with transaction.atomic():
             notification = get_object_or_404(
                 Notification.objects.select_for_update(),
@@ -117,6 +124,15 @@ class NotificationRetryView(APIView):
                             "فقط اعلان ناموفق را می‌توان دوباره ارسال کرد."
                         ),
                     },
+                    status=status.HTTP_409_CONFLICT,
+                )
+
+            if (
+                notification.error_code == "delivery_unknown"
+                and request.data.get("confirm_unknown_delivery") is not True
+            ):
+                return Response(
+                    {"detail": "نتیجهٔ ارسال قبلی نامشخص است؛ ابتدا گزارش پنل پیامکی را بررسی و احتمال ارسال تکراری را تأیید کنید."},
                     status=status.HTTP_409_CONFLICT,
                 )
 

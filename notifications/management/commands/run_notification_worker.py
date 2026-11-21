@@ -1,4 +1,5 @@
 import logging
+import math
 import signal
 from threading import Event
 
@@ -18,7 +19,11 @@ class Command(BaseCommand):
         parser.add_argument("--limit", type=int, default=100)
 
     def handle(self, *args, **options):
-        if options["interval"] <= 0 or options["limit"] <= 0:
+        if (
+            not math.isfinite(options["interval"])
+            or options["interval"] <= 0
+            or options["limit"] <= 0
+        ):
             raise CommandError("--interval and --limit must be greater than zero.")
 
         stopped = Event()
@@ -34,6 +39,7 @@ class Command(BaseCommand):
                     call_command(
                         "process_notifications", limit=options["limit"],
                         stdout=self.stdout, stderr=self.stderr,
+                        stop_event=stopped,
                     )
                 except Exception:
                     # Failed batches are retried on the next interval; keep the

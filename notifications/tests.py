@@ -21,6 +21,7 @@ from repairs.models import RepairOrder, RepairStatusHistory
 from shops.models import RepairShop
 
 from .exceptions import (
+    AmbiguousNotificationProviderError,
     NotificationConfigurationError,
     PermanentNotificationProviderError,
     TransientNotificationProviderError,
@@ -1258,7 +1259,7 @@ class KavenegarProviderTests(TestCase):
                         idempotency_key="kavenegar-token",
                     )
 
-    def test_missing_api_or_message_status_is_a_transient_malformed_response(self):
+    def test_missing_api_or_message_status_needs_review(self):
         responses = (
             {
                 "return": {"message": "missing status"},
@@ -1276,7 +1277,7 @@ class KavenegarProviderTests(TestCase):
                         StubHttpResponse(payload)
                     ),
                 )
-                with self.assertRaises(TransientNotificationProviderError):
+                with self.assertRaises(AmbiguousNotificationProviderError):
                     provider.send(
                         recipient="+989120000000",
                         template_key=REPAIR_CREATED,
@@ -1285,7 +1286,7 @@ class KavenegarProviderTests(TestCase):
                         idempotency_key="kavenegar-missing-status",
                     )
 
-    def test_http_5xx_remains_transient_despite_permanent_api_status(self):
+    def test_http_5xx_needs_review_despite_api_status(self):
         error_body = json.dumps({
             "return": {"status": 424, "message": "template missing"},
             "entries": None,
@@ -1301,7 +1302,7 @@ class KavenegarProviderTests(TestCase):
             )
 
         provider = self.make_provider(opener=opener)
-        with self.assertRaises(TransientNotificationProviderError):
+        with self.assertRaises(AmbiguousNotificationProviderError):
             provider.send(
                 recipient="+989120000000",
                 template_key=REPAIR_CREATED,
@@ -1366,7 +1367,7 @@ class KavenegarProviderTests(TestCase):
                 idempotency_key="kavenegar-permanent",
             )
 
-    def test_network_and_malformed_response_are_retryable(self):
+    def test_network_and_malformed_response_need_review(self):
         malformed = StubHttpResponse({})
         malformed.body = b"not-json"
         for opener in (
@@ -1375,7 +1376,7 @@ class KavenegarProviderTests(TestCase):
         ):
             with self.subTest(opener=opener):
                 provider = self.make_provider(opener=opener)
-                with self.assertRaises(TransientNotificationProviderError):
+                with self.assertRaises(AmbiguousNotificationProviderError):
                     provider.send(
                         recipient="+989120000000",
                         template_key=REPAIR_CREATED,
@@ -1591,7 +1592,7 @@ class SmsIrProviderTests(TestCase):
             )
         self.assertEqual(caught.exception.response["http_status"], 401)
 
-    def test_network_error_is_transient(self):
+    def test_network_error_with_unknown_transmission_needs_review(self):
         def opener(request, timeout):
             raise URLError("network unavailable")
 
@@ -1601,7 +1602,7 @@ class SmsIrProviderTests(TestCase):
             opener=opener,
         )
 
-        with self.assertRaises(TransientNotificationProviderError):
+        with self.assertRaises(AmbiguousNotificationProviderError):
             provider.send(
                 recipient="+989120000000",
                 template_key=REPAIR_CREATED,
@@ -1628,7 +1629,7 @@ class SmsIrProviderTests(TestCase):
                 idempotency_key="smsir-api-failure",
             )
 
-    def test_success_without_message_id_is_transient(self):
+    def test_success_without_message_id_needs_review(self):
         provider = SmsIrProvider(
             api_key="secret-key",
             template_ids={REPAIR_CREATED: 98765},
@@ -1637,7 +1638,7 @@ class SmsIrProviderTests(TestCase):
             ),
         )
 
-        with self.assertRaises(TransientNotificationProviderError):
+        with self.assertRaises(AmbiguousNotificationProviderError):
             provider.send(
                 recipient="+989120000000",
                 template_key=REPAIR_CREATED,
@@ -1646,7 +1647,7 @@ class SmsIrProviderTests(TestCase):
                 idempotency_key="smsir-no-message-id",
             )
 
-    def test_malformed_success_response_is_transient(self):
+    def test_malformed_success_response_needs_review(self):
         response = StubHttpResponse({})
         response.body = b"not-json"
         provider = SmsIrProvider(
@@ -1655,7 +1656,7 @@ class SmsIrProviderTests(TestCase):
             opener=lambda request, timeout: response,
         )
 
-        with self.assertRaises(TransientNotificationProviderError):
+        with self.assertRaises(AmbiguousNotificationProviderError):
             provider.send(
                 recipient="+989120000000",
                 template_key=REPAIR_CREATED,

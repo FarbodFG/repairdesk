@@ -9,14 +9,17 @@ from django.test import SimpleTestCase
 
 class WorkerTests(SimpleTestCase):
     def test_invalid_interval_is_rejected(self):
-        with self.assertRaises(CommandError):
-            call_command("run_notification_worker", interval=0)
+        for interval in (0, -1, float("nan"), float("inf")):
+            with self.subTest(interval=interval):
+                with self.assertRaises(CommandError):
+                    call_command("run_notification_worker", interval=interval)
 
     def test_worker_survives_a_failed_batch_and_stops_when_requested(self):
         stopped = Event()
         calls = []
 
         def batch(*args, **kwargs):
+            self.assertIs(kwargs["stop_event"], stopped)
             calls.append(args[0])
             if len(calls) == 1:
                 raise CommandError("temporary database outage")

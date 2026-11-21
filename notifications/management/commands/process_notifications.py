@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 
 class Command(BaseCommand):
     help = "Process due notification Outbox records once."
+    stealth_options = ("stop_event",)
 
     def add_arguments(self, parser):
         parser.add_argument(
@@ -34,6 +35,7 @@ class Command(BaseCommand):
         failed_count = 0
         skipped_count = 0
         unexpected_error_count = 0
+        processed_count = 0
 
         successful_statuses = {
             Notification.Status.SIMULATED,
@@ -42,6 +44,10 @@ class Command(BaseCommand):
         }
 
         for notification_id in notification_ids:
+            stop_event = options.get("stop_event")
+            if stop_event is not None and stop_event.is_set():
+                break
+            processed_count += 1
             try:
                 dispatch_result = dispatch_notification_with_outcome(
                     notification_id
@@ -75,6 +81,7 @@ class Command(BaseCommand):
             f"succeeded={succeeded_count}, "
             f"failed={failed_count}, "
             f"skipped={skipped_count}, "
+            f"deferred={len(notification_ids) - processed_count}, "
             f"unexpected_errors={unexpected_error_count}."
         )
 

@@ -56,11 +56,15 @@ export default function NotificationsPage() {
   })
 
   const retry = useMutation({
-    mutationFn: async (notificationId: number) => {
+    mutationFn: async ({ notificationId, confirmUnknownDelivery }: {
+      notificationId: number
+      confirmUnknownDelivery: boolean
+    }) => {
       const result = await request<Notification>(`notifications/${notificationId}/retry/`, {
         method: 'POST',
+        body: JSON.stringify({ confirm_unknown_delivery: confirmUnknownDelivery }),
       })
-      if (result.status === 'failed') {
+      if (result.status === 'failed' || result.status === 'cancelled') {
         throw new Error(result.last_error || 'ارسال مجدد پیام ناموفق بود.')
       }
       return result
@@ -161,8 +165,10 @@ export default function NotificationsPage() {
               </div>
               <ul>
                 {notifications.data.results.map((item) => {
-                  const statusItem = statusDetails[item.status]
-                  const retrying = retry.isPending && retry.variables === item.id
+                  const statusItem = item.error_code === 'delivery_unknown'
+                    ? { label: 'نیاز به بررسی ارسال', tone: 'amber' }
+                    : statusDetails[item.status]
+                  const retrying = retry.isPending && retry.variables?.notificationId === item.id
                   return (
                     <li key={item.id} className="notification-row">
                       <div className="notification-recipient">
@@ -207,7 +213,13 @@ export default function NotificationsPage() {
                           <button
                             className="button secondary small-button"
                             disabled={retry.isPending}
-                            onClick={() => retry.mutate(item.id)}
+                            onClick={() => {
+                              const unknownDelivery = item.error_code === 'delivery_unknown'
+                              if (unknownDelivery && !window.confirm(
+                                'نتیجهٔ ارسال قبلی نامشخص است. ابتدا گزارش پنل پیامکی را بررسی کنید؛ ارسال مجدد ممکن است پیام تکراری ایجاد کند. ادامه می‌دهید؟',
+                              )) return
+                              retry.mutate({ notificationId: item.id, confirmUnknownDelivery: unknownDelivery })
+                            }}
                           >
                             {retrying ? <Spinner /> : <RefreshCw size={15} />}
                             ارسال مجدد

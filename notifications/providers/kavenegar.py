@@ -11,6 +11,7 @@ from urllib.request import Request, urlopen
 from django.conf import settings
 
 from notifications.exceptions import (
+    AmbiguousNotificationProviderError,
     NotificationConfigurationError,
     PermanentNotificationProviderError,
     TransientNotificationProviderError,
@@ -18,6 +19,7 @@ from notifications.exceptions import (
 from notifications.templates import TEMPLATES
 
 from .base import ProviderSendResult, ProviderSendStatus, SmsProvider
+from .transport import transport_failure
 
 
 class KavenegarProvider(SmsProvider):
@@ -168,8 +170,8 @@ class KavenegarProvider(SmsProvider):
             response_payload = self._parse_error_response(error.read())
             self._raise_http_error(error.code, response_payload)
         except (URLError, TimeoutError, socket.timeout, OSError) as error:
-            raise TransientNotificationProviderError(
-                "ارتباط با سرویس کاوه‌نگار برقرار نشد.",
+            raise transport_failure(
+                "کاوه‌نگار", error,
                 code="kavenegar_connection_error",
             ) from error
 
@@ -179,7 +181,7 @@ class KavenegarProvider(SmsProvider):
 
         return_data = response_payload.get("return")
         if not isinstance(return_data, Mapping):
-            raise TransientNotificationProviderError(
+            raise AmbiguousNotificationProviderError(
                 "پاسخ کاوه‌نگار ساختار معتبر ندارد.",
                 code="kavenegar_invalid_response",
                 response=response_payload,
@@ -196,15 +198,15 @@ class KavenegarProvider(SmsProvider):
         if not isinstance(entries, list) or not entries or not isinstance(
             entries[0], Mapping
         ):
-            raise TransientNotificationProviderError(
+            raise AmbiguousNotificationProviderError(
                 "جزئیات پیام در پاسخ کاوه‌نگار وجود ندارد.",
                 code="kavenegar_missing_entry",
                 response=response_payload,
             )
         entry = entries[0]
         message_id = entry.get("messageid")
-        if message_id in (None, ""):
-            raise TransientNotificationProviderError(
+        if message_id in (None, "", 0) or isinstance(message_id, bool):
+            raise AmbiguousNotificationProviderError(
                 "شناسه پیام در پاسخ کاوه‌نگار وجود ندارد.",
                 code="kavenegar_missing_message_id",
                 response=response_payload,
@@ -267,12 +269,12 @@ class KavenegarProvider(SmsProvider):
         try:
             payload = json.loads(raw_body.decode("utf-8"))
         except (UnicodeDecodeError, json.JSONDecodeError) as error:
-            raise TransientNotificationProviderError(
+            raise AmbiguousNotificationProviderError(
                 "پاسخ کاوه‌نگار قابل خواندن نیست.",
                 code="kavenegar_invalid_json",
             ) from error
         if not isinstance(payload, dict):
-            raise TransientNotificationProviderError(
+            raise AmbiguousNotificationProviderError(
                 "پاسخ کاوه‌نگار باید یک شیء JSON باشد.",
                 code="kavenegar_invalid_response",
             )
@@ -299,7 +301,7 @@ class KavenegarProvider(SmsProvider):
         try:
             parsed_status = int(value)
         except (TypeError, ValueError) as error:
-            raise TransientNotificationProviderError(
+            raise AmbiguousNotificationProviderError(
                 f"Kavenegar response has an invalid {field_name}.",
                 code="kavenegar_invalid_response",
                 response=response_payload,
@@ -312,7 +314,9 @@ class KavenegarProvider(SmsProvider):
         http_status: int,
         response_payload: Mapping[str, Any],
     ) -> None:
-        if http_status in {408, 409, 425, 429, 451} or http_status >= 500:
+        if http_status == 408 or http_status >= 500:
+            error_class = AmbiguousNotificationProviderError
+        elif http_status in {409, 425, 429, 451}:
             error_class = TransientNotificationProviderError
         else:
             return_data = response_payload.get("return")

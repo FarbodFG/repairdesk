@@ -11,6 +11,7 @@ from urllib.request import Request, urlopen
 from django.conf import settings
 
 from notifications.exceptions import (
+    AmbiguousNotificationProviderError,
     NotificationConfigurationError,
     PermanentNotificationProviderError,
     TransientNotificationProviderError,
@@ -18,6 +19,7 @@ from notifications.exceptions import (
 
 from .base import ProviderSendResult, ProviderSendStatus, SmsProvider
 from notifications.templates import TEMPLATES
+from .transport import transport_failure
 
 
 class SmsIrProvider(SmsProvider):
@@ -151,6 +153,10 @@ class SmsIrProvider(SmsProvider):
                 f"SMS.ir template ID for {template_key!r} must be positive."
             )
 
+        template = TEMPLATES.get(template_key)
+        if template is None or template.required_context.difference(context):
+            raise NotificationConfigurationError("SMS.ir template context is incomplete.")
+
         missing_parameter_names = set(context).difference(self.parameter_names)
         if missing_parameter_names:
             missing = ", ".join(sorted(missing_parameter_names))
@@ -229,8 +235,8 @@ class SmsIrProvider(SmsProvider):
             response_payload = self._parse_error_response(error.read())
             self._raise_http_error(error.code, response_payload)
         except (URLError, TimeoutError, socket.timeout, OSError) as error:
-            raise TransientNotificationProviderError(
-                "ارتباط با سرویس SMS.ir برقرار نشد.",
+            raise transport_failure(
+                "SMS.ir", error,
                 code="smsir_connection_error",
             ) from error
 
@@ -239,7 +245,12 @@ class SmsIrProvider(SmsProvider):
             self._raise_http_error(http_status, response_payload)
 
         api_status = response_payload.get("status")
-        if api_status is not None and str(api_status).lower() not in {
+        if api_status is None or isinstance(api_status, bool):
+            raise AmbiguousNotificationProviderError(
+                "وضعیت پذیرش درخواست در پاسخ SMS.ir معتبر نیست.",
+                code="smsir_invalid_response", response=response_payload,
+            )
+        if str(api_status).lower() not in {
             "1",
             "success",
         }:
@@ -247,15 +258,15 @@ class SmsIrProvider(SmsProvider):
 
         data = response_payload.get("data")
         if not isinstance(data, Mapping):
-            raise TransientNotificationProviderError(
+            raise AmbiguousNotificationProviderError(
                 "پاسخ SMS.ir ساختار معتبر ندارد.",
                 code="smsir_invalid_response",
                 response=response_payload,
             )
 
         message_id = data.get("messageId", data.get("MessageId"))
-        if message_id in (None, ""):
-            raise TransientNotificationProviderError(
+        if message_id in (None, "", 0) or isinstance(message_id, bool):
+            raise AmbiguousNotificationProviderError(
                 "شناسه پیام در پاسخ SMS.ir وجود ندارد.",
                 code="smsir_missing_message_id",
                 response=response_payload,
@@ -284,12 +295,12 @@ class SmsIrProvider(SmsProvider):
         try:
             payload = json.loads(raw_body.decode("utf-8"))
         except (UnicodeDecodeError, json.JSONDecodeError) as error:
-            raise TransientNotificationProviderError(
+            raise AmbiguousNotificationProviderError(
                 "پاسخ SMS.ir قابل خواندن نیست.",
                 code="smsir_invalid_json",
             ) from error
         if not isinstance(payload, dict):
-            raise TransientNotificationProviderError(
+            raise AmbiguousNotificationProviderError(
                 "پاسخ SMS.ir باید یک شیء JSON باشد.",
                 code="smsir_invalid_response",
             )
@@ -311,11 +322,12 @@ class SmsIrProvider(SmsProvider):
         http_status: int,
         response_payload: Mapping[str, Any],
     ) -> None:
-        error_class = (
-            TransientNotificationProviderError
-            if http_status in {408, 425, 429} or http_status >= 500
-            else PermanentNotificationProviderError
-        )
+        if http_status == 408 or http_status >= 500:
+            error_class = AmbiguousNotificationProviderError
+        elif http_status in {425, 429}:
+            error_class = TransientNotificationProviderError
+        else:
+            error_class = PermanentNotificationProviderError
         safe_response = dict(response_payload)
         safe_response["http_status"] = http_status
         message = response_payload.get("message") or (

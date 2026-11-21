@@ -26,6 +26,11 @@ raw_env = ["DJANGO_SETTINGS_MODULE=repair_desk.production_settings"]
 def on_starting(server):
     """Prepare static assets before workers load the manifest and WhiteNoise."""
     project_root = Path(__file__).resolve().parent
+    from deploy.run_combined import maybe_start_supervisor
+
+    maybe_start_supervisor(
+        project_root, {**os.environ, **server.cfg.env}, server.log,
+    )
     server.log.info("Collecting static files before starting application workers")
     subprocess.run(
         [sys.executable, str(project_root / "manage.py"), "collectstatic", "--noinput"],

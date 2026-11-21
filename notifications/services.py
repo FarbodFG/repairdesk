@@ -14,6 +14,7 @@ from django.db.models import Q
 from django.utils import timezone
 
 from .exceptions import (
+    AmbiguousNotificationProviderError,
     NotificationConfigurationError,
     NotificationProviderError,
 )
@@ -25,7 +26,9 @@ from .providers import (
     SmsIrProvider,
     SmsProvider,
 )
-from .templates import REPAIR_CANCELLED, render_template
+from .templates import (
+    REPAIR_CANCELLED, REPAIR_READY, REPAIR_WAITING_FOR_PARTS, render_template,
+)
 
 
 logger = logging.getLogger(__name__)
@@ -368,6 +371,45 @@ def get_due_notification_ids(*, limit: int = 100) -> list[int]:
     )
 
 
+def obsolete_notification_reason(notification: Notification) -> str | None:
+    from repairs.models import RepairOrder, RepairStatusHistory
+
+    if notification.repair_order_id is None:
+        return "سفارش این اعلان حذف شده است."
+    order_status = RepairOrder.objects.filter(
+        pk=notification.repair_order_id,
+    ).values_list("repair_status", flat=True).first()
+    if order_status is None or order_status == RepairOrder.CANCELLED:
+        return "سفارش این اعلان حذف یا لغو شده است."
+    expected_status = {
+        REPAIR_WAITING_FOR_PARTS: RepairOrder.WAITING_FOR_PARTS,
+        REPAIR_READY: RepairOrder.READY_FOR_DELIVERY,
+    }.get(notification.event_type)
+    if expected_status is not None:
+        if order_status != expected_status:
+            return "وضعیت سفارش تغییر کرده و متن این پیامک دیگر به‌روز نیست."
+        if notification.idempotency_key.startswith("repair-status-history:"):
+            latest_history = RepairStatusHistory.objects.filter(
+                repair_order_id=notification.repair_order_id,
+            ).order_by("-pk").values_list("pk", flat=True).first()
+            if notification.idempotency_key != f"repair-status-history:{latest_history}":
+                return "پیامک مربوط به تغییر وضعیت قدیمی سفارش است."
+    return None
+
+
+def mark_delivery_unknown(notification: Notification) -> None:
+    notification.status = Notification.Status.FAILED
+    notification.is_retryable = False
+    notification.error_code = "delivery_unknown"
+    notification.last_error = (
+        "نتیجهٔ ارسال قبلی نامشخص است؛ قبل از ارسال مجدد، "
+        "گزارش پنل پیامکی را بررسی کنید. ارسال مجدد ممکن است پیام تکراری ایجاد کند."
+    )
+    notification.save(update_fields=(
+        "status", "is_retryable", "error_code", "last_error", "updated_at",
+    ))
+
+
 def dispatch_notification_with_outcome(
     notification_id: int,
     *,
@@ -396,20 +438,38 @@ def dispatch_notification_with_outcome(
             )
 
         now = timezone.now()
-        if REPAIR_CANCELLED in (notification.event_type, notification.template_key):
-            # Do not supersede a provider call already in progress.
-            if (
-                notification.status == Notification.Status.PROCESSING
-                and notification.updated_at > now - get_processing_timeout()
-            ):
+        if notification.status == Notification.Status.PROCESSING:
+            if notification.updated_at > now - get_processing_timeout():
                 return NotificationDispatchResult(
                     notification=notification,
                     outcome=DispatchOutcome.SKIPPED_PROCESSING,
                 )
+            if notification.provider != Notification.Provider.FAKE:
+                mark_delivery_unknown(notification)
+                return NotificationDispatchResult(
+                    notification=notification,
+                    outcome=DispatchOutcome.SKIPPED_INELIGIBLE,
+                )
+
+        if REPAIR_CANCELLED in (notification.event_type, notification.template_key):
             notification.status = Notification.Status.CANCELLED
             notification.is_retryable = False
             notification.error_code = "event_disabled"
             notification.last_error = "ارسال پیامک لغو سفارش غیرفعال شده است."
+            notification.save(update_fields=(
+                "status", "is_retryable", "error_code", "last_error", "updated_at",
+            ))
+            return NotificationDispatchResult(
+                notification=notification,
+                outcome=DispatchOutcome.SKIPPED_INELIGIBLE,
+            )
+
+        obsolete_reason = obsolete_notification_reason(notification)
+        if obsolete_reason:
+            notification.status = Notification.Status.CANCELLED
+            notification.is_retryable = False
+            notification.error_code = "obsolete_notification"
+            notification.last_error = obsolete_reason
             notification.save(update_fields=(
                 "status", "is_retryable", "error_code", "last_error", "updated_at",
             ))
@@ -440,12 +500,6 @@ def dispatch_notification_with_outcome(
                 )
 
         if notification.status == Notification.Status.PROCESSING:
-            processing_timeout = get_processing_timeout()
-            if notification.updated_at > timezone.now() - processing_timeout:
-                return NotificationDispatchResult(
-                    notification=notification,
-                    outcome=DispatchOutcome.SKIPPED_PROCESSING,
-                )
             if notification.attempt_count >= max_attempts and not force:
                 notification.status = Notification.Status.FAILED
                 notification.is_retryable = False
@@ -498,6 +552,39 @@ def dispatch_notification_with_outcome(
             idempotency_key=notification.idempotency_key,
         )
 
+    except AmbiguousNotificationProviderError as error:
+        failure_message = (
+            "نتیجهٔ ارسال نامشخص است؛ قبل از ارسال مجدد، گزارش پنل پیامکی "
+            f"را بررسی کنید. ارسال مجدد ممکن است پیام تکراری ایجاد کند. {error}"
+        )
+        provider_response = {**error.response, "provider_error_code": error.code}
+        failure_retryable = False
+        error_code = "delivery_unknown"
+    except NotificationProviderError as error:
+        failure_message = str(error)
+        provider_response = error.response
+        failure_retryable = error.retryable
+        error_code = error.code
+    except NotificationConfigurationError as error:
+        failure_message = str(error)
+        provider_response = {}
+        failure_retryable = False
+        error_code = "configuration_error"
+    except Exception:
+        logger.exception(
+            "Unexpected notification provider failure",
+            extra={"notification_id": notification.pk},
+        )
+        failure_retryable = notification.provider == Notification.Provider.FAKE
+        failure_message = (
+            "خطای غیرمنتظره در پردازش پیامک."
+            if failure_retryable else
+            "نتیجهٔ ارسال نامشخص است؛ پیش از ارسال مجدد، گزارش پنل پیامکی را بررسی کنید."
+        )
+        provider_response = {}
+        error_code = "unexpected_provider_error" if failure_retryable else "delivery_unknown"
+    else:
+        # Persistence failures must escape; they are not safe reasons to resend.
         sent_at = timezone.now()
         status_map = {
             ProviderSendStatus.SIMULATED: Notification.Status.SIMULATED,
@@ -512,8 +599,10 @@ def dispatch_notification_with_outcome(
         )
         updated_count = Notification.objects.filter(
             pk=notification.pk,
-            status=Notification.Status.PROCESSING,
             attempt_count=claimed_attempt_count,
+        ).filter(
+            Q(status=Notification.Status.PROCESSING)
+            | Q(status=Notification.Status.FAILED, error_code="delivery_unknown")
         ).update(
             status=final_status,
             provider_message_id=result.provider_message_id or "",
@@ -535,25 +624,6 @@ def dispatch_notification_with_outcome(
                 else DispatchOutcome.SUPERSEDED
             ),
         )
-    except NotificationProviderError as error:
-        failure_message = str(error)
-        provider_response = error.response
-        failure_retryable = error.retryable
-        error_code = error.code
-    except NotificationConfigurationError as error:
-        failure_message = str(error)
-        provider_response = {}
-        failure_retryable = False
-        error_code = "configuration_error"
-    except Exception as error:
-        logger.exception(
-            "Unexpected notification provider failure",
-            extra={"notification_id": notification.pk},
-        )
-        failure_message = str(error)
-        provider_response = {}
-        failure_retryable = True
-        error_code = "unexpected_provider_error"
 
     is_retryable = (
         failure_retryable
@@ -568,8 +638,10 @@ def dispatch_notification_with_outcome(
         )
     updated_count = Notification.objects.filter(
         pk=notification.pk,
-        status=Notification.Status.PROCESSING,
         attempt_count=claimed_attempt_count,
+    ).filter(
+        Q(status=Notification.Status.PROCESSING)
+        | Q(status=Notification.Status.FAILED, error_code="delivery_unknown")
     ).update(
         status=Notification.Status.FAILED,
         is_retryable=is_retryable,

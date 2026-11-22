@@ -53,7 +53,6 @@ export default function PublicLayout() {
         </div>
         <div className="container footer-bottom">
           <span>{site.shopName} · تعمیر موبایل و فروش لوازم جانبی</span>
-          <span>پیگیری سفارش با RepairDesk</span>
         </div>
       </footer>
     </div>

@@ -56,13 +56,22 @@ def verify(wheel_dir):
         (root / "repair_desk/__init__.py").write_text("")
         (root / "repair_desk/wsgi.py").write_text(
             "def application(environ, start_response):\n"
+            "    if environ.get('PATH_INFO') == '/wake':\n"
+            "        from pathlib import Path\n"
+            "        from notifications.wakeup import notify_worker\n"
+            "        Path('queued').write_text('test-only')\n"
+            "        notify_worker()\n"
             "    start_response('200 OK', [('Content-Type', 'text/plain')])\n"
             "    return [b'isolated-combined-test']\n"
         )
+        (root / "notifications").mkdir()
+        (root / "notifications/__init__.py").write_text("")
+        shutil.copyfile(ROOT / "notifications/wakeup.py", root / "notifications/wakeup.py")
         (root / "manage.py").write_text('''
 import os, signal, sys
 from pathlib import Path
 from threading import Event
+from notifications.wakeup import QueueWakeup, notify_worker
 if sys.argv[1] == "collectstatic":
     with Path("static-starts").open("a") as stream:
         stream.write("collected\\n")
@@ -72,8 +81,16 @@ elif sys.argv[1] == "run_notification_worker":
     with Path("worker-starts").open("a") as stream:
         stream.write(str(os.getpid()) + "\\n")
     stopped = Event()
-    signal.signal(signal.SIGTERM, lambda *_: stopped.set())
-    stopped.wait()
+    def stop(*args):
+        stopped.set()
+        notify_worker()
+    signal.signal(signal.SIGTERM, stop)
+    with QueueWakeup() as wakeup:
+        while not stopped.is_set():
+            if Path("queued").exists():
+                Path("queued").unlink()
+                Path("wakeup-processed").write_text("processed")
+            wakeup.wait(stopped, 5)
     Path("worker-stopped").write_text("graceful")
 else:
     raise SystemExit(2)
@@ -87,6 +104,7 @@ else:
             "PYTHONPATH": str(packages),
             "REPAIRDESK_PROJECT_ROOT": str(root), "REPAIRDESK_PYTHON": sys.executable,
             "GUNICORN_CMD_ARGS": f"--bind 127.0.0.1:{port}",
+            "TMPDIR": str(root),
         }
         env.pop("REPAIRDESK_SUPERVISED", None)
         env.pop("FAIL_WORKER_STARTUP", None)
@@ -130,6 +148,17 @@ else:
                 assert terminal_status.returncode == 0, terminal_status.stdout + terminal_status.stderr
                 assert "repairdesk:sms_worker" in terminal_status.stdout
                 wait_for(http_ready)
+                begin = time.monotonic()
+                connection = http.client.HTTPConnection("127.0.0.1", port, timeout=2)
+                connection.request("GET", "/wake")
+                response = connection.getresponse()
+                assert response.status == 200
+                response.read()
+                connection.close()
+                wait_for(lambda: (root / "wakeup-processed").exists(), timeout=2)
+                latency = time.monotonic() - begin
+                assert latency < 2, latency
+                print(f"PASS: cross-process web-to-worker wakeup in {latency:.3f}s")
                 assert (root / "static-starts").read_text().splitlines() == ["collected"]
                 assert len((root / "worker-starts").read_text().splitlines()) == 1
                 old_pid = int(control("pid", "repairdesk:sms_worker").stdout.strip())

@@ -1,18 +1,16 @@
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { useQuery } from '@tanstack/react-query'
+import { Controller, useForm } from 'react-hook-form'
 import { Field } from '../../components/ui/Field'
 import { FormAlert, Spinner } from '../../components/ui/Feedback'
 import { Modal } from '../../components/ui/Modal'
 import { useAuth } from '../auth/AuthProvider'
 import { canManage } from '../../config/status'
-import { site } from '../../config/site'
 import { dateTime, parseAmount } from '../../lib/format'
-import { request } from '../../lib/api/client'
-import { keys } from '../../lib/api/queries'
 import { applyFieldErrors } from '../../lib/forms'
-import type { Repair, Staff, UpdateRepair } from '../../types/api'
+import type { Repair, UpdateRepair } from '../../types/api'
 import { useUpdateRepair } from './useUpdateRepair'
+import { MoneyField } from './MoneyField'
+import { RepairAssigneeField } from './RepairAssigneeField'
 type EditValues = {
   issue_description: string
   amount: string
@@ -32,11 +30,6 @@ export function RepairEditForm({ repair }: { repair: Repair }) {
       assigned_technician_id: repair.assigned_technician?.id.toString() || '',
     },
   })
-  const staff = useQuery({
-    queryKey: keys.staff,
-    queryFn: ({ signal }) => request<Staff[]>('accounts/', { signal }),
-    enabled: manage,
-  })
   function save(body: UpdateRepair) {
     update.mutate(body, {
       onSuccess: () => {
@@ -47,16 +40,18 @@ export function RepairEditForm({ repair }: { repair: Repair }) {
     })
   }
   function submit(values: EditValues) {
-    let amount: number | null
+    const dirty = form.formState.dirtyFields
+    let amount: number | null = null
     try {
-      amount = parseAmount(values.amount)
-      if (values.is_paid && amount === null)
-        throw new Error('برای ثبت پرداخت، مبلغ نهایی لازم است.')
+      if (dirty.amount || dirty.is_paid) {
+        amount = parseAmount(values.amount)
+        if (values.is_paid && amount === null)
+          throw new Error('برای ثبت پرداخت، مبلغ نهایی لازم است.')
+      }
     } catch (error) {
       form.setError('amount', { message: (error as Error).message })
       return
     }
-    const dirty = form.formState.dirtyFields
     const body: UpdateRepair = {
       ...(dirty.issue_description ? { issue_description: values.issue_description } : {}),
       ...(dirty.amount ? { final_amount: amount } : {}),
@@ -84,50 +79,19 @@ export function RepairEditForm({ repair }: { repair: Repair }) {
           <textarea {...form.register('issue_description')} rows={4} />
         </Field>
         {manage && (
-          <Field
-            label="تعمیرکار مسئول"
+          <RepairAssigneeField
+            registration={form.register('assigned_technician_id')}
+            current={repair.assigned_technician}
             error={form.formState.errors.assigned_technician_id?.message}
-          >
-            <select
-              {...form.register('assigned_technician_id')}
-              disabled={staff.isPending || staff.isError}
-            >
-              <option value="">بدون تخصیص</option>
-              {repair.assigned_technician &&
-                !staff.data?.some(
-                  (person) => person.id === repair.assigned_technician?.id && person.is_active,
-                ) && (
-                  <option value={repair.assigned_technician.id}>
-                    {repair.assigned_technician.username} (فعلی)
-                  </option>
-                )}
-              {staff.data
-                ?.filter((person) => person.role === 3 && person.is_active)
-                .map((person) => (
-                  <option value={person.id} key={person.id}>
-                    {person.username}
-                  </option>
-                ))}
-            </select>
-          </Field>
+          />
         )}
-        {manage && staff.isError && (
-          <button
-            type="button"
-            className="text-link"
-            onClick={() => {
-              void staff.refetch()
-            }}
-          >
-            دریافت دوباره تعمیرکاران
-          </button>
-        )}
-        <Field
-          label={`مبلغ نهایی (${site.currency})`}
-          error={form.formState.errors.amount?.message}
-        >
-          <input {...form.register('amount')} inputMode="numeric" dir="ltr" />
-        </Field>
+        <Controller
+          control={form.control}
+          name="amount"
+          render={({ field: { onChange, ...field }, fieldState }) => (
+            <MoneyField {...field} onValueChange={onChange} error={fieldState.error?.message} />
+          )}
+        />
         <label className="checkbox">
           <input type="checkbox" {...form.register('is_paid')} />
           پرداخت حضوری انجام شده است

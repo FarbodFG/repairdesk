@@ -929,7 +929,7 @@ class NotificationSendModeTests(NotificationTestDataMixin, TestCase):
         notification = Notification.objects.get(
             repair_order_id=response.data["id"],
         )
-        self.assertEqual(callbacks, [])
+        self.assertEqual(len(callbacks), 1)
         self.assertEqual(notification.status, Notification.Status.PENDING)
         self.assertEqual(notification.attempt_count, 0)
 
@@ -944,7 +944,7 @@ class NotificationSendModeTests(NotificationTestDataMixin, TestCase):
         notification = Notification.objects.get(
             repair_order_id=response.data["id"],
         )
-        self.assertEqual(callbacks, [])
+        self.assertEqual(len(callbacks), 1)
         self.assertEqual(notification.status, Notification.Status.PENDING)
         self.assertEqual(notification.attempt_count, 0)
 

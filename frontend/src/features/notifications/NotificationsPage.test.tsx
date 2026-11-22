@@ -52,6 +52,6 @@ it('includes explicit acknowledgement when an uncertain delivery is retried', as
   renderPage()
   await userEvent.click(await screen.findByRole('button', { name: 'ارسال مجدد' }))
   await waitFor(() => expect(requestMock).toHaveBeenCalledWith('notifications/7/retry/', {
-    method: 'POST', body: JSON.stringify({ confirm_unknown_delivery: true }),
+    method: 'POST', body: { confirm_unknown_delivery: true },
   }))
 })

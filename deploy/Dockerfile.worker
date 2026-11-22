@@ -14,4 +14,4 @@ RUN useradd --create-home --uid 10001 repairdesk
 USER repairdesk
 # Supply the same DB/SMS secrets as the API at runtime. Migrate once on the API
 # before starting this worker; never apply migrations from each worker replica.
-CMD ["python", "manage.py", "run_notification_worker", "--interval", "60", "--limit", "100"]
+CMD ["python", "manage.py", "run_notification_worker", "--interval", "5", "--limit", "100"]

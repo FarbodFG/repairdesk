@@ -38,7 +38,6 @@ export default function LoginPage() {
       <section className="login-story">
         <Brand light />
         <div>
-          <span className="eyebrow">REPAIRDESK / WORKSPACE</span>
           <h1>
             هر تعمیر،
             <br />
@@ -50,7 +49,6 @@ export default function LoginPage() {
             همه جزئیات در یک میز کار.
           </p>
         </div>
-        <span className="technical-label">PRECISION IN EVERY DETAIL</span>
       </section>
       <section className="login-panel">
         <Link to="/" className="text-link">

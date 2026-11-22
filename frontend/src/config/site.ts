@@ -1,11 +1,9 @@
 export const site = {
-  productName: 'RepairDesk',
-  name: 'میز تعمیر',
   shopName: import.meta.env.VITE_SHOP_NAME || 'شهر آفتاب',
   phone: import.meta.env.VITE_SHOP_PHONE || '09191861006',
   address: (import.meta.env.VITE_SHOP_ADDRESS || null) as string | null,
   hours: import.meta.env.VITE_SHOP_HOURS || 'شنبه تا پنجشنبه، ۱۰:۰۰ تا ۱۳:۰۰ و ۱۷:۰۰ تا ۲۱:۰۰',
-  currency: import.meta.env.VITE_CURRENCY_LABEL || 'واحد پول تنظیم نشده',
+  currency: import.meta.env.VITE_CURRENCY_LABEL || 'تومان',
   timezone: 'Asia/Tehran',
   services: [
     {

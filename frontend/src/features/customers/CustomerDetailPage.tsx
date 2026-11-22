@@ -75,7 +75,7 @@ export default function CustomerDetailPage() {
               </dd>
             </div>
             <div>
-              <dt>شماره دوم</dt>
+              <dt>شماره در دسترس برای پیامک</dt>
               <dd>
                 {customer.available_phone_number ? (
                   <div className="row">
@@ -85,12 +85,12 @@ export default function CustomerDetailPage() {
                     <CopyButton value={customer.available_phone_number} />
                   </div>
                 ) : (
-                  'ثبت نشده'
+                  'از شمارهٔ اصلی استفاده می‌شود'
                 )}
               </dd>
             </div>
           </dl>
-          <p className="small muted">ویرایش اطلاعات مشتری در API فعلی ارائه نشده است.</p>
+          <p className="small muted">پیامک‌ها به شمارهٔ در دسترس ارسال می‌شوند؛ در صورت خالی بودن، شمارهٔ اصلی استفاده می‌شود.</p>
         </aside>
         <section className="panel">
           <div className="panel-title">

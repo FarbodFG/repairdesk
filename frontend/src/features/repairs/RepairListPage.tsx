@@ -2,7 +2,7 @@ import { useQuery, keepPreviousData } from '@tanstack/react-query'
 import { Link, useSearchParams } from 'react-router'
 import { Plus, RotateCcw } from 'lucide-react'
 import { useAuth } from '../auth/AuthProvider'
-import { canManage, statusIds, statuses } from '../../config/status'
+import { canManage, roles, statusIds, statuses } from '../../config/status'
 import { PageHeader } from '../../components/layout/PageHeader'
 import { SearchInput } from '../../components/ui/SearchInput'
 import { ErrorState, Loading } from '../../components/ui/Feedback'
@@ -17,7 +17,7 @@ export default function RepairListPage() {
   const [params, setParams] = useSearchParams()
   const page = Math.max(1, Number(params.get('page')) || 1)
   const query = new URLSearchParams({ page: String(page), page_size: '20' })
-  for (const key of ['search', 'status', ...(manage ? ['technician_id'] : [])]) {
+  for (const key of ['search', 'status', 'scope', ...(manage ? ['technician_id'] : [])]) {
     if (params.get(key)) query.set(key, params.get(key)!)
   }
   const queryString = query.toString()
@@ -50,15 +50,32 @@ export default function RepairListPage() {
             : 'فقط سفارش‌های تخصیص‌یافته به شما نمایش داده می‌شوند.'
         }
         action={
-          manage && (
-            <Link className="button" to="/app/repairs/new">
-              <Plus size={18} />
-              پذیرش دستگاه
+          <div className="repair-list-actions">
+            <Link className="button secondary" to="/app/repairs/unassigned">
+              سفارش‌های بدون مسئول
             </Link>
-          )
+            {manage && (
+              <Link className="button" to="/app/repairs/new">
+                <Plus size={18} aria-hidden="true" /> پذیرش دستگاه
+              </Link>
+            )}
+          </div>
         }
       />
       <section className="panel list-panel">
+        {manage && (
+          <div className="repair-scope" role="group" aria-label="نمای سفارش‌ها">
+            {[
+              ['', 'همه سفارش‌ها'], ['active', 'فعال'], ['today', 'پذیرش امروز'], ['unpaid', 'پرداخت باز'],
+            ].map(([value, label]) => (
+              <button
+                key={value} type="button"
+                aria-pressed={(params.get('scope') || '') === value}
+                onClick={() => filter('scope', value)}
+              >{label}</button>
+            ))}
+          </div>
+        )}
         <div className="filters">
           <SearchInput
             value={params.get('search') || ''}
@@ -79,19 +96,20 @@ export default function RepairListPage() {
           </select>
           {manage && (
             <select
-              aria-label="فیلتر تعمیرکار"
+              aria-label="فیلتر مسئول تعمیر"
               value={params.get('technician_id') || ''}
               disabled={staff.isPending || staff.isError}
               onChange={(e) => filter('technician_id', e.target.value)}
             >
               <option value="">
-                {staff.isError ? 'دریافت تعمیرکاران ناموفق' : 'همه تعمیرکاران'}
+                {staff.isError ? 'دریافت کارکنان ناموفق' : 'همه مسئولان تعمیر'}
               </option>
               {staff.data
-                ?.filter((person) => person.role === 3)
+                ?.filter((person) => person.role !== null && person.role in roles)
                 .map((person) => (
                   <option key={person.id} value={person.id}>
                     {person.username}
+                    {person.id === user?.id && ' (خودم)'}
                     {!person.is_active && ' (غیرفعال)'}
                   </option>
                 ))}
@@ -112,7 +130,7 @@ export default function RepairListPage() {
               void staff.refetch()
             }}
           >
-            دریافت دوباره تعمیرکاران
+            دریافت دوباره کارکنان
           </button>
         )}
         {repairs.isPending ? (

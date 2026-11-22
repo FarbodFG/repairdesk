@@ -23,11 +23,15 @@ export function TrackingForm({
   busy = false,
   initialCode = '',
   compact = false,
+  lookup = false,
+  onEdit,
 }: {
   onTrack: (code: string) => void
   busy?: boolean
   initialCode?: string
   compact?: boolean
+  lookup?: boolean
+  onEdit?: () => void
 }) {
   const {
     register,
@@ -39,7 +43,7 @@ export function TrackingForm({
   })
   return (
     <form
-      className={`tracking-form ${compact ? 'compact' : ''}`}
+      className={`tracking-form ${compact ? 'compact' : ''} ${lookup ? 'lookup' : ''}`}
       onSubmit={handleSubmit((data) => onTrack(data.code))}
       noValidate
     >
@@ -47,19 +51,19 @@ export function TrackingForm({
         <ScanLine size={20} aria-hidden="true" />
         <Field label="کد پیگیری سفارش" error={errors.code?.message}>
           <input
-            {...register('code')}
+            {...register('code', { onChange: onEdit })}
             dir="ltr"
             autoComplete="off"
             autoCapitalize="characters"
             spellCheck={false}
-            placeholder="کد درج‌شده روی رسید"
+            placeholder={lookup ? 'کد درج‌شده روی رسید…' : 'کد درج‌شده روی رسید'}
+            translate="no"
             maxLength={32}
           />
         </Field>
       </div>
       <button disabled={busy} className="button" type="submit">
-        {busy ? <Spinner /> : 'پیگیری تعمیر'}
-        <ArrowLeft size={18} />
+        {busy ? <><Spinner /> در حال بررسی…</> : <>پیگیری تعمیر <ArrowLeft size={18} aria-hidden="true" /></>}
       </button>
     </form>
   )

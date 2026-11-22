@@ -882,92 +882,6 @@
   font-size: 8px;
   letter-spacing: 1px;
 }
-.track-page {
-  padding-block: 72px 80px;
-  min-height: 70vh;
-}
-.track-heading {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.track-heading .eyebrow {
-  justify-content: center;
-  color: var(--teal);
-}
-.track-heading p {
-  margin-top: 15px;
-  color: var(--muted);
-  font-size: 14px;
-}
-.track-panel {
-  max-width: 780px;
-  margin: 0 auto 24px;
-  padding: 36px;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-}
-.privacy-note {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 11px;
-  margin-top: 18px;
-}
-.track-page > .text-link {
-  display: flex;
-  justify-content: center;
-}
-.tracking-result {
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
-}
-.result-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  font-size: 13px;
-}
-.tracking-status {
-  padding: 40px 20px;
-  text-align: center;
-  color: var(--teal);
-}
-.tracking-status svg {
-  margin-inline: auto;
-  margin-bottom: 16px;
-}
-.tracking-status p {
-  color: var(--muted);
-  margin-top: 10px;
-  font-size: 13px;
-}
-.tracking-status.cancelled {
-  color: #a03131;
-}
-.tracking-facts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: #f7f8f4;
-  padding: 20px;
-  gap: 16px;
-  margin: 0 0 22px;
-  border-radius: 8px;
-}
-.tracking-facts dt {
-  font-size: 11px;
-  color: var(--muted);
-  margin-bottom: 10px;
-}
-.tracking-facts dd {
-  font-size: 13px;
-  margin: 0;
-  line-height: 1.8;
-}
 .login-page {
   min-height: 100dvh;
   display: grid;
@@ -1425,37 +1339,6 @@
     flex-direction: column;
     gap: 8px;
     margin-top: 20px;
-  }
-  .track-page {
-    padding-block: 42px;
-  }
-  .track-heading h1 {
-    font-size: 27px;
-  }
-  .track-panel {
-    padding: 22px;
-  }
-  .track-heading p {
-    font-size: 12px;
-  }
-  .privacy-note {
-    align-items: flex-start;
-    font-size: 10px;
-  }
-  .tracking-facts {
-    grid-template-columns: 1fr;
-  }
-  .tracking-facts > div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-  }
-  .tracking-facts dt {
-    margin: 0;
-  }
-  .result-top {
-    flex-wrap: wrap;
   }
   .login-page {
     grid-template-columns: 1fr;

@@ -19,6 +19,7 @@ from .exceptions import (
     NotificationProviderError,
 )
 from .models import Notification
+from .wakeup import notify_worker
 from .providers import (
     FakeSmsProvider,
     KavenegarProvider,
@@ -34,6 +35,7 @@ from .templates import (
 logger = logging.getLogger(__name__)
 
 IRANIAN_MOBILE_PATTERN = re.compile(r"^(?:\+98|0098|98|0)?(9[0-9]{9})$")
+MOBILE_DIGITS = str.maketrans("۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩", "01234567890123456789")
 
 
 class DispatchOutcome(str, Enum):
@@ -181,7 +183,7 @@ def get_notification_provider_name() -> str:
 
 
 def normalize_recipient(phone_number: str) -> str:
-    normalized = re.sub(r"[\s\-()]", "", phone_number)
+    normalized = re.sub(r"[\s\-()]", "", phone_number.translate(MOBILE_DIGITS))
     match = IRANIAN_MOBILE_PATTERN.fullmatch(normalized)
 
     if not match:
@@ -272,6 +274,18 @@ def create_repair_notification(
     notification_context = dict(context or build_repair_context(repair_order))
     rendered_message = render_template(template_key, notification_context)
     provider_name = get_notification_provider_name()
+    recipient = repair_order.customer.sms_phone_number
+    delivery_state = {}
+    try:
+        recipient = normalize_recipient(recipient)
+    except NotificationConfigurationError as error:
+        # Legacy customer records can predate phone validation. The order is
+        # still valid, and the failed outbox entry shows why no SMS was sent.
+        delivery_state = {
+            "status": Notification.Status.FAILED,
+            "error_code": "configuration_error",
+            "last_error": str(error),
+        }
 
     notification, created = Notification.objects.get_or_create(
         idempotency_key=idempotency_key,
@@ -282,12 +296,11 @@ def create_repair_notification(
             "event_type": event_type,
             "channel": Notification.Channel.SMS,
             "provider": provider_name,
-            "recipient": normalize_recipient(
-                repair_order.customer.phone_number
-            ),
+            "recipient": recipient,
             "template_key": template_key,
             "context": notification_context,
             "rendered_message": rendered_message,
+            **delivery_state,
         },
     )
 
@@ -330,6 +343,9 @@ def schedule_notification_dispatch(notification: Notification) -> str:
         )
         return "worker"
     if send_mode == "worker":
+        # Persist first. The lightweight local signal is only an optimization;
+        # the durable database queue is also checked periodically.
+        transaction.on_commit(notify_worker, robust=True)
         return send_mode
 
     notification_id = notification.pk
@@ -521,6 +537,24 @@ def dispatch_notification_with_outcome(
                     outcome=DispatchOutcome.SKIPPED_INELIGIBLE,
                 )
 
+        if notification.attempt_count == 0 and notification.customer_id:
+            try:
+                notification.recipient = normalize_recipient(
+                    notification.customer.sms_phone_number,
+                )
+            except NotificationConfigurationError as error:
+                notification.status = Notification.Status.FAILED
+                notification.is_retryable = False
+                notification.error_code = "configuration_error"
+                notification.last_error = str(error)
+                notification.save(update_fields=(
+                    "status", "is_retryable", "error_code", "last_error", "updated_at",
+                ))
+                return NotificationDispatchResult(
+                    notification=notification,
+                    outcome=DispatchOutcome.SKIPPED_INELIGIBLE,
+                )
+
         notification.status = Notification.Status.PROCESSING
         notification.attempt_count += 1
         notification.is_retryable = False
@@ -532,6 +566,7 @@ def dispatch_notification_with_outcome(
             update_fields=(
                 "status",
                 "attempt_count",
+                "recipient",
                 "is_retryable",
                 "error_code",
                 "last_error",

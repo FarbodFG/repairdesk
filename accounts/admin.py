@@ -9,7 +9,7 @@ from .models import User
 class UserAdmin(BaseUserAmin):
     fieldsets = BaseUserAmin.fieldsets + (
         (
-            _('RepairDesk information'),
+            _('اطلاعات شهر آفتاب'),
             {
                 'fields': (
                     'repair_shop',
@@ -30,7 +30,7 @@ class UserAdmin(BaseUserAmin):
             },
         ),
         (
-            _('RepairDesk information'),
+            _('اطلاعات شهر آفتاب'),
             {
                 'fields': (
                     'repair_shop',

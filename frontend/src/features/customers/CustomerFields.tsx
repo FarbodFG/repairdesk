@@ -21,7 +21,7 @@ export function CustomerFields({
           />
         </Field>
       </div>
-      <Field label="شماره موبایل" error={errors.phone_number}>
+      <Field label="شماره موبایل اصلی مشتری" error={errors.phone_number}>
         <input
           type="tel"
           autoComplete="tel-national"
@@ -31,7 +31,11 @@ export function CustomerFields({
           onChange={(e) => onChange('phone_number', e.target.value)}
         />
       </Field>
-      <Field label="شماره تماس دوم (اختیاری)" error={errors.available_phone_number}>
+      <Field
+        label="شماره در دسترس برای پیامک (اختیاری)"
+        error={errors.available_phone_number}
+        hint="پیامک به این شماره می‌رود؛ اگر خالی باشد، شمارهٔ اصلی استفاده می‌شود. یکسان بودن دو شماره مجاز است."
+      >
         <input
           type="tel"
           dir="ltr"

@@ -195,7 +195,7 @@ Dockerfile: `deploy/Dockerfile.worker`، Context: ریشهٔ همین ریپو.
 Worker پورت HTTP ندارد؛ برای آن HTTP Probe تعریف نکنید. یک نمونه کافی است.
 
 ```sh
-python manage.py run_notification_worker --interval 60 --limit 100
+python manage.py run_notification_worker --interval 5 --limit 100
 ```
 
 اگر زمان‌بند قابل‌اعتماد دارید، به‌جای Worker دائم فقط فرمان زیر را هر دقیقه اجرا کنید؛

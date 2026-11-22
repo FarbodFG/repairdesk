@@ -1,6 +1,5 @@
 from django.db.models import BigIntegerField, Count, Q, Sum, Value
 from django.db.models.functions import Coalesce
-from django.utils import timezone
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -9,6 +8,7 @@ from rest_framework import status
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from repairs.models import RepairOrder
+from repairs.scopes import local_day_bounds, repair_scopes
 from utils.permissions import IsManagerOrReceptionist
 
 
@@ -17,7 +17,8 @@ class DashboardSummaryView(APIView):
     permission_classes = [IsAuthenticated, IsManagerOrReceptionist]
 
     def get(self, request):
-        today = timezone.localdate()
+        day_start, day_end = local_day_bounds()
+        scopes = repair_scopes((day_start, day_end))
 
         repair_orders = RepairOrder.objects.filter(
             repair_shop=request.user.repair_shop,
@@ -28,12 +29,7 @@ class DashboardSummaryView(APIView):
 
             active_orders=Count(
                 'id',
-                filter=~Q(
-                    repair_status__in=[
-                        RepairOrder.DELIVERED,
-                        RepairOrder.CANCELLED,
-                    ],
-                ),
+                filter=scopes['active'],
             ),
 
             ready_for_delivery_orders=Count(
@@ -45,15 +41,12 @@ class DashboardSummaryView(APIView):
 
             unpaid_orders=Count(
                 'id',
-                filter=(
-                    Q(is_paid=False, final_amount__isnull=False)
-                    & ~Q(repair_status=RepairOrder.CANCELLED)
-                ),
+                filter=scopes['unpaid'],
             ),
 
             today_orders=Count(
                 'id',
-                filter=Q(created_at__date=today),
+                filter=scopes['today'],
             ),
 
             total_paid_amount=Coalesce(
@@ -70,7 +63,8 @@ class DashboardSummaryView(APIView):
                     'final_amount',
                     filter=Q(
                         is_paid=True,
-                        paid_at__date=today,
+                        paid_at__gte=day_start,
+                        paid_at__lt=day_end,
                     ),
                 ),
                 Value(0),

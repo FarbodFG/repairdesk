@@ -1,7 +1,13 @@
+import re
+
 from django.shortcuts import get_object_or_404
 from django.db import transaction
 from django.db.models import Q
+from django.utils import timezone
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
 
+from rest_framework.generics import ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -9,7 +15,9 @@ from rest_framework import status
 
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
-from utils.permissions import IsManagerOrReceptionist, CanUpdateRepairOrder
+from utils.permissions import (
+    CanUpdateRepairOrder, HasActiveWorkspace, IsManagerOrReceptionist, has_active_workspace,
+)
 from accounts.models import User
 from notifications.services import (
     create_repair_notification,
@@ -25,11 +33,53 @@ from .serializer import (
     RepairOrderUpdateSerializer,
     RepairStatusHistorySerializer,
     PublicRepairTrackingSerializer,
+    UnassignedRepairSerializer,
 )
 from .models import RepairOrder, RepairStatusHistory
 from .pagination import RepairOrderPagination
+from .scopes import UNASSIGNED_ACTIVE_REPAIRS, repair_scopes
 
 
+class UnassignedRepairListView(ListAPIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, HasActiveWorkspace]
+    serializer_class = UnassignedRepairSerializer
+    pagination_class = RepairOrderPagination
+
+    def get_queryset(self):
+        return (
+            RepairOrder.objects.filter(
+                UNASSIGNED_ACTIVE_REPAIRS, repair_shop_id=self.request.user.repair_shop_id,
+            )
+            .select_related('device__device_model__brand')
+            .order_by('-created_at', '-pk')
+        )
+
+
+class ClaimRepairView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, HasActiveWorkspace]
+
+    def post(self, request, repair_order_id):
+        order = RepairOrder.objects.filter(
+            pk=repair_order_id, repair_shop_id=request.user.repair_shop_id,
+        )
+        # The condition and update run in one statement, so only one claimant wins.
+        claimed = order.filter(UNASSIGNED_ACTIVE_REPAIRS).update(
+            assigned_technician_id=request.user.pk, updated_at=timezone.now(),
+        )
+        if claimed:
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
+        current = get_object_or_404(order.values('assigned_technician_id'))
+        if current['assigned_technician_id'] == request.user.pk:
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(
+            {'detail': 'این سفارش دیگر قابل پذیرش نیست.'}, status=status.HTTP_409_CONFLICT,
+        )
+
+
+@method_decorator(never_cache, name='dispatch')
 class RepairOrderListCreateView(APIView):
     authentication_classes = [JWTAuthentication]
 
@@ -44,6 +94,8 @@ class RepairOrderListCreateView(APIView):
     def get(self, request):
         if request.user.is_authenticated:
             user = request.user
+            if not has_active_workspace(user):
+                self.permission_denied(request, message="برای دسترسی، حساب و تعمیرگاه باید فعال باشند.")
 
             repair_orders = (
                 RepairOrder.objects
@@ -61,19 +113,6 @@ class RepairOrderListCreateView(APIView):
                     assigned_technician=user,
                 )
 
-            elif user.role not in {
-                User.MANAGER_ROLE,
-                User.RECEPTIONIST_ROLE,
-            }:
-                return Response(
-                    {
-                        'detail': (
-                            'شما اجازه مشاهده سفارش‌های تعمیر را ندارید.'
-                        ),
-                    },
-                    status=status.HTTP_403_FORBIDDEN,
-                )
-
             search = request.query_params.get('search', '').strip()
 
             if search:
@@ -83,6 +122,16 @@ class RepairOrderListCreateView(APIView):
                     | Q(customer__phone_number__icontains=search)
                     | Q(customer__available_phone_number__icontains=search)
                 )
+
+            scope = request.query_params.get('scope')
+            if scope:
+                condition = repair_scopes().get(scope)
+                if condition is None:
+                    return Response(
+                        {'detail': 'فیلتر سفارش نامعتبر است.'},
+                        status=status.HTTP_400_BAD_REQUEST,
+                    )
+                repair_orders = repair_orders.filter(condition)
 
             repair_status = request.query_params.get('status')
 
@@ -150,7 +199,7 @@ class RepairOrderListCreateView(APIView):
 
             return paginator.get_paginated_response(serializer.data)
 
-        tracking_code = request.query_params.get('tracking_code')
+        tracking_code = request.query_params.get('tracking_code', '').strip()
 
         if not tracking_code:
             return Response(
@@ -158,13 +207,17 @@ class RepairOrderListCreateView(APIView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
+        if not re.fullmatch(r'[A-Za-z0-9]{6,32}', tracking_code):
+            return Response(
+                {'detail': 'قالب کد پیگیری معتبر نیست.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
         repair_order = get_object_or_404(
-            RepairOrder.objects.select_related(
-                'repair_shop',
-                'customer',
-                'device',
+            RepairOrder.objects.only(
+                'tracking_code', 'repair_status', 'final_amount', 'is_paid', 'created_at',
             ),
-            tracking_code=tracking_code,
+            tracking_code=tracking_code.upper(),
         )
 
         serializer = PublicRepairTrackingSerializer(repair_order)
@@ -187,7 +240,7 @@ class RepairOrderDetailView(APIView):
     authentication_classes = [JWTAuthentication]
 
     def get_permissions(self):
-        if self.request.method in {'PATCH', 'GET'}:
+        if self.request.method in {'PATCH', 'GET', 'HEAD'}:
             permission_classes = [IsAuthenticated, CanUpdateRepairOrder]
         elif self.request.method == 'DELETE':
             permission_classes = [IsAuthenticated, IsManagerOrReceptionist]

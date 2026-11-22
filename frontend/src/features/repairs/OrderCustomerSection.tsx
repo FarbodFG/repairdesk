@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { UserRound } from 'lucide-react'
 import { SearchInput } from '../../components/ui/SearchInput'
 import { CustomerFields } from '../customers/CustomerFields'
+import { smsPhoneNumber } from '../customers/customerSchema'
 import type { Customer } from '../../types/api'
 export function OrderCustomerSection() {
   const [search, setSearch] = useState('')
@@ -21,17 +22,19 @@ export function OrderCustomerSection() {
       request<Customer[]>(`customers/?search=${encodeURIComponent(search)}`, { signal }),
     enabled: values.customerMode === 'existing',
   })
+  const selectedCustomer = customers.data?.find((customer) => String(customer.id) === values.customer_id)
   return (
     <section className="panel">
       <div className="form-section-title">
-        <UserRound size={20} />
-        <h2>۱. مشتری</h2>
+        <UserRound size={20} aria-hidden="true" />
+        <h2 tabIndex={-1}>مشتری</h2>
       </div>
       <div className="segmented" role="group" aria-label="روش انتخاب مشتری">
         <button
           type="button"
           aria-pressed={values.customerMode === 'existing'}
           onClick={() => {
+            if (values.customerMode === 'existing') return
             form.setValue('customerMode', 'existing')
             form.setValue('device_id', '')
           }}
@@ -42,6 +45,7 @@ export function OrderCustomerSection() {
           type="button"
           aria-pressed={values.customerMode === 'new'}
           onClick={() => {
+            if (values.customerMode === 'new') return
             form.setValue('customerMode', 'new')
             form.setValue('deviceMode', 'new')
             form.setValue('device_id', '')
@@ -97,6 +101,11 @@ export function OrderCustomerSection() {
                 ))}
               </select>
             </Field>
+          )}
+          {selectedCustomer && (
+            <p className="small muted">
+              شمارهٔ دریافت پیامک: <bdi dir="ltr">{smsPhoneNumber(selectedCustomer)}</bdi>
+            </p>
           )}
         </>
       )}

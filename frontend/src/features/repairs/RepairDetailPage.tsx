@@ -100,7 +100,7 @@ export default function RepairDetailPage() {
           </div>
         </div>
         <div>
-          <small className="muted">تعمیرکار</small>
+          <small className="muted">مسئول تعمیر</small>
           <p>{repair.assigned_technician?.username || 'تخصیص داده نشده'}</p>
         </div>
       </section>

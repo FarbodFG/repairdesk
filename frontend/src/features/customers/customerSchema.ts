@@ -12,3 +12,10 @@ export const customerSchema = z.object({
     .pipe(z.string().regex(/^(09\d{9})?$/, 'شماره دوم باید خالی یا یک موبایل معتبر باشد.')),
 })
 export type CustomerValues = z.input<typeof customerSchema>
+
+export function smsPhoneNumber(customer: {
+  phone_number: string
+  available_phone_number?: string
+}) {
+  return customer.available_phone_number?.trim() || customer.phone_number.trim()
+}

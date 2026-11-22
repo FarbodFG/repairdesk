@@ -30,6 +30,7 @@ class WorkerTests(SimpleTestCase):
             patch(f"{target}.Event", return_value=stopped),
             patch(f"{target}.call_command", side_effect=batch),
             patch(f"{target}.connections.close_all"),
+            patch(f"{target}.close_old_connections"),
             patch(f"{target}.logger.exception") as logged,
         ):
             call_command("run_notification_worker", interval=0.001, stdout=StringIO())

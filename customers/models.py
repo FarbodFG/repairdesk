@@ -20,6 +20,11 @@ class Customer(models.Model):
         verbose_name = _('customer')
         verbose_name_plural = _('customers')
 
+    @property
+    def sms_phone_number(self):
+        """The reachable second number is preferred; blank means primary."""
+        return (self.available_phone_number or '').strip() or self.phone_number.strip()
+
     def __str__(self):
         return f'{self.name} - {self.phone_number}'
 

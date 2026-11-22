@@ -22,8 +22,8 @@ export function OrderDeviceSection() {
   return (
     <section className="panel">
       <div className="form-section-title">
-        <Smartphone size={20} />
-        <h2>۲. دستگاه</h2>
+        <Smartphone size={20} aria-hidden="true" />
+        <h2 tabIndex={-1}>دستگاه</h2>
       </div>
       {values.customerMode === 'existing' && (
         <div className="segmented" role="group" aria-label="روش انتخاب دستگاه">

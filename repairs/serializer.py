@@ -20,6 +20,23 @@ from notifications.templates import REPAIR_CREATED
 from .models import RepairOrder, RepairStatusHistory
 
 
+def eligible_repair_assignees(user):
+    return User.objects.filter(
+        repair_shop_id=user.repair_shop_id,
+        role__in=[role for role, _ in User.ROLES],
+        is_active=True,
+    )
+
+
+class UnassignedRepairSerializer(serializers.ModelSerializer):
+    device_name = serializers.CharField(source='device')
+
+    class Meta:
+        model = RepairOrder
+        fields = ('id', 'device_name', 'repair_status', 'created_at')
+        read_only_fields = fields
+
+
 class RepairOrderSerializer(serializers.ModelSerializer):
     repair_shop = RepairShopSerializer(read_only=True)
     customer = CustomerSerializer(read_only=True)
@@ -90,6 +107,11 @@ class RepairOrderSerializer(serializers.ModelSerializer):
                 "برای مشتری جدید باید دستگاه جدید ثبت شود."
             )
 
+        if attrs.get('is_paid') and attrs.get('final_amount') is None:
+            raise serializers.ValidationError({
+                'final_amount': 'برای ثبت پرداخت، مبلغ نهایی لازم است.',
+            })
+
         return attrs
 
     class Meta:
@@ -119,6 +141,7 @@ class RepairOrderSerializer(serializers.ModelSerializer):
             'id',
             'repair_shop',
             'repair_status_display',
+            'repair_status',
             'tracking_code',
             'created_at',
             'customer',
@@ -140,9 +163,7 @@ class RepairOrderSerializer(serializers.ModelSerializer):
             self.fields['device_id'].queryset = Device.objects.filter(
                 customer__repair_shop=repair_shop)
 
-            self.fields['assigned_technician_id'].queryset = User.objects.filter(
-                repair_shop=repair_shop,
-                role=User.TECHNICIAN_ROLE, is_active=True,)
+            self.fields['assigned_technician_id'].queryset = eligible_repair_assignees(request.user)
 
     def create(self, validated_data):
         request = self.context["request"]
@@ -232,13 +253,7 @@ class RepairOrderUpdateSerializer(serializers.ModelSerializer):
             User.MANAGER_ROLE,
             User.RECEPTIONIST_ROLE,
         }:
-            self.fields[
-                'assigned_technician_id'
-            ].queryset = User.objects.filter(
-                repair_shop=request.user.repair_shop,
-                role=User.TECHNICIAN_ROLE,
-                is_active=True,
-            )
+            self.fields['assigned_technician_id'].queryset = eligible_repair_assignees(request.user)
         else:
             self.fields['assigned_technician_id'].read_only = True
 
@@ -259,6 +274,14 @@ class RepairOrderUpdateSerializer(serializers.ModelSerializer):
                     ),
                 }
             )
+
+        if 'is_paid' in attrs or 'final_amount' in attrs:
+            paid = attrs.get('is_paid', self.instance.is_paid)
+            amount = attrs.get('final_amount', self.instance.final_amount)
+            if paid and amount is None:
+                raise serializers.ValidationError({
+                    'final_amount': 'برای ثبت پرداخت، مبلغ نهایی لازم است.',
+                })
 
         return attrs
 

@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from django.db import transaction
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -50,13 +51,16 @@ class UserAccountDetaileView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, IsManage]
 
+    @transaction.atomic
     def patch(self, request, user_id):
         data = request.data
 
         user = get_object_or_404(
-            User,
+            User.objects.select_for_update(),
             id=user_id,
-            repair_shop=request.user.repair_shop
+            repair_shop=request.user.repair_shop,
+            is_staff=False,
+            is_superuser=False,
         )
 
         serializer = UserAccountUpdateSerializer(user, data=data, partial=True)

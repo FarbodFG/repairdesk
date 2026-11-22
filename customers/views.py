@@ -25,10 +25,10 @@ class CustomerListCreateView(APIView):
         search = request.query_params.get('search', '')
 
         if search:
-            print("ok")
             customers = Customer.objects.filter(
                 Q(name__icontains=search) |
-                Q(phone_number__icontains=search),
+                Q(phone_number__icontains=search) |
+                Q(available_phone_number__icontains=search),
                 repair_shop_id=request.user.repair_shop_id
             ).select_related('repair_shop')
         else:

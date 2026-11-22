@@ -72,7 +72,7 @@ export default function StaffPage() {
                 <span className={`badge ${person.is_active ? 'forest' : 'neutral'}`}>
                   {person.is_active ? 'فعال' : 'غیرفعال'}
                 </span>
-                {manager && (
+                {manager && !person.is_staff && (
                   <button
                     className="icon-button"
                     aria-label={`ویرایش ${person.username}`}

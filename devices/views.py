@@ -3,6 +3,7 @@ from django.db.models import Q
 from rest_framework.generics import ListAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from utils.permissions import HasActiveWorkspace
 
 from .models import DeviceModel
 from .pagination import DeviceModelPagination
@@ -11,7 +12,7 @@ from .serializer import DeviceModelSerializer
 
 class DeviceModelListView(ListAPIView):
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, HasActiveWorkspace]
     serializer_class = DeviceModelSerializer
     pagination_class = DeviceModelPagination
 

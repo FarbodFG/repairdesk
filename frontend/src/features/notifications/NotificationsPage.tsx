@@ -62,7 +62,7 @@ export default function NotificationsPage() {
     }) => {
       const result = await request<Notification>(`notifications/${notificationId}/retry/`, {
         method: 'POST',
-        body: JSON.stringify({ confirm_unknown_delivery: confirmUnknownDelivery }),
+        body: { confirm_unknown_delivery: confirmUnknownDelivery },
       })
       if (result.status === 'failed' || result.status === 'cancelled') {
         throw new Error(result.last_error || 'ارسال مجدد پیام ناموفق بود.')

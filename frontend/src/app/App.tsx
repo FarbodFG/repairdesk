@@ -11,6 +11,7 @@ const LoginPage = lazy(() => import('../features/auth/LoginPage'))
 const AccountPage = lazy(() => import('../features/auth/AccountPage'))
 const DashboardPage = lazy(() => import('../features/dashboard/DashboardPage'))
 const RepairListPage = lazy(() => import('../features/repairs/RepairListPage'))
+const UnassignedRepairsPage = lazy(() => import('../features/repairs/UnassignedRepairsPage'))
 const CreateRepairPage = lazy(() => import('../features/repairs/CreateRepairPage'))
 const RepairDetailPage = lazy(() => import('../features/repairs/RepairDetailPage'))
 const CustomersPage = lazy(() => import('../features/customers/CustomersPage'))
@@ -39,7 +40,7 @@ export function App() {
                     : pathname.includes('account')
                       ? 'حساب کاربری'
                       : 'فضای کاری'
-    document.title = `${title} | ${pathname === '/' || pathname === '/track' ? site.shopName : site.productName}`
+    document.title = `${title} | ${site.shopName}`
     if (!hash) window.scrollTo({ top: 0, behavior: 'instant' })
   }, [pathname, hash])
   return (
@@ -59,6 +60,7 @@ export function App() {
               <Route index element={<DashboardPage />} />
               <Route path="account" element={<AccountPage />} />
               <Route path="repairs" element={<RepairListPage />} />
+              <Route path="repairs/unassigned" element={<UnassignedRepairsPage />} />
               <Route path="repairs/:id" element={<RepairDetailPage />} />
               <Route element={<RoleGuard allowed={[1, 2]} />}>
                 <Route path="repairs/new" element={<CreateRepairPage />} />

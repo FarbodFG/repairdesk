@@ -84,6 +84,87 @@ test('پیگیری عمومی معتبر، کد ناموجود و عدم افش�
   await page.getByRole('button', { name: 'پیگیری تعمیر' }).click()
   await expect(page.getByRole('heading', { name: 'سفارشی با این کد پیدا نشد' })).toBeVisible()
 })
+
+test('اسکرول و چیدمان صفحه پیگیری با ورودی خالی', async ({ page }, info) => {
+  const width = info.project.name === 'mobile' ? 280 : info.project.name === 'tablet' ? 768 : 1024
+  await page.setViewportSize({ width, height: 620 })
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  const lookups: string[] = []
+  page.on('request', (request) => {
+    if (request.url().includes('tracking_code=')) lookups.push(request.url())
+  })
+  await page.goto('/track')
+  await expect(page.getByLabel('کد پیگیری سفارش')).toHaveValue('')
+  await expect(page.locator('.tracking-outcome')).toHaveCount(0)
+  const layout = await page.evaluate(() => {
+    const hero = document.querySelector('.tracking-hero')!.getBoundingClientRect()
+    const help = document.querySelector('.tracking-help')!.getBoundingClientRect()
+    const photo = document.querySelector('.tracking-photo')!.getBoundingClientRect()
+    return { documentWidth: document.documentElement.scrollWidth, hero: hero.bottom, help: help.top, photo: photo.top }
+  })
+  expect(layout.documentWidth).toBeLessThanOrEqual(width)
+  expect(layout.help - layout.hero).toBeLessThanOrEqual(16)
+  if (width <= 840) expect(layout.photo).toBeGreaterThan(layout.help)
+
+  await page.getByRole('button', { name: 'پیگیری تعمیر' }).click()
+  await expect(page.getByRole('alert')).toBeVisible()
+  expect(lookups).toEqual([])
+  await noOverflow(page)
+
+  await page.mouse.move(width / 2, 420)
+  await page.mouse.wheel(0, 2000)
+  await expect(page.locator('.footer-bottom')).toBeInViewport()
+  await page.mouse.wheel(0, -2000)
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
+})
+
+test('لینک پیامکی، حفظ محرمانگی کد و بازیابی خطای پیگیری', async ({ page }) => {
+  const lookup = page.waitForRequest((request) => request.url() === `${api}/repairs/?tracking_code=RDTEST00000004`)
+  await page.goto('/track?code=rdtest00000004')
+  const incoming = await lookup
+  expect(incoming.headers()).not.toHaveProperty('authorization')
+  expect(incoming.headers().referer || '').toBe('')
+  await expect(page).toHaveURL(/\/track$/)
+  const ready = page.getByRole('heading', { name: 'آماده تحویل' })
+  await expect(ready).toBeFocused()
+  await expect(page.locator('[aria-current="step"]')).toContainText('آمادهٔ تحویل')
+  await noOverflow(page)
+
+  const code = page.getByLabel('کد پیگیری سفارش')
+  await code.fill('RDTEST00000002')
+  await expect(ready).toHaveCount(0)
+  const offline = `${api}/repairs/?tracking_code=RDTEST00000002`
+  await page.route(offline, (route) => route.abort('failed'), { times: 1 })
+  await page.getByRole('button', { name: 'پیگیری تعمیر' }).click()
+  await expect(page.getByRole('alert')).toContainText('دریافت وضعیت سفارش ممکن نشد')
+  await page.getByRole('button', { name: 'تلاش دوباره' }).click()
+  await expect(page.getByRole('heading', { name: 'منتظر قطعه' })).toBeVisible()
+  await expect(page.locator('[aria-current="step"]')).toContainText('تعمیر')
+
+  await page.goto('/track?code=BAD-CODE')
+  await expect(page).toHaveURL(/\/track$/)
+  await expect(page.getByRole('alert')).toContainText('کد پیگیری داخل لینک معتبر نیست')
+  await expect(code).toHaveValue('')
+})
+
+test('وضعیت لغو و پاسخ نامعتبر در صفحه پیگیری', async ({ page }) => {
+  await page.goto('/track')
+  const query = `${api}/repairs/?tracking_code=RDTEST00000007`
+  await page.route(query, (route) => route.fulfill({ json: {
+    tracking_code: 'RDTEST00000007', repair_status: 7,
+    final_amount: null, is_paid: false, created_at: '2026-11-23T12:00:00+03:30',
+  } }), { times: 1 })
+  await page.getByLabel('کد پیگیری سفارش').fill('RDTEST00000007')
+  await page.getByRole('button', { name: 'پیگیری تعمیر' }).click()
+  await expect(page.getByRole('heading', { name: 'لغوشده' })).toBeVisible()
+  await expect(page.getByRole('list', { name: 'مراحل تعمیر' })).toHaveCount(0)
+  await noOverflow(page)
+  await page.route(query, (route) => route.fulfill({ json: { repair_status: 100 } }), { times: 1 })
+  await page.getByRole('button', { name: 'پیگیری تعمیر' }).click()
+  await expect(page.getByRole('alert')).toContainText('دریافت وضعیت سفارش ممکن نشد')
+  await expect(page.getByRole('heading', { name: 'لغوشده' })).toHaveCount(0)
+})
+
 test('محافظت مسیر، داشبورد مدیر، بازیابی JWT و فیلتر و صفحه‌بندی', async ({ page }, info) => {
   const requestedUrls: string[] = []
   page.on('request', (request) => requestedUrls.push(request.url()))
@@ -96,6 +177,17 @@ test('محافظت مسیر، داشبورد مدیر، بازیابی JWT و ف
   await page.reload()
   expect((await refreshed).status()).toBe(200)
   await expect(page.getByRole('heading', { name: 'جریان سفارش‌ها' })).toBeVisible()
+  const queue = page.getByRole('region', { name: 'صف کار تعمیرگاه' })
+  const waiting = queue.getByRole('button', { name: 'منتظر قطعه' })
+  await waiting.click()
+  await expect(waiting).toHaveAttribute('aria-pressed', 'true')
+  await expect(queue.getByRole('link', { name: 'مشاهده فهرست «منتظر قطعه»' }))
+    .toHaveAttribute('href', '/app/repairs?status=3')
+  if (info.project.name === 'mobile') {
+    const dock = page.getByRole('navigation', { name: 'دسترسی سریع پنل' })
+    await expect(dock.getByRole('link', { name: 'خانه' })).toHaveAttribute('aria-current', 'page')
+    await expect(dock.getByRole('link', { name: 'پذیرش' })).toBeVisible()
+  }
   await noOverflow(page)
   await page.screenshot({
     path: `test-results/visual/dashboard-${info.project.name}.png`,
@@ -113,6 +205,18 @@ test('محافظت مسیر، داشبورد مدیر، بازیابی JWT و ف
   await expect(page.getByRole('link', { name: 'RDTEST00000002', exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'بازنشانی فیلترها' }).click()
   await expect(page).toHaveURL(/\/app\/repairs$/)
+  const quickSearch = page.getByRole('button', { name: 'جست‌وجوی سفارش', exact: true })
+  await quickSearch.click()
+  await expect(page.getByRole('searchbox', { name: 'عبارت جست‌وجو' })).toBeFocused()
+  await page.keyboard.press('Escape')
+  await expect(quickSearch).toBeFocused()
+  await page.keyboard.press('Control+k')
+  const quickSearchInput = page.getByRole('searchbox', { name: 'عبارت جست‌وجو' })
+  await quickSearchInput.fill('RDTEST00000002')
+  await quickSearchInput.press('Enter')
+  await expect(page.getByRole('dialog')).toHaveCount(0)
+  await expect(page).toHaveURL(/search=RDTEST00000002/)
+  await expect(page.getByRole('link', { name: 'RDTEST00000002', exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'خروج از حساب' }).click()
   await expect(page).toHaveURL(/\/login/)
   expect(requestedUrls.some((url) => /three|PhoneScene/i.test(url))).toBe(false)
@@ -123,19 +227,43 @@ test('ثبت سفارش، گردش وضعیت، دریافت دستگاه، پر
 }) => {
   const tokens = await login(page)
   await page.goto('/app/repairs/new')
+  await page.getByRole('button', { name: 'ادامه به انتخاب دستگاه' }).click()
+  await expect(page.getByText('مشتری را انتخاب کنید.', { exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'مشتری جدید', exact: true }).click()
   await page.getByLabel('نام و نام خانوادگی مشتری').fill('مشتری موقت آزمون')
-  await page.getByLabel('شماره موبایل', { exact: true }).fill('09120000001')
+  await page.getByLabel('شماره موبایل اصلی مشتری', { exact: true }).fill('09120000001')
+  await page.getByLabel('شماره در دسترس برای پیامک (اختیاری)').fill('09121112233')
+  await page.getByRole('button', { name: 'ادامه به انتخاب دستگاه' }).click()
   await page.getByRole('button', { name: 'نام مدل به‌صورت دستی' }).click()
   await page.getByLabel('نام مدل دستگاه', { exact: true }).fill('Isolated test device')
+  await page.getByRole('button', { name: 'ادامه به جزئیات سفارش' }).click()
   await page.getByLabel('شرح مشکل دستگاه').fill('شرح آزمایشی؛ بدون داده واقعی')
-  await page.getByLabel('تعمیرکار مسئول (اختیاری)').selectOption({ label: 'qa_technician' })
+  await page.getByLabel('تعمیرکار مسئول (اختیاری)').selectOption({ label: 'خودم (qa_manager)' })
+  const amount = page.getByRole('textbox', { name: /^مبلغ نهایی/ })
+  await amount.fill('۱۰۰۰۰۰۰')
+  await expect(amount).toHaveValue('1,000,000')
+  await expect(page.getByText('یک میلیون تومان', { exact: true })).toBeVisible()
+  await page.getByRole('button', { name: 'بازگشت', exact: true }).click()
+  await expect(page.getByLabel('نام مدل دستگاه', { exact: true })).toHaveValue('Isolated test device')
+  await page.getByRole('button', { name: 'ادامه به جزئیات سفارش' }).click()
+  await expect(amount).toHaveValue('1,000,000')
+  await noOverflow(page)
   const createdResponse = page.waitForResponse(
     (response) => response.url() === `${api}/repairs/` && response.request().method() === 'POST',
   )
   await page.getByRole('button', { name: 'ثبت و دریافت کد پیگیری' }).click()
   const created = await (await createdResponse).json()
   expect(created.repair_status).toBe(1)
+  expect(created.final_amount).toBe(1000000)
+  expect(created.assigned_technician.username).toBe('qa_manager')
+  expect(created.customer.available_phone_number).toBe('09121112233')
+  const notices = await request.get(`${api}/notifications/?repair_order_id=${created.id}`, {
+    headers: { Authorization: `Bearer ${tokens.access}` },
+  })
+  expect(notices.ok()).toBe(true)
+  const noticePage = await notices.json()
+  expect(noticePage.results).toHaveLength(1)
+  expect(noticePage.results[0].recipient).toBe('+989121112233')
   await expect(page).toHaveURL(new RegExp(`/app/repairs/${created.id}$`))
   async function patch(action: () => Promise<unknown>) {
     const response = page.waitForResponse(
@@ -153,6 +281,9 @@ test('ثبت سفارش، گردش وضعیت، دریافت دستگاه، پر
     page.getByRole('button', { name: 'در حال بررسی', exact: true }).click(),
   )
   expect(inspecting.body).toEqual({ repair_status: 2 })
+  await page.getByLabel('تعمیرکار مسئول', { exact: true }).selectOption({ label: 'qa_reception' })
+  const assigned = await patch(() => page.getByRole('button', { name: 'ذخیره تغییرات' }).click())
+  expect(assigned.data.assigned_technician.username).toBe('qa_reception')
   await expect(page.getByRole('heading', { name: 'تاریخچه تغییر وضعیت' })).toBeVisible()
   await expect(page.locator('.history-list li')).toHaveCount(1)
   const newToken = await (
@@ -172,11 +303,18 @@ test('ثبت سفارش، گردش وضعیت، دریافت دستگاه، پر
   const manual = await patch(() => page.getByRole('button', { name: 'ذخیره زمان دستی' }).click())
   expect(Object.keys(manual.body)).toEqual(['received_at'])
   expect(manual.body.received_at).toMatch(/Z$/)
-  await page.getByLabel(/^مبلغ نهایی/).fill('1250000')
+  await expect(amount).toHaveValue('1,000,000')
+  await amount.fill('12.50')
+  await page.getByRole('button', { name: 'ذخیره تغییرات' }).click()
+  await expect(page.getByText('مبلغ باید عدد صحیح و نامنفی باشد.', { exact: true })).toBeVisible()
+  await amount.fill('1250000')
+  await expect(amount).toHaveValue('1,250,000')
+  await expect(page.getByText('یک میلیون و دویست و پنجاه هزار تومان', { exact: true })).toBeVisible()
   await page.getByLabel('پرداخت حضوری انجام شده است').check()
   await page.getByRole('button', { name: 'ذخیره تغییرات' }).click()
   const paid = await patch(() => page.getByRole('button', { name: 'تأیید و ذخیره' }).click())
   expect(paid.data.is_paid).toBe(true)
+  expect(paid.body.final_amount).toBe(1250000)
   expect(paid.data.paid_at).toBeTruthy()
   expect(paid.body).not.toHaveProperty('paid_at')
   expect(paid.body).not.toHaveProperty('repair_status')
@@ -242,8 +380,31 @@ test('ناوبری و دسترسی پذیرش و تعمیرکار', async ({ pag
   await page.goto('/app/repairs/new')
   await expect(page.getByRole('heading', { name: 'دسترسی به این صفحه ندارید' })).toBeVisible()
   await page.goto('/app/repairs')
-  await expect(page.getByLabel('فیلتر تعمیرکار')).toHaveCount(0)
+  await expect(page.getByLabel('فیلتر مسئول تعمیر')).toHaveCount(0)
   await noOverflow(page)
+})
+
+test('تعمیرکار سفارش بدون مسئول را به نام خودش ثبت می‌کند', async ({ page, request }) => {
+  const tokens = await login(page)
+  const device = `دستگاه بدون مسئول ${Date.now()}`
+  const created = await request.post(`${api}/repairs/`, {
+    headers: { Authorization: `Bearer ${tokens.access}` },
+    data: { customer_id: 1, new_device: { custom_model_name: device } },
+  })
+  expect(created.status()).toBe(201)
+  const { id } = await created.json()
+  await page.getByRole('button', { name: 'خروج از حساب' }).click()
+  await login(page, 'qa_technician')
+  await page.getByRole('link', { name: 'سفارش‌های بدون مسئول' }).click()
+  const row = page.getByRole('listitem').filter({ hasText: device })
+  await expect(row).toBeVisible()
+  await noOverflow(page)
+  const claimed = page.waitForResponse((response) => response.url() === `${api}/repairs/${id}/claim/`)
+  await row.getByRole('button', { name: 'پذیرش مسئولیت' }).click()
+  expect((await claimed).status()).toBe(204)
+  await expect(page).toHaveURL(new RegExp(`/app/repairs/${id}$`))
+  await expect(page.getByRole('heading', { name: device })).toBeVisible()
+  await expect(page.getByText('qa_technician', { exact: true })).not.toHaveCount(0)
 })
 
 test('انقضای واقعی access و پاک‌شدن نشست با refresh نامعتبر', async ({ page }) => {
@@ -278,9 +439,11 @@ test('مشتری موجود، مدل جست‌وجوشده و دستگاه مو�
   await page
     .getByLabel('انتخاب مشتری', { exact: true })
     .selectOption({ label: 'مشتری آزمایشی — 09120000000' })
+  await page.getByRole('button', { name: 'ادامه به انتخاب دستگاه' }).click()
   await page
     .getByLabel('دستگاه مشتری', { exact: true })
     .selectOption({ label: 'Test Brand Test Phone' })
+  await page.getByRole('button', { name: 'ادامه به جزئیات سفارش' }).click()
   const existingResponse = page.waitForResponse(
     (response) => response.url() === `${api}/repairs/` && response.request().method() === 'POST',
   )
@@ -294,6 +457,7 @@ test('مشتری موجود، مدل جست‌وجوشده و دستگاه مو�
   await page
     .getByLabel('انتخاب مشتری', { exact: true })
     .selectOption({ label: 'مشتری آزمایشی — 09120000000' })
+  await page.getByRole('button', { name: 'ادامه به انتخاب دستگاه' }).click()
   await page.getByRole('button', { name: 'دستگاه جدید', exact: true }).click()
   const searched = page.waitForResponse((response) =>
     response.url().includes('devices/models/?search=Test'),
@@ -303,6 +467,7 @@ test('مشتری موجود، مدل جست‌وجوشده و دستگاه مو�
   await page
     .getByLabel('مدل دستگاه', { exact: true })
     .selectOption({ label: 'Test Brand — Test Phone' })
+  await page.getByRole('button', { name: 'ادامه به جزئیات سفارش' }).click()
   const modelResponse = page.waitForResponse(
     (response) => response.url() === `${api}/repairs/` && response.request().method() === 'POST',
   )

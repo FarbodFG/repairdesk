@@ -79,6 +79,7 @@ class NotificationListView(APIView):
                 Q(recipient__icontains=search)
                 | Q(customer__name__icontains=search)
                 | Q(customer__phone_number__icontains=search)
+                | Q(customer__available_phone_number__icontains=search)
                 | Q(repair_order__tracking_code__icontains=search)
             )
             try:
